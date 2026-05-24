@@ -1,0 +1,109 @@
+@use 'colors' as *;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: $bg;
+}
+
+// ------nav
+
+.navbar {
+	width: 100%;
+	padding: 1em 2em;
+	display: flex;
+	justify-content: space-between;
+
+	&__links {
+		display: flex;
+		list-style: none;
+		gap: 2rem;
+		a {
+			position: relative;
+			text-decoration: none;
+			color: $main-color;
+			font-family: sans-serif;
+			font-size: 1.4em;
+			&::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: -5px;
+				width: 100%;
+				height: 2px;
+				background-color: $main-color;
+				transform: scaleX(0);
+				transform-origin: left;
+				transition: 0.5s;
+			}
+			&:hover::after {
+				transform: scaleX(1);
+			}
+		}
+	}
+
+	&__btn {
+		font-family: sans-serif;
+		text-decoration: none;
+		color: $main-color;
+		border: 2px solid $main-color;
+		padding: 0.4em;
+		border-radius: 5px;
+		transition:
+			background-color ease 0.5s,
+			color ease 0.5s;
+
+		&:hover {
+			background-color: $main-color;
+			color: white;
+		}
+	}
+}
+
+// --------hero
+
+.hero {
+	width: 100%;
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+    // align-items: center;
+
+	&__left {
+		padding: 5rem 5rem;
+		background-color: $bg;
+
+		&__first-text {
+			color: $green-deep;
+			font-size: 3.6rem;
+		}
+
+		&__second-text {
+			color: $main-color;
+			font-size: 3.4rem;
+			font-style: italic;
+		}
+
+		&__normal-text {
+			color: $text-muted;
+			font-size: 1.4rem;
+		}
+
+		&__btn {
+            background-color: $main-color;
+			color: white;
+            text-decoration: none;
+            font-family: sans-serif;
+            padding: 1em;
+		}
+	}
+
+	&__right {
+		padding: 6rem 5rem;
+		background-color: $green-deep;
+	}
+}
