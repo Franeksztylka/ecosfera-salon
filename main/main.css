@@ -19,6 +19,7 @@ body {
   padding: 1em 2em;
   display: flex;
   justify-content: space-between;
+  z-index: 100;
 }
 .navbar__links {
   display: flex;
@@ -189,13 +190,18 @@ body {
   animation: draw 1s ease 0.8s forwards;
 }
 .hero__leaf .leaf-vein {
+  opacity: 0;
   stroke-width: 1;
-  stroke-dasharray: 60;
-  stroke-dashoffset: 60;
+  stroke-dasharray: 57;
+  stroke-dashoffset: 57;
   animation: draw 0.6s ease 1.4s forwards;
 }
 @keyframes draw {
+  from {
+    opacity: 0;
+  }
   to {
+    opacity: 1;
     stroke-dashoffset: 0;
   }
 }
@@ -212,6 +218,7 @@ body {
   .navbar {
     position: fixed;
     transition: background-color 0.2s ease-in;
+    z-index: 100;
   }
   .navbar ul {
     display: none;
@@ -219,7 +226,7 @@ body {
     top: 60px;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 99;
     background: #2E7D32;
     padding: 2rem 0;
     align-items: center;
@@ -265,6 +272,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+    z-index: 101;
   }
   .navbar span {
     display: block;
