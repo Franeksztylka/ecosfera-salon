@@ -76,7 +76,6 @@ body {
   background-color: #F4F2EE;
 }
 .hero__title {
-  position: relative;
   color: #1B3A1C;
   font-size: 5rem;
 }
@@ -154,41 +153,18 @@ body {
   opacity: 0.2;
 }
 
+.scroll-bg {
+  background-color: #2E7D32;
+}
+
+.navbar-open-bg {
+  background: #2E7D32;
+}
+
 @media (max-width: 768px) {
-  .navbar a.navbar__btn {
-    display: none;
-  }
-  .navbar img {
-    display: none;
-  }
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 8px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  .hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: #333;
-    border-radius: 2px;
-    transition: transform 0.3s, opacity 0.3s;
-  }
-  .hamburger.open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-  .hamburger.open span:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
   .navbar {
-    position: relative;
+    position: fixed;
+    transition: background-color 0.2s ease-in;
   }
   .navbar ul {
     display: none;
@@ -197,13 +173,17 @@ body {
     left: 0;
     width: 100%;
     z-index: 10;
-    background: linear-gradient(#50c878, #3eb489);
+    background: #2E7D32;
     padding: 2rem 0;
     align-items: center;
+  }
+  .navbar ul a {
+    color: white;
   }
   .navbar ul.navbar-open {
     display: flex;
     flex-direction: column;
+    animation: wjazd 0.3s ease forwards;
   }
   .navbar ul.navbar-open li {
     animation: wjazd 0.3s ease forwards;
@@ -222,6 +202,59 @@ body {
   }
   .navbar ul.navbar-open li:nth-child(4) {
     animation-delay: 0.4s;
+  }
+  .navbar a.navbar__btn {
+    display: none;
+  }
+  .navbar img {
+    display: none;
+  }
+  .navbar .hamburger {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .navbar span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #333;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .navbar .hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .navbar .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar .hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  .navbar .cross-color {
+    background-color: white;
+  }
+  .hero {
+    padding-top: 0px;
+  }
+  .hero__right {
+    display: none;
+  }
+  .hero__left {
+    width: 100%;
+    padding: 0 0 10px 25px;
+    height: 100vh;
+  }
+  .hero__reviews {
+    margin-top: 20px;
+  }
+  .hero__description {
+    margin-top: 20px;
   }
 }
 @keyframes wjazd {
