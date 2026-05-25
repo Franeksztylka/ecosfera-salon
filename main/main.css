@@ -78,21 +78,28 @@ body {
 .hero__title {
   color: #1B3A1C;
   font-size: 5rem;
+  animation: fadeUp 0.8s ease forwards;
 }
 .hero__subtitle {
   color: #2E7D32;
   font-size: 4.4rem;
   font-style: italic;
+  animation: fadeUp 0.8s ease 0.2s forwards;
+  opacity: 0;
 }
 .hero__description {
   color: #6b7b6c;
   font-size: 1.6rem;
+  animation: fadeUp 0.8s ease 0.4s forwards;
+  opacity: 0;
 }
 .hero__container {
   display: flex;
   align-items: center;
   gap: 2rem;
   margin-top: 2rem;
+  animation: fadeUp 0.8s ease 0.6s forwards;
+  opacity: 0;
 }
 .hero__btn {
   display: inline-block;
@@ -119,6 +126,8 @@ body {
   border: 1px solid #4CAF50;
   border-radius: 10px;
   background-color: white;
+  animation: popIn 0.6s ease 1s forwards;
+  opacity: 0;
 }
 .hero__stars {
   color: #2E7D32;
@@ -151,6 +160,44 @@ body {
   position: relative;
   border: 1px solid #6b7b6c;
   opacity: 0.2;
+}
+.hero__leaf {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  z-index: 3;
+}
+.hero__leaf .leaf-outline,
+.hero__leaf .leaf-vein-main,
+.hero__leaf .leaf-vein {
+  fill: none;
+  stroke: #2E7D32;
+  stroke-linecap: round;
+}
+.hero__leaf .leaf-outline {
+  stroke-width: 1;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: draw 2s ease forwards;
+}
+.hero__leaf .leaf-vein-main {
+  stroke-width: 0.8;
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+  animation: draw 1s ease 0.8s forwards;
+}
+.hero__leaf .leaf-vein {
+  stroke-width: 1;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: draw 0.6s ease 1.4s forwards;
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .scroll-bg {
@@ -265,5 +312,25 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }/*# sourceMappingURL=main.css.map */

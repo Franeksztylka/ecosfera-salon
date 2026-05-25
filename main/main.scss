@@ -88,18 +88,23 @@ body {
 	&__title {
 		color: $green-deep;
 		font-size: 5rem;
+		animation: fadeUp 0.8s ease forwards;
 	}
 
 	&__subtitle {
 		color: $main-color;
 		font-size: 4.4rem;
 		font-style: italic;
+		animation: fadeUp 0.8s ease 0.2s forwards;
+		opacity: 0;
 	}
 
 	&__description {
 		// margin-top: 10rem;
 		color: $text-muted;
 		font-size: 1.6rem;
+		animation: fadeUp 0.8s ease 0.4s forwards;
+		opacity: 0;
 	}
 
 	&__container {
@@ -107,6 +112,8 @@ body {
 		align-items: center;
 		gap: 2rem;
 		margin-top: 2rem;
+		animation: fadeUp 0.8s ease 0.6s forwards;
+		opacity: 0;
 	}
 
 	&__btn {
@@ -136,6 +143,8 @@ body {
 		border: 1px solid $green-light;
 		border-radius: 10px;
 		background-color: white;
+		animation: popIn 0.6s ease 1s forwards;
+		opacity: 0;
 	}
 
 	&__stars {
@@ -177,13 +186,56 @@ body {
 		border: 1px solid $text-muted;
 		opacity: 0.2;
 	}
+
+	&__leaf {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 40%;
+		z-index: 3;
+
+		.leaf-outline,
+		.leaf-vein-main,
+		.leaf-vein {
+			fill: none;
+			stroke: $main-color;
+			stroke-linecap: round;
+		}
+
+		.leaf-outline {
+			stroke-width: 1;
+			stroke-dasharray: 600;
+			stroke-dashoffset: 600;
+			animation: draw 2s ease forwards;
+		}
+
+		.leaf-vein-main {
+			stroke-width: 0.8;
+			stroke-dasharray: 260;
+			stroke-dashoffset: 260;
+			animation: draw 1s ease 0.8s forwards;
+		}
+
+		.leaf-vein {
+			stroke-width: 1;
+			stroke-dasharray: 60;
+			stroke-dashoffset: 60;
+			animation: draw 0.6s ease 1.4s forwards;
+		}
+	}
+
+	@keyframes draw {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
 }
-//STYLE POMOCNICZE DO JS 
-.scroll-bg{
-	background-color:$main-color;
-	
+//STYLE POMOCNICZE DO JS
+.scroll-bg {
+	background-color: $main-color;
 }
-.navbar-open-bg{
+.navbar-open-bg {
 	background: $main-color;
 }
 
@@ -191,10 +243,10 @@ body {
 
 @media (max-width: 768px) {
 	//NAWIGACJA
-	
-	.navbar{
+
+	.navbar {
 		position: fixed;
-		transition: background-color .2s ease-in;
+		transition: background-color 0.2s ease-in;
 		ul {
 			display: none;
 			position: absolute;
@@ -205,14 +257,14 @@ body {
 			background: $main-color;
 			padding: 2rem 0;
 			align-items: center;
-			a{
+			a {
 				color: white;
 			}
 		}
 		ul.navbar-open {
 			display: flex;
 			flex-direction: column;
-			animation: wjazd .3s ease forwards;
+			animation: wjazd 0.3s ease forwards;
 		}
 		ul.navbar-open li {
 			animation: wjazd 0.3s ease forwards;
@@ -238,7 +290,7 @@ body {
 		img {
 			display: none;
 		}
-		.hamburger{
+		.hamburger {
 			display: flex;
 			position: fixed;
 			flex-direction: column;
@@ -255,8 +307,8 @@ body {
 			background: #333;
 			border-radius: 2px;
 			transition:
-			transform 0.3s,
-			opacity 0.3s;
+				transform 0.3s,
+				opacity 0.3s;
 		}
 		.hamburger.open span:nth-child(1) {
 			transform: translateY(7px) rotate(45deg);
@@ -264,38 +316,33 @@ body {
 		.hamburger.open span:nth-child(2) {
 			opacity: 0;
 		}
-		
+
 		.hamburger.open span:nth-child(3) {
 			transform: translateY(-7px) rotate(-45deg);
 		}
-		.cross-color{
+		.cross-color {
 			background-color: white;
 		}
-		
 	}
 
 	//SEKCJA HERO
-	.hero{
-		padding-top:0px;
-		&__right{
+	.hero {
+		padding-top: 0px;
+		&__right {
 			display: none;
 		}
-		&__left{
+		&__left {
 			width: 100%;
-			padding:0 0 10px 25px;
+			padding: 0 0 10px 25px;
 			height: 100vh;
 		}
-		&__reviews{
+		&__reviews {
 			margin-top: 20px;
 		}
-		&__description{
+		&__description {
 			margin-top: 20px;
 		}
-		
-		
-
 	}
-	
 }
 @keyframes wjazd {
 	from {
@@ -305,5 +352,27 @@ body {
 	to {
 		opacity: 1;
 		transform: translateY(0);
+	}
+}
+
+@keyframes fadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes popIn {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
 	}
 }
