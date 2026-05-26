@@ -1,8 +1,7 @@
 	document.addEventListener('DOMContentLoaded', () => { //ŁADOWANIE DOM ,GWARANTUJE STABILNOSC DZIALANIA
-    
-	
 	const navBar = document.querySelector('.navbar')
 	const btn = document.querySelector('.hamburger')
+	const navBtn = document.querySelector('.navbar__btn')
 	const navUl = document.getElementById('navbar-links')
 	const navLinks = document.querySelectorAll('.navbar-links-menu')
 	const burgerSpan = document.querySelectorAll('.span-burger')
@@ -18,13 +17,15 @@
 			burgerSpan.forEach(function(span){
 				span.classList.add('cross-color')
 			})
+			
 		}else{
 			burgerSpan.forEach(function(span){
 				span.classList.remove('cross-color')
 			})
+			
 		}
 	})
-
+	
 	navLinks.forEach(function(link){
 		link.addEventListener('click', () => {
 			navUl.classList.remove('navbar-open')
@@ -47,8 +48,17 @@
 
 		if(window.scrollY > 50){
 			navBar.classList.add('scroll-bg')
+			navLinks.forEach(function(link){
+			link.classList.add('link-color-change')
+			})
+			navBtn.classList.add('btn-color-change')
 		}else{
 			navBar.classList.remove('scroll-bg')
+			navLinks.forEach(function(link){
+				link.classList.remove('link-color-change')
+			})
+			navBtn.classList.remove('btn-color-change')
+			
 		}
 
 	})

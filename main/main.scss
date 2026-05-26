@@ -24,6 +24,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	z-index: 100;
+	transition: background-color .3s ease-in;
 	&__links {
 		display: flex;
 		list-style: none;
@@ -34,6 +35,7 @@ body {
 			color: $text-muted;
 			font-family: sans-serif;
 			font-size: 1.4em;
+			transition: color .3s ;
 			&::after {
 				content: '';
 				position: absolute;
@@ -49,7 +51,11 @@ body {
 			&:hover::after {
 				transform: scaleX(1);
 			}
+			&.link-color-change{
+			color: white;
+			}
 		}
+
 	}
 
 	&__btn {
@@ -67,7 +73,16 @@ body {
 			background-color: $main-color;
 			color: white;
 		}
+		&.btn-color-change{
+			color: white;
+			border: 2px solid white;
+			}
+			&.btn-color-change:hover{
+				background-color: #fff;
+				color: $main-color;
+			}
 	}
+
 }
 
 // --------hero
@@ -226,16 +241,48 @@ body {
 		}
 	}
 
-	@keyframes draw {
-		from{
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-			stroke-dashoffset: 0;
-		}
+}
+
+//ABOUT US
+
+.about-us{
+	padding-top:30px ;
+	background-color: $bg-2;
+	&__wrapper{
+		display: flex;
+	}
+	&__left{
+		width: 50%;
+	}
+	
+	h2{
+		font-family: sans-serif;
+		text-align: center;
+		font-size: 30px;
+	}
+	&__image-container{
+		flex-shrink: 0;
+		margin-left: 40px;
+		width: 400px;
+		height: 400px;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+	&__image-owner{
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+	display: block;
+	}
+	&__description{
+		font-size: 40px;
+		padding-left: 200px;
 	}
 }
+
+
+
 //STYLE POMOCNICZE DO JS
 .scroll-bg {
 	background-color: $main-color;
@@ -243,12 +290,19 @@ body {
 .navbar-open-bg {
 	background: $main-color;
 }
+.hamburger{
+	display: none;
+}
+
+
+
+
 
 //responsywnosc
 
 @media (max-width: 768px) {
 	//NAWIGACJA
-
+	
 	.navbar {
 		position: fixed;
 		transition: background-color 0.2s ease-in;
@@ -314,8 +368,8 @@ body {
 			background: #333;
 			border-radius: 2px;
 			transition:
-				transform 0.3s,
-				opacity 0.3s;
+			transform 0.3s,
+			opacity 0.3s;
 		}
 		.hamburger.open span:nth-child(1) {
 			transform: translateY(7px) rotate(45deg);
@@ -323,7 +377,7 @@ body {
 		.hamburger.open span:nth-child(2) {
 			opacity: 0;
 		}
-
+		
 		.hamburger.open span:nth-child(3) {
 			transform: translateY(-7px) rotate(-45deg);
 		}
@@ -331,7 +385,7 @@ body {
 			background-color: white;
 		}
 	}
-
+	
 	//SEKCJA HERO
 	.hero {
 		padding-top: 0px;
@@ -350,6 +404,9 @@ body {
 			margin-top: 20px;
 		}
 	}
+	
+	
+	
 }
 @keyframes wjazd {
 	from {
@@ -381,5 +438,15 @@ body {
 	to {
 		opacity: 1;
 		transform: scale(1);
+	}
+}
+
+@keyframes draw {
+	from{
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+		stroke-dashoffset: 0;
 	}
 }
