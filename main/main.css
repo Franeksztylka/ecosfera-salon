@@ -53,6 +53,9 @@ body {
 .navbar__links a.link-color-change {
   color: white;
 }
+.navbar__links a.link-color-change::after {
+  background-color: #fff;
+}
 .navbar__btn {
   font-family: sans-serif;
   text-decoration: none;
@@ -81,6 +84,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-top: var(--navbar-height);
+  overflow: hidden;
 }
 .hero__left {
   display: flex;
@@ -153,6 +157,7 @@ body {
 }
 .hero__right {
   background-color: #1B3A1C;
+  overflow: hidden;
 }
 .hero__bg {
   z-index: 1;
@@ -209,10 +214,31 @@ body {
   stroke-dashoffset: 57;
   animation: draw 0.6s ease 1.4s forwards;
 }
+.hero .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: 3;
+}
+.hero .wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 93px;
+  z-index: 3;
+}
+.hero .wave .shape-fill {
+  fill: #d5e6d5;
+  z-index: 3;
+}
 
 .about-us {
   padding-top: 30px;
-  background-color: rgba(213, 230, 213, 0.8901960784);
+  background-color: #d5e6d5;
 }
 .about-us__wrapper {
   display: flex;

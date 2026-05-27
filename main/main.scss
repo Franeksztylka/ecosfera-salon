@@ -54,6 +54,9 @@ body {
 			&.link-color-change{
 			color: white;
 			}
+			&.link-color-change::after{
+				background-color: #fff;
+			}
 		}
 
 	}
@@ -93,6 +96,7 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	padding-top: var(--navbar-height);
+	overflow: hidden;
 	&__left {
 		display: flex;
 		flex-direction: column;
@@ -175,6 +179,8 @@ body {
 	&__right {
 		// padding: 6rem 5rem;
 		background-color: $green-deep;
+		overflow: hidden;
+		
 	}
 
 	&__bg {
@@ -241,6 +247,30 @@ body {
 		}
 	}
 
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+	z-index: 3;
+	
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 93px;
+	z-index: 3;
+}
+
+.wave .shape-fill {
+    fill: $bg-2;
+	z-index: 3;
+}
 }
 
 //ABOUT US
@@ -280,6 +310,8 @@ body {
 		padding-left: 200px;
 	}
 }
+
+
 
 
 
