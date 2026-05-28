@@ -24,7 +24,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	z-index: 100;
-	transition: background-color .3s ease-in;
+	transition: background-color 0.3s ease-in;
 	&__links {
 		display: flex;
 		list-style: none;
@@ -35,7 +35,7 @@ body {
 			color: $text-muted;
 			font-family: sans-serif;
 			font-size: 1.4em;
-			transition: color .3s ;
+			transition: color 0.3s;
 			&::after {
 				content: '';
 				position: absolute;
@@ -51,14 +51,13 @@ body {
 			&:hover::after {
 				transform: scaleX(1);
 			}
-			&.link-color-change{
-			color: white;
+			&.link-color-change {
+				color: white;
 			}
-			&.link-color-change::after{
+			&.link-color-change::after {
 				background-color: #fff;
 			}
 		}
-
 	}
 
 	&__btn {
@@ -76,16 +75,26 @@ body {
 			background-color: $main-color;
 			color: white;
 		}
-		&.btn-color-change{
+		&.btn-color-change {
 			color: white;
 			border: 2px solid white;
-			}
-			&.btn-color-change:hover{
-				background-color: #fff;
-				color: $main-color;
-			}
+		}
+		&.btn-color-change:hover {
+			background-color: #fff;
+			color: $main-color;
+		}
 	}
 
+	&__logo {
+		display: flex;
+		align-items: center;
+
+		img {
+			display: block;
+			height: 70px;
+			width: auto;
+		}
+	}
 }
 
 // --------hero
@@ -180,7 +189,6 @@ body {
 		// padding: 6rem 5rem;
 		background-color: $green-deep;
 		overflow: hidden;
-		
 	}
 
 	&__bg {
@@ -241,56 +249,56 @@ body {
 		.leaf-vein {
 			opacity: 0;
 			stroke-width: 1;
-			stroke-dasharray:57;
+			stroke-dasharray: 57;
 			stroke-dashoffset: 57;
 			animation: draw 0.6s ease 1.4s forwards;
 		}
 	}
 
-.wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-	z-index: 3;
-	
-}
+	.wave {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+		line-height: 0;
+		transform: rotate(180deg);
+		z-index: 3;
+		animation: waveIn 1s ease forwards;
+	}
 
-.wave svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 93px;
-	z-index: 3;
-}
+	.wave svg {
+		position: relative;
+		display: block;
+		width: calc(100% + 1.3px);
+		height: 93px;
+		z-index: 3;
+	}
 
-.wave .shape-fill {
-    fill: $bg-2;
-	z-index: 3;
-}
+	.wave .shape-fill {
+		fill: $bg-2;
+		z-index: 3;
+	}
 }
 
 //ABOUT US
 
-.about-us{
-	padding-top:30px ;
+.about-us {
+	padding-top: 30px;
 	background-color: $bg-2;
-	&__wrapper{
+	&__wrapper {
 		display: flex;
 	}
-	&__left{
+	&__left {
 		width: 50%;
 	}
-	
-	h2{
+
+	h2 {
 		font-family: sans-serif;
 		text-align: center;
 		font-size: 30px;
 	}
-	&__image-container{
+	&__image-container {
 		flex-shrink: 0;
 		margin-left: 40px;
 		width: 400px;
@@ -298,22 +306,18 @@ body {
 		border-radius: 50%;
 		overflow: hidden;
 	}
-	&__image-owner{
-	width: 100%;
-	height: 100%;
-	-o-object-fit: cover;
-	object-fit: cover;
-	display: block;
+	&__image-owner {
+		width: 100%;
+		height: 100%;
+		-o-object-fit: cover;
+		object-fit: cover;
+		display: block;
 	}
-	&__description{
+	&__description {
 		font-size: 40px;
 		padding-left: 200px;
 	}
 }
-
-
-
-
 
 //STYLE POMOCNICZE DO JS
 .scroll-bg {
@@ -322,19 +326,15 @@ body {
 .navbar-open-bg {
 	background: $main-color;
 }
-.hamburger{
+.hamburger {
 	display: none;
 }
-
-
-
-
 
 //responsywnosc
 
 @media (max-width: 768px) {
 	//NAWIGACJA
-	
+
 	.navbar {
 		position: fixed;
 		transition: background-color 0.2s ease-in;
@@ -400,8 +400,8 @@ body {
 			background: #333;
 			border-radius: 2px;
 			transition:
-			transform 0.3s,
-			opacity 0.3s;
+				transform 0.3s,
+				opacity 0.3s;
 		}
 		.hamburger.open span:nth-child(1) {
 			transform: translateY(7px) rotate(45deg);
@@ -409,7 +409,7 @@ body {
 		.hamburger.open span:nth-child(2) {
 			opacity: 0;
 		}
-		
+
 		.hamburger.open span:nth-child(3) {
 			transform: translateY(-7px) rotate(-45deg);
 		}
@@ -417,7 +417,7 @@ body {
 			background-color: white;
 		}
 	}
-	
+
 	//SEKCJA HERO
 	.hero {
 		padding-top: 0px;
@@ -436,9 +436,6 @@ body {
 			margin-top: 20px;
 		}
 	}
-	
-	
-	
 }
 @keyframes wjazd {
 	from {
@@ -474,11 +471,20 @@ body {
 }
 
 @keyframes draw {
-	from{
+	from {
 		opacity: 0;
 	}
 	to {
 		opacity: 1;
 		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes waveIn {
+	from {
+		transform: rotate(180deg) translateY(-100%);
+	}
+	to {
+		transform: rotate(180deg) translateY(0);
 	}
 }
