@@ -189,39 +189,41 @@ body {
   border: 1px solid #6b7b6c;
   opacity: 0.2;
 }
-.hero__leaf {
+.hero .carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.hero .carousel__slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.hero .carousel__slide.active {
+  opacity: 1;
+}
+.hero .carousel__btn {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-  z-index: 3;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1.5rem;
 }
-.hero__leaf .leaf-outline,
-.hero__leaf .leaf-vein-main,
-.hero__leaf .leaf-vein {
-  fill: none;
-  stroke: #2E7D32;
-  stroke-linecap: round;
+.hero .carousel__btn--prev {
+  left: 10px;
 }
-.hero__leaf .leaf-outline {
-  stroke-width: 1;
-  stroke-dasharray: 600;
-  stroke-dashoffset: 600;
-  animation: draw 2s ease forwards;
-}
-.hero__leaf .leaf-vein-main {
-  stroke-width: 0.8;
-  stroke-dasharray: 260;
-  stroke-dashoffset: 260;
-  animation: draw 1s ease 0.8s forwards;
-}
-.hero__leaf .leaf-vein {
-  opacity: 0;
-  stroke-width: 1;
-  stroke-dasharray: 57;
-  stroke-dashoffset: 57;
-  animation: draw 0.6s ease 1.4s forwards;
+.hero .carousel__btn--next {
+  right: 10px;
 }
 .hero .wave {
   position: absolute;
@@ -444,5 +446,21 @@ body {
   }
   to {
     transform: rotate(180deg) translateY(0);
+  }
+}
+@keyframes cutTop {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+}
+@keyframes cutBottom {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
   }
 }/*# sourceMappingURL=main.css.map */

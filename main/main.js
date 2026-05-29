@@ -5,8 +5,10 @@
 	const navUl = document.getElementById('navbar-links')
 	const navLinks = document.querySelectorAll('.navbar-links-menu')
 	const burgerSpan = document.querySelectorAll('.span-burger')
-	const bg = document.getElementById('hero__bg')
-	const numberOfColorBoxes = 49;
+	const slides = document.querySelectorAll('.carousel__slide')
+	const prevBtn = document.querySelector('.carousel__btn--prev')
+	const nextBtn = document.querySelector('.carousel__btn--next')
+	let current = 0
 
 
 	burgerBtn.addEventListener('click', () => {
@@ -37,12 +39,6 @@
 		})
 	})
 
-	for (let i = 0; i < numberOfColorBoxes; i++) {
-		const colorBox = document.createElement('div')
-		colorBox.classList.add('colorBox')
-		bg.append(colorBox)
-	}
-
 
 	window.addEventListener('scroll' ,() =>{
 
@@ -68,5 +64,15 @@
 		}
 
 	})
+	function goTo(index) {
+    slides[current].classList.remove('active')
+    current = (index + slides.length) % slides.length
+    slides[current].classList.add('active')
+	}
+
+	nextBtn.addEventListener('click', () => goTo(current + 1))
+	prevBtn.addEventListener('click', () => goTo(current - 1))
+
+	setInterval(() => goTo(current + 1), 4000)
 
 });
