@@ -326,6 +326,9 @@ body {
 .navbar-open-bg {
 	background: $main-color;
 }
+.burger-open{
+	background-color: #fff;
+}
 .hamburger {
 	display: none;
 }
@@ -420,7 +423,8 @@ body {
 
 	//SEKCJA HERO
 	.hero {
-		padding-top: 0px;
+		padding-top: 20px;
+		padding-bottom: 25px;
 		&__right {
 			display: none;
 		}
@@ -434,6 +438,9 @@ body {
 		}
 		&__description {
 			margin-top: 20px;
+		}
+		.wave{
+			display: none;
 		}
 	}
 }

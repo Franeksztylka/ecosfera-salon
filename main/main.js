@@ -1,6 +1,6 @@
 	document.addEventListener('DOMContentLoaded', () => { //ŁADOWANIE DOM ,GWARANTUJE STABILNOSC DZIALANIA
 	const navBar = document.querySelector('.navbar')
-	const btn = document.querySelector('.hamburger')
+	const burgerBtn = document.querySelector('.hamburger')
 	const navBtn = document.querySelector('.navbar__btn')
 	const navUl = document.getElementById('navbar-links')
 	const navLinks = document.querySelectorAll('.navbar-links-menu')
@@ -9,8 +9,8 @@
 	const numberOfColorBoxes = 49;
 
 
-	btn.addEventListener('click', () => {
-		btn.classList.toggle('open')
+	burgerBtn.addEventListener('click', () => {
+		burgerBtn.classList.toggle('open')
 		navUl.classList.toggle('navbar-open')
 		navBar.classList.toggle('navbar-open-bg')
 		if(navBar.classList.contains('navbar-open-bg')){
@@ -32,7 +32,7 @@
 			burgerSpan.forEach(function(span){
 				span.classList.remove('cross-color')
 			})
-			btn.classList.remove('open')
+			burgerBtn.classList.remove('open')
 			navBar.classList.remove('navbar-open-bg')
 		})
 	})
@@ -51,11 +51,17 @@
 			navLinks.forEach(function(link){
 			link.classList.add('link-color-change')
 			})
+			burgerSpan.forEach(function(span){
+				span.classList.add('cross-color')
+			})
 			navBtn.classList.add('btn-color-change')
 		}else{
 			navBar.classList.remove('scroll-bg')
 			navLinks.forEach(function(link){
 				link.classList.remove('link-color-change')
+			})
+			burgerSpan.forEach(function(span){
+				span.classList.remove('cross-color')
 			})
 			navBtn.classList.remove('btn-color-change')
 			
