@@ -254,9 +254,17 @@ body {
 }
 .about-us__wrapper {
   display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 4rem;
 }
 .about-us__left {
   width: 50%;
+}
+.about-us__right {
+  width: 50%;
+  display: flex;
+  align-items: center;
 }
 .about-us h2 {
   font-family: sans-serif;
@@ -264,12 +272,13 @@ body {
   font-size: 30px;
 }
 .about-us__image-container {
-  flex-shrink: 0;
-  margin-left: 40px;
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  max-width: 350px;
+  height: 350px;
   border-radius: 50%;
   overflow: hidden;
+  margin: 0 auto;
+  flex-shrink: 0;
 }
 .about-us__image-owner {
   width: 100%;
@@ -279,8 +288,11 @@ body {
   display: block;
 }
 .about-us__description {
-  font-size: 40px;
-  padding-left: 200px;
+  font-size: 1.2rem;
+  padding-left: 0;
+}
+.about-us__wrapper--reverse {
+  flex-direction: row-reverse;
 }
 
 .scroll-bg {
