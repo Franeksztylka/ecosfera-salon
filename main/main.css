@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --navbar-height: 65px;
 }
@@ -249,50 +250,71 @@ body {
 }
 
 .about-us {
+  position: relative;
+  overflow: hidden;
+  background-color: #A5D6A7;
   padding: 4em 6em;
-  background-color: #d5e6d5;
+}
+.about-us__canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.about-us {
+  /* reszta wrapperów z z-index: 1 */
+}
+.about-us h2, .about-us__wrapper, .about-us__text, .about-us__image-container {
+  position: relative;
+  z-index: 1;
+}
+.about-us h2 {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 30px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 2rem;
 }
 .about-us__wrapper {
   display: flex;
   align-items: center;
   gap: 4rem;
   margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
 }
-.about-us__left {
-  width: 50%;
-}
-.about-us__right {
-  width: 50%;
-  display: flex;
-  align-items: center;
-}
-.about-us h2 {
-  font-family: sans-serif;
-  text-align: center;
-  font-size: 30px;
+.about-us__wrapper-reverse {
+  flex-direction: row-reverse;
 }
 .about-us__image-container {
-  width: 100%;
-  max-width: 350px;
+  width: 350px;
   height: 350px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto;
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
 .about-us__image-owner {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   display: block;
+}
+.about-us__text {
+  flex: 1;
+  position: relative;
+  z-index: 1;
 }
 .about-us__description {
   font-size: 1.2rem;
   padding-left: 0;
-}
-.about-us__wrapper--reverse {
-  flex-direction: row-reverse;
 }
 
 .scroll-bg {
