@@ -286,109 +286,85 @@ body {
 
 // ABOUT US
 
-.about-us{
-   position: sticky;
-   	top: 0;
+.about-us {
+    position: relative;
+    background: linear-gradient(180deg, #0f2c1f 0%, #1a3c2f 100%);
+    padding: 8rem 0 6rem;
     overflow: hidden;
-    background-color: $green-pale;
-    padding-top: 3.5em;
-	
-	
-	
-	z-index: 1;
-    // background-attachment:fixed ;
-	img{
-		width: 100px;
-	}
-	
-	section{
-		background-color: $green-pale;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
 
-	.left{
-		height: 100vh;
-		width: 	40vw;
-	}
-	.right{
-		height: 100vh;
-		width: 	60vw;	
-	}
-}
-&__owner-card{
-	position: sticky;
-	top: 0;
-	background-image: repeating-linear-gradient(45deg, rgb(0, 255, 115) 0px, $green-deep 1px, transparent 1px, transparent 20px);
-	padding-top: 1em;
-	img{
-	width: 100%;
-	height: 100%;
-	}
-
-	.left{
-		background-image: url('../main/img/Sylwia-Jamnicka-photo.png');
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position:  center;
-	}
-	.right{
-		padding: 0em 2em;
-		.description{
-		
-			font-size: 40px;
-		}
-	}
-
-}
-&__coworker-card{
-	background-image: repeating-linear-gradient(135deg, rgb(255, 0, 149) 0px, $green-deep 1px, transparent 1px, transparent 20px);
-	position: sticky;
-	top: 0;
-	z-index: 3;
-	width: 100%;
-	height: 100%;
-
-	.left{
-		padding: 0em 2em;
-		.description{
-		
-			font-size: 40px;
-		}
-	}
-	.right{
-		background-image: url('../main/img/salon-logo.png');
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position:  center;
-	}
-	
-}
-
-    h2 {
-        font-family: sans-serif;
+    &__title {
+        font-family: 'Abril Fatface', serif;
         text-align: center;
-        font-size: 50px;
-        position: relative;
-        z-index: 1;
-        
-        margin-bottom: 2rem;
-	}
-
-    &__text {
-        flex: 1;
-        position: relative;
-        z-index: 1;
-		p{
-			font-size: 35px;
-		}
+        font-size: clamp(3rem, 5vw, 5rem);
+        color: #e8d5b8;
+        margin-bottom: 4rem;
+        text-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
 
-    &__description {
-        font-size: 1.2rem;
-        padding-left: 0;
+    &__owner-card {
+        position: relative;
+        max-width: 1400px;
+        margin: 0 auto;
+        height: 85vh;
+        min-height: 650px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+
+        @media (max-width: 992px) {
+            grid-template-columns: 1fr;
+            height: auto;
+        }
+    }
+
+    &__image-wrapper {
+        position: relative;
+        background-image: url('../main/img/Sylwia-Jamnicka-photo.png'); // <-- zmień ścieżkę jeśli trzeba
+        background-size: cover;
+        background-position: center 30%;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                90deg,
+                rgba(15, 44, 31, 0.75) 30%,
+                rgba(26, 60, 47, 0.45) 70%
+            );
+            z-index: 1;
+        }
+    }
+
+    &__glass-content {
+        position: relative;
+        z-index: 2;
+        padding: 4rem 5rem;
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.3);
+
+        @media (max-width: 992px) {
+            padding: 3rem 2rem;
+            border-left: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+    }
+
+    .description {
+        font-family: 'EB Garamond', serif;
+        font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+        line-height: 1.75;
+        color: #f0e6d9;
+        font-weight: 400;
     }
 }
-
 //STYLE POMOCNICZE DO JS
 .scroll-bg {
 	background-color: $main-color;
