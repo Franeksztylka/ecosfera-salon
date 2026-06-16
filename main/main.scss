@@ -8,10 +8,12 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 body {
 	background-color: $bg;
+	height: 100vh;
 }
 
 // ------nav
@@ -93,6 +95,7 @@ body {
 			display: block;
 			height: 70px;
 			width: auto;
+			
 		}
 	}
 }
@@ -100,12 +103,15 @@ body {
 // --------hero
 
 .hero {
+	position: sticky;
+	top: 0;
 	width: 100%;
 	height: 100vh;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	padding-top: var(--navbar-height);
 	overflow: hidden;
+	z-index: 0;
 	&__left {
 		display: flex;
 		flex-direction: column;
@@ -186,7 +192,6 @@ body {
 	}
 
 	&__right {
-		// padding: 6rem 5rem;
 		background-color: $green-deep;
 		overflow: hidden;
 	}
@@ -204,7 +209,8 @@ body {
 		filter: saturate(2);
 		overflow: hidden;
 	}
-
+	
+}
 	.colorBox {
 		z-index: 2;
 		filter: brightness(1.1);
@@ -251,61 +257,50 @@ body {
     }
 }
 	
+//==================FALA NIEAKTUALNE ALE MOZE SIE PRZYDA===============================
+	// .wave {
+	// 	position: absolute;
+	// 	bottom: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	overflow: hidden;
+	// 	line-height: 0;
+	// 	transform: rotate(180deg);
+	// 	z-index: 3;
+	// 	animation: waveIn 1s ease forwards;
+	// }
 
-	.wave {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		overflow: hidden;
-		line-height: 0;
-		transform: rotate(180deg);
-		z-index: 3;
-		animation: waveIn 1s ease forwards;
-	}
+	// .wave svg {
+	// 	position: relative;
+	// 	display: block;
+	// 	width: calc(100% + 1.3px);
+	// 	height: 93px;
+	// 	z-index: 3;
+	// }
 
-	.wave svg {
-		position: relative;
-		display: block;
-		width: calc(100% + 1.3px);
-		height: 93px;
-		z-index: 3;
-	}
+	// .wave .shape-fill {
+	// 	fill: $bg-2;
+	// 	z-index: 3;
+	// }
 
-	.wave .shape-fill {
-		fill: $bg-2;
-		z-index: 3;
-	}
-}
 
-//ABOUT US
+// ABOUT US
 
 .about-us {
-   position: relative;
+   position: sticky;
+   	top: 0;
     overflow: hidden;
     background-color: $green-pale;
-    padding: 4em 6em;
-
-    &__canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        pointer-events: none;
-    }
-
-    /* reszta wrapperów z z-index: 1 */
-    h2, &__wrapper, &__text, &__image-container {
-        position: relative;
-        z-index: 1;
-    }
+    padding: 4em 5em 0em;
+	background-image: repeating-linear-gradient(45deg, rgb(0, 255, 115) 0px, $green-deep 1px, transparent 1px, transparent 20px);
+	z-index: 1;
+    // background-attachment:fixed ;
+  
 
     h2 {
         font-family: sans-serif;
         text-align: center;
-        font-size: 30px;
+        font-size: 50px;
         position: relative;
         z-index: 1;
         margin-bottom: 2rem;
@@ -335,7 +330,7 @@ body {
         z-index: 1;
     }
 
-    &__image-owner {
+    &__image{
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -346,6 +341,9 @@ body {
         flex: 1;
         position: relative;
         z-index: 1;
+		p{
+			font-size: 35px;
+		}
     }
 
     &__description {
