@@ -54,7 +54,7 @@ body {
 				transform: scaleX(1);
 			}
 			&.link-color-change {
-				color: white;
+				color: $bg;
 			}
 			&.link-color-change::after {
 				background-color: #fff;
@@ -257,83 +257,66 @@ body {
     }
 }
 	
-//==================FALA NIEAKTUALNE ALE MOZE SIE PRZYDA===============================
-	// .wave {
-	// 	position: absolute;
-	// 	bottom: 0;
-	// 	left: 0;
-	// 	width: 100%;
-	// 	overflow: hidden;
-	// 	line-height: 0;
-	// 	transform: rotate(180deg);
-	// 	z-index: 3;
-	// 	animation: waveIn 1s ease forwards;
-	// }
-
-	// .wave svg {
-	// 	position: relative;
-	// 	display: block;
-	// 	width: calc(100% + 1.3px);
-	// 	height: 93px;
-	// 	z-index: 3;
-	// }
-
-	// .wave .shape-fill {
-	// 	fill: $bg-2;
-	// 	z-index: 3;
-	// }
-
 
 // ABOUT US
-
 .about-us {
-    position: relative;
+    position: sticky;
+    top: -100vh;
+    height: 200vh;                    
     background: linear-gradient(180deg, #0f2c1f 0%, #1a3c2f 100%);
-    padding: 8rem 0 6rem;
     overflow: hidden;
-
+    z-index: 2;
+	#sylwia-image   { background-image: url('../main/img/Sylwia-Jamnicka-photo.png'); }
+	#coworker-image { background-image: url('../main/img/twoja-wspolpracowniczka.jpg'); }
     &__title {
         font-family: 'Abril Fatface', serif;
         text-align: center;
         font-size: clamp(3rem, 5vw, 5rem);
         color: #e8d5b8;
-        margin-bottom: 4rem;
+        margin-bottom: 5rem;
         text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        padding-top: 6rem;
+        position: relative;
+        z-index: 10;
     }
 
-    &__owner-card {
+    &__owner-card,
+    &__coworker-card {
         position: relative;
         max-width: 1400px;
-        margin: 0 auto;
-        height: 85vh;
-        min-height: 650px;
+        margin: 0 auto 5rem;
+        height: 75vh;
+        min-height: 620px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         border-radius: 24px;
         overflow: hidden;
-        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.45);
 
         @media (max-width: 992px) {
             grid-template-columns: 1fr;
             height: auto;
+            min-height: auto;
+            margin-bottom: 4rem;
         }
     }
 
+    &__owner-card {
+        height: 82vh;
+        min-height: 680px;
+    }
+
+  
     &__image-wrapper {
         position: relative;
-        background-image: url('../main/img/Sylwia-Jamnicka-photo.png'); // <-- zmień ścieżkę jeśli trzeba
         background-size: cover;
-        background-position: center 30%;
-        
+        background-position: center 25%;
+
         &::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                90deg,
-                rgba(15, 44, 31, 0.75) 30%,
-                rgba(26, 60, 47, 0.45) 70%
-            );
+            background: #00000080;
             z-index: 1;
         }
     }
@@ -341,30 +324,64 @@ body {
     &__glass-content {
         position: relative;
         z-index: 2;
-        padding: 4rem 5rem;
+        padding: 4.5rem 5rem;
         display: flex;
-        align-items: center;
-        background: rgba(255, 255, 255, 0.08);
+        flex-direction: column;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.07);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
-        border-left: 1px solid rgba(255, 255, 255, 0.15);
-        box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.3);
+        border-left: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.35);
 
         @media (max-width: 992px) {
-            padding: 3rem 2rem;
+            padding: 3rem 2.5rem;
             border-left: none;
             border-top: 1px solid rgba(255, 255, 255, 0.15);
         }
     }
 
+    &__person-header {
+        margin-bottom: 2rem;
+
+        h3 {
+            font-family: 'Abril Fatface', serif;
+            font-size: 2.8rem;
+            color: #e8d5b8;
+            margin: 0;
+        }
+
+        .role {
+            font-family: sans-serif;
+            color: #b8d5c4;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+    }
+
     .description {
         font-family: 'EB Garamond', serif;
-        font-size: clamp(1.35rem, 2.2vw, 1.65rem);
-        line-height: 1.75;
+        font-size: clamp(1.3rem, 2.1vw, 1.6rem);
+        line-height: 1.78;
         color: #f0e6d9;
-        font-weight: 400;
     }
 }
+
+//<---------------- USŁUGI
+
+
+.uslugi{
+	position: sticky;
+	height: 100vh;
+	background-color: black;
+	z-index: 3;
+	
+}
+
+
+
+
+
 //STYLE POMOCNICZE DO JS
 .scroll-bg {
 	background-color: $main-color;

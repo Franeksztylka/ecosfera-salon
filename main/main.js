@@ -62,4 +62,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setInterval(() => goTo(current + 1), 4000);
 
+    
 });

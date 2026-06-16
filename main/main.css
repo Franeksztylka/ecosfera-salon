@@ -43,7 +43,7 @@ body {
   bottom: -5px;
   width: 100%;
   height: 2px;
-  background-color: #2E7D32;
+  background-color: #245e27;
   transform: scaleX(0);
   transform-origin: left;
   transition: 0.5s;
@@ -52,7 +52,7 @@ body {
   transform: scaleX(1);
 }
 .navbar__links a.link-color-change {
-  color: white;
+  color: #F4F2EE;
 }
 .navbar__links a.link-color-change::after {
   background-color: #fff;
@@ -60,14 +60,14 @@ body {
 .navbar__btn {
   font-family: sans-serif;
   text-decoration: none;
-  color: #2E7D32;
-  border: 2px solid #2E7D32;
+  color: #245e27;
+  border: 2px solid #245e27;
   padding: 0.4em;
   border-radius: 5px;
   transition: background-color ease 0.5s, color ease 0.5s;
 }
 .navbar__btn:hover {
-  background-color: #2E7D32;
+  background-color: #245e27;
   color: white;
 }
 .navbar__btn.btn-color-change {
@@ -76,7 +76,7 @@ body {
 }
 .navbar__btn.btn-color-change:hover {
   background-color: #fff;
-  color: #2E7D32;
+  color: #245e27;
 }
 .navbar__logo {
   display: flex;
@@ -112,7 +112,7 @@ body {
   animation: fadeUp 0.8s ease forwards;
 }
 .hero__subtitle {
-  color: #2E7D32;
+  color: #245e27;
   font-size: 4.4rem;
   font-style: italic;
   animation: fadeUp 0.8s ease 0.2s forwards;
@@ -137,7 +137,7 @@ body {
   padding: 0.9em 2em;
   font-family: sans-serif;
   border-radius: 10px;
-  background-color: #2E7D32;
+  background-color: #245e27;
   color: white;
   text-decoration: none;
 }
@@ -161,7 +161,7 @@ body {
   opacity: 0;
 }
 .hero__stars {
-  color: #2E7D32;
+  color: #245e27;
   font-size: 1.2rem;
 }
 .hero__opinions {
@@ -233,83 +233,121 @@ body {
 }
 
 .about-us {
-  position: relative;
+  position: sticky;
+  top: -100vh;
+  height: 200vh;
   background: linear-gradient(180deg, #0f2c1f 0%, #1a3c2f 100%);
-  padding: 8rem 0 6rem;
   overflow: hidden;
+  z-index: 2;
+}
+.about-us #sylwia-image {
+  background-image: url("../main/img/Sylwia-Jamnicka-photo.png");
+}
+.about-us #coworker-image {
+  background-image: url("../main/img/twoja-wspolpracowniczka.jpg");
 }
 .about-us__title {
   font-family: "Abril Fatface", serif;
   text-align: center;
   font-size: clamp(3rem, 5vw, 5rem);
   color: #e8d5b8;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  padding-top: 6rem;
+  position: relative;
+  z-index: 10;
 }
-.about-us__owner-card {
+.about-us__owner-card, .about-us__coworker-card {
   position: relative;
   max-width: 1400px;
-  margin: 0 auto;
-  height: 85vh;
-  min-height: 650px;
+  margin: 0 auto 5rem;
+  height: 75vh;
+  min-height: 620px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
 }
 @media (max-width: 992px) {
-  .about-us__owner-card {
+  .about-us__owner-card, .about-us__coworker-card {
     grid-template-columns: 1fr;
     height: auto;
+    min-height: auto;
+    margin-bottom: 4rem;
   }
+}
+.about-us__owner-card {
+  height: 82vh;
+  min-height: 680px;
 }
 .about-us__image-wrapper {
   position: relative;
-  background-image: url("../main/img/Sylwia-Jamnicka-photo.png");
   background-size: cover;
-  background-position: center 30%;
+  background-position: center 25%;
 }
 .about-us__image-wrapper::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(15, 44, 31, 0.75) 30%, rgba(26, 60, 47, 0.45) 70%);
+  background: rgba(0, 0, 0, 0.5019607843);
   z-index: 1;
 }
 .about-us__glass-content {
   position: relative;
   z-index: 2;
-  padding: 4rem 5rem;
+  padding: 4.5rem 5rem;
   display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.08);
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-left: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.35);
 }
 @media (max-width: 992px) {
   .about-us__glass-content {
-    padding: 3rem 2rem;
+    padding: 3rem 2.5rem;
     border-left: none;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
   }
 }
+.about-us__person-header {
+  margin-bottom: 2rem;
+}
+.about-us__person-header h3 {
+  font-family: "Abril Fatface", serif;
+  font-size: 2.8rem;
+  color: #e8d5b8;
+  margin: 0;
+}
+.about-us__person-header .role {
+  font-family: sans-serif;
+  color: #b8d5c4;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
 .about-us .description {
   font-family: "EB Garamond", serif;
-  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
-  line-height: 1.75;
+  font-size: clamp(1.3rem, 2.1vw, 1.6rem);
+  line-height: 1.78;
   color: #f0e6d9;
-  font-weight: 400;
+}
+
+.uslugi {
+  position: sticky;
+  height: 100vh;
+  background-color: black;
+  z-index: 3;
 }
 
 .scroll-bg {
-  background-color: #2E7D32;
+  background-color: #245e27;
 }
 
 .navbar-open-bg {
-  background: #2E7D32;
+  background: #245e27;
 }
 
 .burger-open {
@@ -333,7 +371,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 99;
-    background: #2E7D32;
+    background: #245e27;
     padding: 2rem 0;
     align-items: center;
   }
