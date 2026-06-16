@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 800) {
+        if (window.scrollY > 950) {
             navBar.classList.add('scroll-bg');
             navLinks.forEach(link => link.classList.add('link-color-change'));
             burgerSpan.forEach(span => span.classList.add('cross-color'));
