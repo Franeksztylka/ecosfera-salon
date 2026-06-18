@@ -1,0 +1,10 @@
+@use 'colors' as *; //Plik z kolorami
+@use 'mixins' as *; //Plik z mixinami
+@use 'base'; //Plik bazowy , style do body padding itp rzeczy ktore nie byly koniecznie do konkrentnej sekcji
+@use 'animations'; //Plik z animacjami
+@use 'navigation'; // Plik ze stylmi navigacji
+@use 'hero'; //Plik ze stylami sekcji hero
+@use 'aboutUs'; //Plik ze stylami sekcji about us
+@use 'uslugi'; //Plik ze stylami sekcji uslugi
+@use 'jsHelpers'; // Plik ze stylami pomocniczymi do jsa
+

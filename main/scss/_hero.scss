@@ -1,0 +1,176 @@
+@use 'colors' as *;
+@use 'mixins' as *;
+
+.hero {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding-top: var(--navbar-height);
+	overflow: hidden;
+	z-index: 0;
+	&__left {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 6rem 5rem;
+		background-color: $bg;
+	}
+	&__title {
+		color: $green-deep;
+		font-size: 5rem;
+		animation: fadeUp 0.8s ease forwards;
+	}
+
+	&__subtitle {
+		color: $main-color;
+		font-size: 4.4rem;
+		font-style: italic;
+		animation: fadeUp 0.8s ease 0.2s forwards;
+		opacity: 0;
+	}
+
+	&__description {
+		// margin-top: 10rem;
+		color: $text-muted;
+		font-size: 1.6rem;
+		animation: fadeUp 0.8s ease 0.4s forwards;
+		opacity: 0;
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		margin-top: 2rem;
+		animation: fadeUp 0.8s ease 0.6s forwards;
+		opacity: 0;
+	}
+
+	&__btn {
+		display: inline-block;
+		padding: 0.9em 2em;
+		font-family: sans-serif;
+		border-radius: 10px;
+		background-color: $main-color;
+		color: white;
+		text-decoration: none;
+	}
+
+	&__text {
+		margin-left: 1.6rem;
+		padding: 0.2rem;
+		font-size: 1.2em;
+		font-family: sans-serif;
+		border-bottom: 1px solid $green-light;
+		text-decoration: none;
+		color: $green-deep;
+	}
+
+	&__reviews {
+		margin-top: 3em;
+		padding: 0.1em 1.2em 0.7em;
+		width: 20em;
+		border: 1px solid $green-light;
+		border-radius: 10px;
+		background-color: white;
+		animation: popIn 0.6s ease 1s forwards;
+		opacity: 0;
+	}
+
+	&__stars {
+		color: $main-color;
+		font-size: 1.2rem;
+	}
+
+	&__opinions {
+		color: $text-muted;
+		font-size: 1.2em;
+	}
+
+	&__right {
+		background-color: $green-deep;
+		overflow: hidden;
+	}
+
+	&__bg {
+		z-index: 1;
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+		grid-template-rows: repeat(7, 1fr);
+		filter: saturate(2);
+		overflow: hidden;
+	}
+	@include tablet{
+        grid-template-columns: 1fr; 
+    padding-top: 20px;
+    padding-bottom: 25px;
+
+    &__right {
+        display: none; 
+    }
+    &__left {
+        width: 100%; 
+        padding: 0 0 10px 25px;
+        height: 100vh;
+    }
+		&__reviews {
+			margin-top: 20px;
+		}
+		&__description {
+			margin-top: 20px;
+		}
+    }
+}
+	.colorBox {
+		z-index: 2;
+		filter: brightness(1.1);
+		transition: 2s ease;
+		position: relative;
+		// margin: 2px;
+		// background: #1d1d1d;
+		border: 1px solid $text-muted;
+		opacity: 0.2;
+	}
+	.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    &__slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.8s ease;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.3);
+        color: white;
+        border: none;
+        padding: 1rem;
+        cursor: pointer;
+        z-index: 10;
+        font-size: 1.5rem;
+
+        &--prev { left: 10px; }
+        &--next { right: 10px; }
+    }
+}

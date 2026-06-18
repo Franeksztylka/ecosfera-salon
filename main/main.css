@@ -13,6 +13,36 @@ body {
   background-color: #F4F2EE;
 }
 
+@keyframes wjazd {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 .navbar {
   position: fixed;
   width: 100%;
@@ -86,6 +116,87 @@ body {
   display: block;
   height: 70px;
   width: auto;
+}
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    transition: background-color 0.2s ease-in;
+    z-index: 100;
+  }
+  .navbar ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background: #245e27;
+    padding: 2rem 0;
+    align-items: center;
+  }
+  .navbar ul a {
+    color: white;
+  }
+  .navbar ul.navbar-open {
+    display: flex;
+    flex-direction: column;
+    animation: wjazd 0.3s ease forwards;
+  }
+  .navbar ul.navbar-open li {
+    animation: wjazd 0.3s ease forwards;
+  }
+  .navbar li {
+    opacity: 0;
+  }
+  .navbar ul.navbar-open li:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .navbar ul.navbar-open li:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .navbar ul.navbar-open li:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .navbar ul.navbar-open li:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  .navbar a.navbar__btn {
+    display: none;
+  }
+  .navbar img {
+    display: none;
+  }
+  .navbar .hamburger {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 101;
+  }
+  .navbar span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #333;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .navbar .hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .navbar .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar .hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  .navbar .cross-color {
+    background-color: white;
+  }
 }
 
 .hero {
@@ -185,6 +296,27 @@ body {
   filter: saturate(2);
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+    padding-bottom: 25px;
+  }
+  .hero__right {
+    display: none;
+  }
+  .hero__left {
+    width: 100%;
+    padding: 0 0 10px 25px;
+    height: 100vh;
+  }
+  .hero__reviews {
+    margin-top: 20px;
+  }
+  .hero__description {
+    margin-top: 20px;
+  }
+}
 
 .colorBox {
   z-index: 2;
@@ -205,8 +337,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 0;
   transition: opacity 0.8s ease;
 }
@@ -356,170 +487,4 @@ body {
 
 .hamburger {
   display: none;
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    position: fixed;
-    transition: background-color 0.2s ease-in;
-    z-index: 100;
-  }
-  .navbar ul {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    z-index: 99;
-    background: #245e27;
-    padding: 2rem 0;
-    align-items: center;
-  }
-  .navbar ul a {
-    color: white;
-  }
-  .navbar ul.navbar-open {
-    display: flex;
-    flex-direction: column;
-    animation: wjazd 0.3s ease forwards;
-  }
-  .navbar ul.navbar-open li {
-    animation: wjazd 0.3s ease forwards;
-  }
-  .navbar li {
-    opacity: 0;
-  }
-  .navbar ul.navbar-open li:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-  .navbar ul.navbar-open li:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-  .navbar ul.navbar-open li:nth-child(3) {
-    animation-delay: 0.3s;
-  }
-  .navbar ul.navbar-open li:nth-child(4) {
-    animation-delay: 0.4s;
-  }
-  .navbar a.navbar__btn {
-    display: none;
-  }
-  .navbar img {
-    display: none;
-  }
-  .navbar .hamburger {
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    gap: 5px;
-    padding: 8px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 101;
-  }
-  .navbar span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: #333;
-    border-radius: 2px;
-    transition: transform 0.3s, opacity 0.3s;
-  }
-  .navbar .hamburger.open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-  .navbar .hamburger.open span:nth-child(2) {
-    opacity: 0;
-  }
-  .navbar .hamburger.open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
-  .navbar .cross-color {
-    background-color: white;
-  }
-  .hero {
-    padding-top: 20px;
-    padding-bottom: 25px;
-  }
-  .hero__right {
-    display: none;
-  }
-  .hero__left {
-    width: 100%;
-    padding: 0 0 10px 25px;
-    height: 100vh;
-  }
-  .hero__reviews {
-    margin-top: 20px;
-  }
-  .hero__description {
-    margin-top: 20px;
-  }
-  .hero .wave {
-    display: none;
-  }
-}
-@keyframes wjazd {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes draw {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes waveIn {
-  from {
-    transform: rotate(180deg) translateY(-100%);
-  }
-  to {
-    transform: rotate(180deg) translateY(0);
-  }
-}
-@keyframes cutTop {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(-15deg);
-  }
-}
-@keyframes cutBottom {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(15deg);
-  }
 }/*# sourceMappingURL=main.css.map */
