@@ -926,4 +926,23 @@ body {
 
 .hamburger {
   display: none;
+}
+
+.opinie {
+  position: sticky;
+  top: -100vh;
+  height: 90vh;
+  background: #ede8e1;
+  z-index: 4;
+  overflow: hidden;
+}
+.opinie__wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.opinie__title {
+  color: #1B3A1C;
+  margin-bottom: 1.2em;
+  font-size: 3.6em;
 }/*# sourceMappingURL=main.css.map */

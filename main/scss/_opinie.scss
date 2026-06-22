@@ -1,0 +1,30 @@
+@use 'colors' as *;
+@use 'mixins' as *;
+
+.opinie {
+	position: sticky;
+	top: -100vh;
+	height: 90vh;
+
+	background: #ede8e1;
+
+	z-index: 4;
+	overflow: hidden;
+
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		// align-items: center;
+		width: 100%;
+	}
+
+	&__title {
+		color: $green-deep;
+        margin-bottom: 1.2em;
+		font-size: 3.6em;
+	}
+
+	&__description {
+
+	}
+}
