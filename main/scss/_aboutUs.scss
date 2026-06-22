@@ -1,5 +1,5 @@
 @use 'colors' as *;
-
+@use 'animations' as *;
 .about-us {
 	position: sticky;
 	top: -100vh;
@@ -19,11 +19,21 @@
 		text-align: center;
 		font-size: clamp(3rem, 5vw, 5rem);
 		color: #234f36;
-		margin-bottom: 5rem;
-		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+		margin-bottom: 3rem;
+		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 		padding-top: 6rem;
 		position: relative;
 		z-index: 10;
+	}
+
+	&__divider {
+		width: 70px;
+		height: 2.5px;
+		background: linear-gradient(90deg, transparent, $main-color, transparent);
+		margin: 0.5rem auto 2rem;
+		animation: expandWidth 0.8s ease 0.3s forwards;
+		transform-origin: center;
+		opacity: 0;
 	}
 
 	&__owner-card,
@@ -62,7 +72,7 @@
 			content: '';
 			position: absolute;
 			inset: 0;
-			background: #00000080;
+			background: #00000057;
 			z-index: 1;
 		}
 	}
@@ -107,7 +117,7 @@
 
 	.description {
 		font-family: 'EB Garamond', serif;
-		font-size: clamp(1.3rem, 2.1vw, 1.6rem);
+		font-size: clamp(1.6rem, 2.1vw, 1.6rem);
 		line-height: 1.78;
 		color: #f0e6d9;
 	}

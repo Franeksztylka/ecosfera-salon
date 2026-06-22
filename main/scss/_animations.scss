@@ -32,3 +32,14 @@
 		transform: scale(1);
 	}
 }
+@keyframes expandWidth {
+	from {
+		width: 0;
+		opacity: 0;
+	}
+	to {
+		width: 70px;
+		opacity: 1;
+	}
+}
+
