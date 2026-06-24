@@ -3,8 +3,8 @@
 @use 'animations' as *;
 .about-us {
 	position: sticky;
-	top: -100vh;
-	height: 200vh;
+	top: -110vh;
+	height: 210vh;
 	background-color: #ede8e1;
 	overflow: hidden;
 	z-index: 1;
@@ -42,7 +42,7 @@
 		position: relative;
 		max-width: 1400px;
 		margin: 0 auto 5rem;
-		height: 75vh;
+		height: 85vh;
 		min-height: 620px;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -112,8 +112,8 @@
 		color: #f0e6d9;
 	}
 	@include tablet{
-		top: -120vh;
-		height: 220vh;
+		top: -125vh;
+		height: 225vh;
 		&__owner-card,
 		&__coworker-card{
 			grid-template-columns: 1fr;
