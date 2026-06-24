@@ -3,28 +3,86 @@
 
 .opinie {
 	position: sticky;
-	top: -100vh;
-	height: 90vh;
-
+	top: 0;
+	height: 100vh;
+	z-index: 3;
 	background: #ede8e1;
-
-	z-index: 4;
 	overflow: hidden;
 
 	&__wrapper {
-		display: flex;
-		justify-content: center;
-		// align-items: center;
-		width: 100%;
+        text-align: center;
+        width: 100%;
+    }
+ 
+    &__title {
+        color: $green-deep;
+        margin: 0.5em 0;
+        font-size: 5em;
+    }
+	&__subtitle{
+		color: $main-color;
 	}
-
-	&__title {
-		color: $green-deep;
-        margin-bottom: 1.2em;
-		font-size: 3.6em;
-	}
-
-	&__description {
-
-	}
+ 
+    &__divider {
+        width: 70px;
+        height: 2.5px;
+        background: linear-gradient(90deg, transparent, $main-color, transparent);
+        margin: 0.5rem auto 1rem;
+        animation: expandWidth 0.8s ease 0.3s forwards;
+        transform-origin: center;
+        opacity: 0;
+    }
+ 
+    &__description {
+        font-size: 1.5rem;
+        font-family: sans-serif;
+        color: $text-muted;
+    }
+ 
+    &__content {
+        display: flex;
+        justify-content: center;
+    }
+ 
+    &__rating {
+        padding-top: 0.5em;
+        font-size: 7em;
+        color: $green-deep;
+        margin-bottom: -0.2em;
+    }
+ 
+    &__stars {
+        color: $green-deep;
+        font-size: 2.3em;
+        margin-bottom: 1em;
+    }
+ 
+    &__reviews {
+        font-family: sans-serif;
+        font-size: 1.6em;
+        margin-bottom: 0.2em;
+    }
+ 
+    &__source {
+        font-family: sans-serif;
+        color: $text-muted;
+    }
+ 
+    &__big-card {
+        margin-top: 2.2rem;
+        margin-left: 10rem;
+        padding: 9rem;
+        padding-left: 25rem;
+        max-width: 900px;
+        border-radius: 8px;
+        background-color: #F4F2EE;
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.2);
+    }
+ 
+    &__opinion {
+        font-family: sans-serif;
+        font-style: italic;
+        font-size: 1em;
+    }
 }
+

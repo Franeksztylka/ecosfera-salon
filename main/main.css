@@ -243,8 +243,9 @@ body {
   opacity: 0;
 }
 .hero__description {
+  margin-top: 1.5rem;
   color: #6b7b6c;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   animation: fadeUp 0.8s ease 0.4s forwards;
   opacity: 0;
 }
@@ -252,13 +253,13 @@ body {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   animation: fadeUp 0.8s ease 0.6s forwards;
   opacity: 0;
 }
 .hero__btn {
   display: inline-block;
-  padding: 0.9em 2em;
+  padding: 0.7em 1.5em;
   font-family: sans-serif;
   border-radius: 10px;
   background-color: #245e27;
@@ -268,7 +269,7 @@ body {
 .hero__text {
   margin-left: 1.6rem;
   padding: 0.2rem;
-  font-size: 1.2em;
+  font-size: 1em;
   font-family: sans-serif;
   border-bottom: 1px solid #4CAF50;
   text-decoration: none;
@@ -287,11 +288,11 @@ body {
 .hero__stars {
   color: #245e27;
   padding-top: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .hero__opinions {
   color: #6b7b6c;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 .hero__right {
   background-color: #1B3A1C;
@@ -324,11 +325,29 @@ body {
     padding: 0 0 10px 25px;
     height: 100vh;
   }
-  .hero__reviews {
-    margin-top: 20px;
+  .hero__title {
+    font-size: 4em;
+  }
+  .hero__subtitle {
+    font-size: 3em;
   }
   .hero__description {
+    font-size: 0.7em;
+    word-wrap: wrap;
     margin-top: 20px;
+  }
+  .hero__container {
+    width: 100%;
+  }
+  .hero__btn {
+    font-size: 18px;
+  }
+  .hero__text {
+    margin-right: 20px;
+  }
+  .hero__reviews {
+    margin-top: 20px;
+    font-size: 17px;
   }
 }
 
@@ -383,7 +402,7 @@ body {
   height: 200vh;
   background-color: #ede8e1;
   overflow: hidden;
-  z-index: 2;
+  z-index: 1;
 }
 .about-us #sylwia-image {
   background-image: url("../main/img/Sylwia-Jamnicka-photo.png");
@@ -491,11 +510,12 @@ body {
 }
 
 .uslugi {
-  position: relative;
+  position: sticky;
+  top: 0;
   background-color: #ede8e1;
-  z-index: 3;
+  z-index: 2;
   padding: 4em;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -945,19 +965,90 @@ body {
 
 .opinie {
   position: sticky;
-  top: -100vh;
-  height: 90vh;
+  top: 0;
+  height: 100vh;
+  z-index: 3;
   background: #ede8e1;
-  z-index: 4;
   overflow: hidden;
 }
 .opinie__wrapper {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   width: 100%;
 }
 .opinie__title {
   color: #1B3A1C;
-  margin-bottom: 1.2em;
-  font-size: 3.6em;
+  margin: 0.5em 0;
+  font-size: 5em;
+}
+.opinie__subtitle {
+  color: #245e27;
+}
+.opinie__divider {
+  width: 70px;
+  height: 2.5px;
+  background: linear-gradient(90deg, transparent, #245e27, transparent);
+  margin: 0.5rem auto 1rem;
+  animation: expandWidth 0.8s ease 0.3s forwards;
+  transform-origin: center;
+  opacity: 0;
+}
+.opinie__description {
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  color: #6b7b6c;
+}
+.opinie__content {
+  display: flex;
+  justify-content: center;
+}
+.opinie__rating {
+  padding-top: 0.5em;
+  font-size: 7em;
+  color: #1B3A1C;
+  margin-bottom: -0.2em;
+}
+.opinie__stars {
+  color: #1B3A1C;
+  font-size: 2.3em;
+  margin-bottom: 1em;
+}
+.opinie__reviews {
+  font-family: sans-serif;
+  font-size: 1.6em;
+  margin-bottom: 0.2em;
+}
+.opinie__source {
+  font-family: sans-serif;
+  color: #6b7b6c;
+}
+.opinie__big-card {
+  margin-top: 2.2rem;
+  margin-left: 10rem;
+  padding: 9rem;
+  padding-left: 25rem;
+  max-width: 900px;
+  border-radius: 8px;
+  background-color: #F4F2EE;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+}
+.opinie__opinion {
+  font-family: sans-serif;
+  font-style: italic;
+  font-size: 1em;
+}
+
+.kontakt {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background-color: #be8e4a;
+  z-index: 4;
+  padding: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.kontakt h2 {
+  color: #1B3A1C;
 }/*# sourceMappingURL=main.css.map */

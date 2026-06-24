@@ -1,11 +1,12 @@
 @use 'colors' as *;
 @use 'animations' as *;
 .uslugi {
-	position: relative;
+	position: sticky;
+	top: 0;
 	background-color: #ede8e1;
-	z-index: 3;
+	z-index: 2;
 	padding: 4em;
-	min-height: 100vh;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
