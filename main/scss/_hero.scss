@@ -109,42 +109,55 @@
 		filter: saturate(2);
 		overflow: hidden;
 	}
+	
 	@include tablet{
     grid-template-columns: 1fr; 
     padding-top: 20px;
     padding-bottom: 25px;
-
     &__right {
-        display: none; 
+		display: none; 
     }
     &__left {
         width: 100%; 
-        padding: 0 0 10px 25px;
+        padding: 0 ;
         height: 100vh;
+		align-items: center;
+		text-align: center;
     }
 	&__title{
 		font-size: 4em;
+
 	}
 	&__subtitle{
-		font-size: 3em;
+		padding: 0;
+		margin: 0;
+		font-size: 2.6em;
 	}
 	&__description {
-		font-size: .7em;
-		word-wrap: wrap;
+		font-size: 1.3em;
 		margin-top: 20px;
 	}
 	&__container{
-		width: 100%;
+		justify-content: space-around;
+
 	}
 	&__btn{
 		font-size: 18px;
 	}
 	&__text{
-		margin-right: 20px;
+		font-size: 1.3em;
+		margin: 0;
 	}
 	&__reviews {
-		margin-top: 20px;
+		margin-top: 3em;
 		font-size: 17px;
+		text-align: left;
+		.hero__stars{
+			font-size: 1.2rem;
+		}
+		.hero__opinions{
+			font-size: 1.2rem;
+		}
 	}
     }
 }

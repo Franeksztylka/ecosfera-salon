@@ -1,11 +1,11 @@
 @use 'colors' as *;
+@use 'mixins' as *;
 @use 'animations' as *;
 .about-us {
 	position: sticky;
 	top: -100vh;
 	height: 200vh;
 	background-color: #ede8e1;
-	// background: linear-gradient(180deg, #0f2c1f 0%, #1a3c2f 100%);
 	overflow: hidden;
 	z-index: 1;
 	#sylwia-image {
@@ -31,9 +31,9 @@
 		height: 2.5px;
 		background: linear-gradient(90deg, transparent, $main-color, transparent);
 		margin: 0.5rem auto 2rem;
+		opacity: 0;
 		animation: expandWidth 0.8s ease 0.3s forwards;
 		transform-origin: center;
-		opacity: 0;
 	}
 
 	&__owner-card,
@@ -50,12 +50,7 @@
 		overflow: hidden;
 		box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.45);
 
-		@media (max-width: 992px) {
-			grid-template-columns: 1fr;
-			height: auto;
-			min-height: auto;
-			margin-bottom: 4rem;
-		}
+		
 	}
 
 	&__owner-card {
@@ -90,11 +85,6 @@
 		border-left: 1px solid rgba(255, 255, 255, 0.18);
 		box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.35);
 
-		@media (max-width: 992px) {
-			padding: 3rem 2.5rem;
-			border-left: none;
-			border-top: 1px solid rgba(255, 255, 255, 0.15);
-		}
 	}
 
 	&__person-header {
@@ -116,9 +106,43 @@
 	}
 
 	.description {
-		font-family: 'EB Garamond', serif;
+		font-family:  sans-serif;
 		font-size: clamp(1.6rem, 2.1vw, 1.6rem);
 		line-height: 1.78;
 		color: #f0e6d9;
+	}
+	@include tablet{
+		top: -120vh;
+		height: 220vh;
+		&__owner-card,
+		&__coworker-card{
+			grid-template-columns: 1fr;
+			margin-bottom: 4rem;
+			width: 360px;
+		}
+		&__owner-card{
+			height: auto;
+			.description{
+				font-size: 1.3em;
+				word-wrap: wrap;
+			}
+		}
+		&__coworker-card{
+			height: auto;
+			.description{
+				font-size: 1.3em;
+				word-wrap: wrap;
+			}
+		}
+		&__image-wrapper{
+		display: none;
+		}
+		&__glass-content{
+				
+			padding: 1rem 1rem;
+				border-left: none;
+				border-top: 1px solid rgba(255, 255, 255, 0.15);
+		}
+	
 	}
 }
