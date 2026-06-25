@@ -2,87 +2,218 @@
 @use 'mixins' as *;
 
 .opinie {
-	position: sticky;
-	top: 0;
-	height: 100vh;
+	position: relative;
+	height: 90vh;
+	min-height: 680px;
 	z-index: 3;
 	background: #ede8e1;
 	overflow: hidden;
 
-	&__wrapper {
-        text-align: center;
-        width: 100%;
-    }
- 
-    &__title {
-        color: $green-deep;
-        margin: 0.5em 0;
-        font-size: 5em;
-    }
-	&__subtitle{
-		color: $main-color;
-	}
- 
-    &__divider {
-        width: 70px;
-        height: 2.5px;
-        background: linear-gradient(90deg, transparent, $main-color, transparent);
-        margin: 0.5rem auto 1rem;
-        animation: expandWidth 0.8s ease 0.3s forwards;
-        transform-origin: center;
-        opacity: 0;
-    }
- 
-    &__description {
-        font-size: 1.5rem;
-        font-family: sans-serif;
-        color: $text-muted;
-    }
- 
-    &__content {
-        display: flex;
-        justify-content: center;
-    }
- 
-    &__rating {
-        padding-top: 0.5em;
-        font-size: 7em;
-        color: $green-deep;
-        margin-bottom: -0.2em;
-    }
- 
-    &__stars {
-        color: $green-deep;
-        font-size: 2.3em;
-        margin-bottom: 1em;
-    }
- 
-    &__reviews {
-        font-family: sans-serif;
-        font-size: 1.6em;
-        margin-bottom: 0.2em;
-    }
- 
-    &__source {
-        font-family: sans-serif;
-        color: $text-muted;
-    }
- 
-    &__big-card {
-        margin-top: 2.2rem;
-        margin-left: 10rem;
-        padding: 9rem;
-        padding-left: 25rem;
-        max-width: 900px;
-        border-radius: 8px;
-        background-color: #F4F2EE;
-        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.2);
-    }
- 
-    &__opinion {
-        font-family: sans-serif;
-        font-style: italic;
-        font-size: 1em;
-    }
-}
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
+	&__wrapper {
+		width: 100%;
+		max-width: 1400px;
+		margin: 0 auto;
+		text-align: center;
+		padding: 0 2rem;
+
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+
+	&__header {
+		margin: 0;
+	}
+
+	&__title {
+		color: $green-deep;
+		margin: 0 0 0.1em;
+		font-size: clamp(2.5rem, 4vw, 4rem);
+	}
+
+	&__divider {
+		width: 70px;
+		height: 2.5px;
+		background: linear-gradient(90deg, transparent, $main-color, transparent);
+		margin: 0.3rem auto 0.6rem;
+	}
+
+	&__description {
+		font-size: 1.1rem;
+		font-family: sans-serif;
+		color: $text-muted;
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 4rem;
+	}
+
+	&__rating-box {
+		min-width: 220px;
+	}
+
+	&__rating {
+		font-size: 6rem;
+		line-height: 1;
+		color: $green-deep;
+		margin-bottom: 0.1rem;
+		font-weight: 700;
+	}
+
+	&__stars {
+		color: $green-deep;
+		font-size: 1.8rem;
+		margin-bottom: 0.6rem;
+		letter-spacing: 4px;
+	}
+
+	&__reviews {
+		font-family: sans-serif;
+		font-size: 1.5rem;
+		margin-bottom: 0.2rem;
+		color: $green-deep;
+		font-weight: 600;
+	}
+
+	&__source {
+		font-family: sans-serif;
+		color: $text-muted;
+		font-size: 0.9rem;
+	}
+
+	&__big-card {
+		max-width: 700px;
+		width: 100%;
+		padding: 2.5rem 3rem;
+		border-radius: 20px;
+		background-color: #f4f2ee;
+		box-shadow: 0 20px 40px -12px rgb(0 0 0 / 0.12);
+		text-align: left;
+		position: relative;
+		transition: transform 0.4s ease;
+
+		&:hover {
+			transform: translateY(-4px);
+		}
+	}
+
+	&__quote {
+		font-family: 'EB Garamond', serif;
+		font-style: italic;
+		font-size: 1.45rem;
+		line-height: 1.6;
+		color: $green-deep;
+		margin-bottom: 1.5rem;
+	}
+
+	&__author {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__author-name {
+		font-family: sans-serif;
+		font-weight: 600;
+		font-size: 1.1rem;
+		color: $green-deep;
+	}
+
+	&__author-stars {
+		color: $green-deep;
+		font-size: 1.1rem;
+	}
+
+	&__cards {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	&__card {
+		flex: 1;
+		padding: 2rem;
+		background: #f4f2ee;
+		border-radius: 18px;
+		box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+		transition: all 0.3s ease;
+
+		&:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+		}
+	}
+
+	&__card-stars {
+		font-size: 1.1rem;
+		color: $green-deep;
+		margin-bottom: 0.8rem;
+		letter-spacing: 2px;
+	}
+
+	&__card-text {
+		font-family: 'EB Garamond', serif;
+		font-size: 1.15rem;
+		line-height: 1.6;
+		color: $green-deep;
+		margin-bottom: 1.2rem;
+	}
+
+	&__card-author {
+		font-family: sans-serif;
+		font-weight: 600;
+		font-size: 1rem;
+		color: $green-deep;
+	}
+
+	@include tablet {
+		height: auto;
+		min-height: initial;
+		padding: 4rem 0;
+
+		&__wrapper {
+			display: block;
+		}
+
+		&__header {
+			margin-bottom: 3rem;
+		}
+
+		&__content {
+			flex-direction: column;
+			gap: 3rem;
+		}
+
+		&__big-card {
+			max-width: 100%;
+			padding: 2.5rem 1.5rem;
+			text-align: center;
+		}
+
+		&__author {
+			flex-direction: column;
+			gap: 0.6rem;
+		}
+
+		&__rating {
+			font-size: 5rem;
+		}
+
+		&__cards {
+			flex-direction: column;
+			gap: 1.5rem;
+			margin-top: 3rem;
+			padding: 0;
+		}
+	}
+}
