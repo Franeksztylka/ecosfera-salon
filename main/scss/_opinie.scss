@@ -2,11 +2,12 @@
 @use 'mixins' as *;
 
 .opinie {
-	position: relative;
-	height: 90vh;
-	min-height: 680px;
+	position: sticky;
+	height: 100vh;
+    top: 0;
 	z-index: 3;
 	background: #ede8e1;
+    box-shadow:3px 3px 15px   rgba(0, 0, 0, 0.5);
 	overflow: hidden;
 
 	display: flex;
@@ -35,6 +36,9 @@
 		margin: 0 0 0.1em;
 		font-size: clamp(2.5rem, 4vw, 4rem);
 	}
+    &__subtitle{
+        color: $main-color;
+    }
 
 	&__divider {
 		width: 70px;

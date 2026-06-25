@@ -1,20 +1,59 @@
 @use 'colors' as *;
+@use 'mixins' as *;
 @use 'animations' as *;
-
 .kontakt{
    position: sticky;
 	top: 0;
-	height: 100vh;
+	height: 80vh;
 	background-color: #ede8e1;
-;
 	z-index: 4;
-	padding: 4em;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-    &__title{
+	text-align: center;
+	box-shadow:3px 3px 15px   rgba(0, 0, 0, 0.5);
+	&__title{
 		font-size: 5em;
         color: $green-deep;
+		padding-top: 1em;
+		width: 100%;
     }
+	&__divider{
+		width: 70px;
+		height: 2.5px;
+		background: linear-gradient(90deg, transparent, $main-color, transparent);
+		margin: 0.5rem auto 2rem;
+		opacity: 0;
+		animation: expandWidth 0.8s ease 0.3s forwards;
+		transform-origin: center;
+	}
+	&__wrapper{
+	display: flex;
+	color: $text-muted;
+	flex-wrap: wrap;
+	gap: 5em;
+	}
+	&__data{
+		display: flex;         
+        flex-direction: column;
+        gap: 2rem;           
+		p{
+			font-size: 1.5em;
+			margin: 0;
+		}
+		
+	}
+	&__map-container{
+		max-width: 50%;
+		width: 80%;
+	}
+	.data-title{
+		text-align: center;
+		font-size: 2.5em;
+	}
+	&__workhours{
+		padding-left: 10em;
+		td{
+			font-size: 1.5em;
+			text-align: left;
+		}
+	}
+	
 }

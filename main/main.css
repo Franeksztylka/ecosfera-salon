@@ -439,8 +439,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 0;
   transition: opacity 0.8s ease;
 }
@@ -471,6 +470,7 @@ body {
   top: -110vh;
   height: 210vh;
   background-color: #ede8e1;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   z-index: 1;
 }
@@ -600,6 +600,7 @@ body {
   position: sticky;
   top: 0;
   background-color: #ede8e1;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
   z-index: 2;
   padding: 4em;
   height: 100vh;
@@ -689,8 +690,8 @@ body {
 }
 .uslugi__content {
   flex: 1;
-  max-height: 45vh;
-  min-height: 45vh;
+  max-height: 50vh;
+  min-height: 50vh;
   overflow-y: auto;
   overflow-x: hidden;
   margin-bottom: 2em;
@@ -1000,11 +1001,12 @@ body {
 }
 
 .opinie {
-  position: relative;
-  height: 90vh;
-  min-height: 680px;
+  position: sticky;
+  height: 100vh;
+  top: 0;
   z-index: 3;
   background: #ede8e1;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1028,6 +1030,9 @@ body {
   color: #1B3A1C;
   margin: 0 0 0.1em;
   font-size: clamp(2.5rem, 4vw, 4rem);
+}
+.opinie__subtitle {
+  color: #245e27;
 }
 .opinie__divider {
   width: 70px;
@@ -1188,16 +1193,59 @@ body {
 .kontakt {
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 80vh;
   background-color: #ede8e1;
   z-index: 4;
-  padding: 4em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  text-align: center;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
 }
 .kontakt__title {
   font-size: 5em;
   color: #1B3A1C;
+  padding-top: 1em;
+  width: 100%;
+}
+.kontakt__divider {
+  width: 70px;
+  height: 2.5px;
+  background: linear-gradient(90deg, transparent, #245e27, transparent);
+  margin: 0.5rem auto 2rem;
+  opacity: 0;
+  animation: expandWidth 0.8s ease 0.3s forwards;
+  transform-origin: center;
+}
+.kontakt__wrapper {
+  display: flex;
+  color: #6b7b6c;
+  flex-wrap: wrap;
+  gap: 5em;
+}
+.kontakt__data {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.kontakt__data p {
+  font-size: 1.5em;
+  margin: 0;
+}
+.kontakt__map-container {
+  max-width: 50%;
+  width: 80%;
+}
+.kontakt .data-title {
+  text-align: center;
+  font-size: 2.5em;
+}
+.kontakt__workhours {
+  padding-left: 10em;
+}
+.kontakt__workhours td {
+  font-size: 1.5em;
+  text-align: left;
+}
+
+footer {
+  height: 20vh;
+  background-color: black;
 }/*# sourceMappingURL=main.css.map */
