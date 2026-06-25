@@ -5,14 +5,16 @@
    position: sticky;
 	top: 0;
 	height: 100vh;
-	background-color: #be8e4a;
+	background-color: #ede8e1;
+;
 	z-index: 4;
 	padding: 4em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-    h2{
+    &__title{
+		font-size: 5em;
         color: $green-deep;
     }
 }

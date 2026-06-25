@@ -293,8 +293,7 @@
 	}
 	@include tablet{
 		.uslugi {
-		min-height: 110vh;
-		height: auto;
+		min-height: 100vh;
 		padding: 2em 1em;
 		
 		}
@@ -308,6 +307,7 @@
 
 		&__tabs {
 			gap: 0.5em;
+			margin:0;
 		}
 		&__tab {
 			padding: 0.6em 1.2em;
@@ -321,6 +321,7 @@
 			margin: 0;
 			width: 100%;
 			max-width: 100%;
+			margin-bottom: 1em;
 		}
 		&__row{
 			padding: 1em 0;

@@ -15,10 +15,9 @@
 		background-image: url('../main/img/twoja-wspolpracowniczka.jpg');
 	}
 	&__title {
-		font-family: 'Abril Fatface', serif;
 		text-align: center;
 		font-size: clamp(3rem, 5vw, 5rem);
-		color: #234f36;
+		color: $green-deep;
 		margin-bottom: 3rem;
 		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 		padding-top: 6rem;
