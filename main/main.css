@@ -289,6 +289,7 @@ body {
 }
 .hero__title {
   color: #1B3A1C;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   font-size: 5rem;
   animation: fadeUp 0.8s ease forwards;
 }
@@ -611,6 +612,7 @@ body {
 }
 .uslugi__title {
   color: #1B3A1C;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   font-size: 5rem;
   animation: fadeUp 0.8s ease forwards;
   text-align: center;
@@ -1028,6 +1030,7 @@ body {
 }
 .opinie__title {
   color: #1B3A1C;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   margin: 0 0 0.1em;
   font-size: clamp(2.5rem, 4vw, 4rem);
 }
@@ -1156,7 +1159,8 @@ body {
 }
 @media (max-width: 768px) {
   .opinie {
-    height: auto;
+    height: 180vh;
+    top: -84vh;
     min-height: initial;
     padding: 4rem 0;
   }
@@ -1202,6 +1206,7 @@ body {
 .kontakt__title {
   font-size: 5em;
   color: #1B3A1C;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   padding-top: 1em;
   width: 100%;
 }
@@ -1243,6 +1248,11 @@ body {
 .kontakt__workhours td {
   font-size: 1.5em;
   text-align: left;
+}
+@media (max-width: 768px) {
+  .kontakt .kontakt__map-container {
+    display: none;
+  }
 }
 
 footer {

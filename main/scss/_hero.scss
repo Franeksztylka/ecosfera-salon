@@ -20,6 +20,7 @@
 	}
 	&__title {
 		color: $green-deep;
+		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 		font-size: 5rem;
 		animation: fadeUp 0.8s ease forwards;
 	}
@@ -111,7 +112,7 @@
 		overflow: hidden;
 	}
 	
-	@include tablet{
+	@include telefon{
     grid-template-columns: 1fr; 
     padding-top: 20px;
     padding-bottom: 25px;

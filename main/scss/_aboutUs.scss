@@ -111,7 +111,7 @@
 		line-height: 1.78;
 		color: #f0e6d9;
 	}
-	@include tablet{
+	@include telefon{
 		top: -125vh;
 		height: 225vh;
 		&__owner-card,

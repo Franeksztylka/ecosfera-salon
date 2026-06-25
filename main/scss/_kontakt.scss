@@ -12,6 +12,7 @@
 	&__title{
 		font-size: 5em;
         color: $green-deep;
+		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 		padding-top: 1em;
 		width: 100%;
     }
@@ -55,5 +56,12 @@
 			text-align: left;
 		}
 	}
-	
+	@include telefon{
+		.kontakt{
+			&__map-container{
+				display: none;
+			}
+
+		}
+	}
 }

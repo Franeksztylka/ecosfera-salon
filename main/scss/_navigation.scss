@@ -83,7 +83,7 @@
 		}
 	}
 
-    @include tablet{
+    @include telefon{
         position: fixed;
 		transition: background-color 0.2s ease-in;
 		z-index: 100;
