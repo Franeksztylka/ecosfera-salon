@@ -1,73 +1,94 @@
 @use 'colors' as *;
 @use 'mixins' as *;
 
-
 .navbar {
 	position: fixed;
 	width: 100%;
 	height: var(--navbar-height);
-	padding: 1em 2em;
+	padding: 0 2.5em;
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
 	z-index: 100;
-	transition: background-color 0.3s ease-in;
+	background: rgba(244, 242, 238, 0.75);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border-bottom: 1px solid rgba(36, 94, 39, 0.1);
+	transition: background 0.4s ease, box-shadow 0.4s ease;
+
+	&.scrolled {
+		background: rgba(244, 242, 238, 0.97);
+		box-shadow: 0 1px 20px rgba(27, 58, 28, 0.07);
+	}
+	
+
+	&.navbar-open-bg {
+		background: $green-deep;
+		box-shadow: none;
+		border-bottom-color: transparent;
+	}
+
 	&__links {
 		display: flex;
 		list-style: none;
-		gap: 2rem;
+		gap: 0.4rem;
+		align-items: center;
+
 		a {
-			position: relative;
 			text-decoration: none;
-			color: $text-muted;
+			color: #3a4f3b;
 			font-family: sans-serif;
-			font-size: 1.4em;
-			transition: color 0.3s;
-			&::after {
-				content: '';
-				position: absolute;
-				left: 0;
-				bottom: -5px;
-				width: 100%;
-				height: 2px;
-				background-color: $main-color;
-				transform: scaleX(0);
-				transform-origin: left;
-				transition: 0.5s;
+			font-size: 1.15rem;
+			font-weight: 600;
+			letter-spacing: 0.03em;
+			padding: 7px 16px;
+			border-radius: 8px;
+			border: 1px solid transparent;
+			text-shadow: 0 1px 4px rgba(27, 58, 28, 0.1);
+			transition: color 0.2s, background 0.2s, border-color 0.2s, text-shadow 0.2s;
+
+			&:hover {
+				color: $green-deep;
+				background: rgba(36, 94, 39, 0.07);
+				border-color: rgba(36, 94, 39, 0.15);
+				text-shadow: 0 2px 8px rgba(27, 58, 28, 0.2);
 			}
-			&:hover::after {
-				transform: scaleX(1);
-			}
+
 			&.link-color-change {
-				color: $bg;
-			}
-			&.link-color-change::after {
-				background-color: #fff;
+				color: $green-deep;
+				text-shadow: 0 1px 6px rgba(27, 58, 28, 0.15);
 			}
 		}
 	}
 
 	&__btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 7px;
 		font-family: sans-serif;
 		text-decoration: none;
-		color: $main-color;
-		border: 2px solid $main-color;
-		padding: 0.4em;
-		border-radius: 5px;
-		transition:
-			background-color ease 0.5s,
-			color ease 0.5s;
+		font-size: 14px;
+		font-weight: 600;
+		background: $green-deep;
+		color: $beige;
+		border: none;
+		padding: 9px 20px;
+		border-radius: 10px;
+		transition: background 0.2s ease, transform 0.15s ease;
+
+		&::before {
+			content: '';
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: $green-light;
+			flex-shrink: 0;
+			animation: navbar-dot 2.4s ease-in-out infinite;
+		}
 
 		&:hover {
-			background-color: $main-color;
-			color: white;
-		}
-		&.btn-color-change {
-			color: white;
-			border: 2px solid white;
-		}
-		&.btn-color-change:hover {
-			background-color: #fff;
-			color: $main-color;
+			background: $main-color;
+			transform: translateY(-1px);
 		}
 	}
 
@@ -77,63 +98,84 @@
 
 		img {
 			display: block;
-			height: 70px;
+			height: 90px;
 			width: auto;
-			
 		}
 	}
 
-    @include telefon{
-        position: fixed;
-		transition: background-color 0.2s ease-in;
-		z-index: 100;
+	@include telefon {
+		padding: 0 1.2em;
+		transition: background 0.2s ease, box-shadow 0.2s ease;
+
 		ul {
 			display: none;
 			position: absolute;
-			top: 60px;
+			top: var(--navbar-height);
 			left: 0;
 			width: 100%;
 			z-index: 99;
-			background: $main-color;
-			padding: 2rem 0;
-			align-items: center;
-			a {
-				color: white;
+			background: $green-deep;
+			padding: 0.6rem 1.5rem 1.4rem;
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 0;
+
+			li {
+				width: 100%;
+				padding: 0.85rem 0;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+				opacity: 0;
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+
+			li a,
+			li a.link-color-change {
+				color: #e8f5e9;
+				text-shadow: none;
+				font-size: 1.1rem;
+				font-weight: 500;
+				letter-spacing: 0.02em;
+				padding: 0;
+				border-radius: 0;
+				border: none;
+				display: block;
+				background: transparent;
+
+				&:hover {
+					color: $green-pale;
+					background: transparent;
+					border-color: transparent;
+					text-shadow: none;
+				}
 			}
 		}
+
 		ul.navbar-open {
 			display: flex;
-			flex-direction: column;
 			animation: wjazd 0.3s ease forwards;
 		}
+
 		ul.navbar-open li {
 			animation: wjazd 0.3s ease forwards;
 		}
-		li {
-			opacity: 0;
-		}
-		ul.navbar-open li:nth-child(1) {
-			animation-delay: 0.1s;
-		}
-		ul.navbar-open li:nth-child(2) {
-			animation-delay: 0.2s;
-		}
-		ul.navbar-open li:nth-child(3) {
-			animation-delay: 0.3s;
-		}
-		ul.navbar-open li:nth-child(4) {
-			animation-delay: 0.4s;
-		}
-		ul.navbar-open li:nth-child(5) {
-			animation-delay: 0.5s;
-		}
-			
+
+		ul.navbar-open li:nth-child(1) { animation-delay: 0.05s; }
+		ul.navbar-open li:nth-child(2) { animation-delay: 0.10s; }
+		ul.navbar-open li:nth-child(3) { animation-delay: 0.15s; }
+		ul.navbar-open li:nth-child(4) { animation-delay: 0.20s; }
+		ul.navbar-open li:nth-child(5) { animation-delay: 0.25s; }
+
 		a.navbar__btn {
 			display: none;
 		}
+
 		img {
 			display: none;
 		}
+
 		.hamburger {
 			display: flex;
 			position: fixed;
@@ -145,28 +187,32 @@
 			cursor: pointer;
 			z-index: 101;
 		}
+		.open{
+			span{
+
+				background-color: #fff;
+			}
+		}
 		span {
 			display: block;
-			width: 24px;
+			width: 22px;
 			height: 2px;
-			background: #333;
+			background: $green-deep;
 			border-radius: 2px;
-			transition:
-				transform 0.3s,
-				opacity 0.3s;
-		}
-		.hamburger.open span:nth-child(1) {
-			transform: translateY(7px) rotate(45deg);
-		}
-		.hamburger.open span:nth-child(2) {
-			opacity: 0;
+			transition: transform 0.28s, opacity 0.28s;
 		}
 
-		.hamburger.open span:nth-child(3) {
-			transform: translateY(-7px) rotate(-45deg);
-		}
+		.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+		.hamburger.open span:nth-child(2) { opacity: 0; }
+		.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 		.cross-color {
-			background-color: white;
-		}
-    }
+    background-color: #e8f5e9;
+	}
+	}
+}
+
+@keyframes navbar-dot {
+	0%, 100% { opacity: 1; transform: scale(1); }
+	50% { opacity: 0.5; transform: scale(0.75); }
 }

@@ -5,41 +5,33 @@ document.addEventListener('DOMContentLoaded', () => {
 	const navBtn = document.querySelector('.navbar__btn')
 	const navUl = document.getElementById('navbar-links')
 	const navLinks = document.querySelectorAll('.navbar-links-menu')
-	const burgerSpan = document.querySelectorAll('.span-burger')
+	const burgerSpan = document.querySelectorAll('.hamburger span')
 
 	burgerBtn.addEventListener('click', () => {
-		burgerBtn.classList.toggle('open')
+		const isOpen = burgerBtn.classList.toggle('open')
 		navUl.classList.toggle('navbar-open')
 		navBar.classList.toggle('navbar-open-bg')
-
-		if (navBar.classList.contains('navbar-open-bg')) {
-			burgerSpan.forEach(span => span.classList.add('cross-color'))
-		} else {
-			burgerSpan.forEach(span => span.classList.remove('cross-color'))
-		}
 	})
 
 	navLinks.forEach(link => {
 		link.addEventListener('click', () => {
 			navUl.classList.remove('navbar-open')
-			burgerSpan.forEach(span => span.classList.remove('cross-color'))
 			burgerBtn.classList.remove('open')
 			navBar.classList.remove('navbar-open-bg')
 		})
 	})
 
 	window.addEventListener('scroll', () => {
-		if (window.scrollY > window.innerHeight - 20) {
-			navBar.classList.add('scroll-bg')
-			navLinks.forEach(link => link.classList.add('link-color-change'))
-			burgerSpan.forEach(span => span.classList.add('cross-color'))
-			if (navBtn) navBtn.classList.add('btn-color-change')
-		} else {
-			navBar.classList.remove('scroll-bg')
-			navLinks.forEach(link => link.classList.remove('link-color-change'))
-			burgerSpan.forEach(span => span.classList.remove('cross-color'))
-			if (navBtn) navBtn.classList.remove('btn-color-change')
+		const scrolled = window.scrollY > 40
+		const menuOpen = navBar.classList.contains('navbar-open-bg')
+
+		navBar.classList.toggle('scrolled', scrolled && !menuOpen)
+
+		if (!menuOpen) {
+			navLinks.forEach(link => link.classList.toggle('link-color-change', scrolled))
 		}
+
+		if (navBtn) navBtn.classList.toggle('btn-color-change', scrolled)
 	})
 
 	// ==================== CAROUSEL ====================
@@ -92,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	})
 
-	//==================== CENNIK ====================
+	// ==================== CENNIK ====================
 	document.querySelectorAll('.uslugi__tab').forEach(tab => {
 		tab.addEventListener('click', () => {
 			const tabName = tab.dataset.tab
@@ -114,8 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	})
 
-	//==================== OPINIE ====================
-
+	// ==================== OPINIE ====================
 	const counters = document.querySelectorAll('[data-target]')
 
 	const animateCounter = counter => {
@@ -154,9 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			})
 		},
-		{
-			threshold: 0.5,
-		},
+		{ threshold: 0.5 }
 	)
 
 	counters.forEach(counter => observer.observe(counter))
