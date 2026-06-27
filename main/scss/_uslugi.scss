@@ -301,7 +301,6 @@
 			font-size: 0.9rem;
 		}
 		&__content{
-
 			overflow: visible;
 		}
 		&__table{
@@ -336,6 +335,64 @@
 			width: 50%;
 		}
 	
+	}
+	@include tablet{
+		.uslugi {
+		min-height: 100vh;
+		padding: 2em 1em;
+		
+		}
+		&__title {
+			font-size: 3rem;
+		}
+
+		&__subtitle {
+			font-size: 2.5rem;
+		}
+
+		&__tabs {
+			gap: 0.5em;
+			margin:0;
+		}
+		&__tab {
+			padding: 0.6em 1.2em;
+			font-size: 0.9rem;
+		}
+		&__content{
+			overflow: visible;
+		}
+		
+		&__table{
+			margin: 0;
+			width: 100%;
+			max-width: 100%;
+			margin-bottom: 1em;
+		}
+		&__row{
+			padding: 1em 0;
+			align-items: flex-start;
+			&:hover{
+			background: rgba($main-color, 0.03);
+			border-bottom-color: rgba($main-color, 0.2);
+			transition: all 0.3s ease;
+			padding-left: 0;
+			}
+		}
+
+		&__name{
+			font-size: 1.5em;
+			padding-right: 1em;
+			line-height: 1.3;
+		}
+		&__price{
+			font-size: 1.3em;
+			white-space: nowrap;
+			flex-shrink: 0;
+			margin-left: auto;
+		}
+		&__botanical {
+			width: 50%;
+		}
 	}
 }
 

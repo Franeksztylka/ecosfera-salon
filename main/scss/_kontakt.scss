@@ -49,13 +49,14 @@
 		text-align: center;
 		font-size: 2.5em;
 	}
-	&__workhours{
-		padding-left: 10em;
-		td{
-			font-size: 1.5em;
-			text-align: left;
-		}
-	}
+	&__workhours {
+    padding-left: 0;       
+    margin: 0 auto;         
+    td {
+        font-size: 1.5em;
+        text-align: left;
+    }
+}
 	@include telefon{
 		.kontakt{
 			&__map-container{
@@ -64,4 +65,12 @@
 
 		}
 	}
+	@include tablet {
+    &__map-container {
+        display: none;
+    }
+    &__wrapper {
+        justify-content: center;
+    }
+}
 }

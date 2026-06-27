@@ -145,4 +145,33 @@
 		}
 	
 	}
+	@include tablet{
+		top: -100vh;
+		height: 200vh;
+		&__title{
+			font-size: 4.6em;
+		}
+		&__owner-card,
+		&__coworker-card{
+			grid-template-columns: 1fr;
+			margin-bottom: 4rem;
+			width: 70vw;
+		}
+		&__owner-card,
+		&__coworker-card{
+			height: auto;
+			.description{
+				font-size: 1.5em;
+				word-wrap: wrap;
+			}
+		}
+		&__image-wrapper{
+		display: none;
+		}
+		&__glass-content{
+			padding: 1rem 1rem;
+				border-left: none;
+				border-top: 1px solid rgba(255, 255, 255, 0.15);
+		}
+	}
 }

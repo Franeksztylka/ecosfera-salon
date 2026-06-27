@@ -222,4 +222,10 @@
 			padding: 0;
 		}
 	}
+	@include tablet{
+		&__title{
+			padding-top: .6em;
+			font-size: 3em;
+		}
+	}
 }

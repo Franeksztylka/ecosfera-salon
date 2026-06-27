@@ -162,6 +162,58 @@
 		}
 	}
     }
+	@include tablet{
+	grid-template-columns: 1fr; 
+    padding-top: 20px;
+    padding-bottom: 25px;
+    &__right {
+		display: none; 
+    }
+    &__left {
+        width: 100%; 
+        padding: 0 ;
+        height: 100vh;
+		align-items: center;
+		text-align: center;
+    }
+	&__title{
+		font-size: 5em;
+		
+	}
+	&__subtitle{
+		padding: 0;
+		margin: 0;
+		padding-bottom: 1.3em;
+		font-size: 3em;
+	}
+	&__description {
+		padding: 0 2rem;
+		font-size: 1.7rem;
+		margin-top: 15px;
+	}
+	&__container{
+		gap: 6rem;
+	}
+	&__btn{
+		font-size: 1.2em;
+	}
+	&__text{
+		font-size: 1.2em;
+		margin: 0;
+	}
+	&__reviews {
+		margin-top: 4em;
+		font-size: 17px;
+		text-align: left;
+		width: 30em;
+		.hero__stars{
+			font-size: 1.3rem;
+		}
+		.hero__opinions{
+			font-size: 1.3rem;
+		}
+	}
+	}
 }
 	.colorBox {
 		z-index: 2;
