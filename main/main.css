@@ -1488,7 +1488,7 @@ body {
 .kontakt {
   position: sticky;
   top: 0;
-  height: 80vh;
+  height: 83vh;
   background-color: #ede8e1;
   z-index: 4;
   text-align: center;
@@ -1541,6 +1541,9 @@ body {
   font-size: 1.5em;
   text-align: left;
 }
+.kontakt__entrance {
+  font-size: 1.5em;
+}
 @media (max-width: 767px) {
   .kontakt .kontakt__map-container {
     display: none;
@@ -1556,6 +1559,6 @@ body {
 }
 
 footer {
-  height: 20vh;
+  height: 17vh;
   background-color: black;
 }/*# sourceMappingURL=main.css.map */

@@ -4,7 +4,7 @@
 .kontakt{
    position: sticky;
 	top: 0;
-	height: 80vh;
+	height: 83vh;
 	background-color: #ede8e1;
 	z-index: 4;
 	text-align: center;
@@ -57,6 +57,9 @@
         text-align: left;
     }
 }
+	&__entrance{
+		font-size: 1.5em;
+	}
 	@include telefon{
 		.kontakt{
 			&__map-container{
@@ -72,5 +75,6 @@
     &__wrapper {
         justify-content: center;
     }
+	
 }
 }
