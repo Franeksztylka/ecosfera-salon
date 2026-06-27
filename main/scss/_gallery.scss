@@ -1,0 +1,38 @@
+@use 'colors' as *;
+@use 'mixins' as *;
+@use 'animations' as *;
+
+.gallery{
+    position: sticky;
+	height: auto;
+    top: -115vh;
+	z-index: 3;
+    display: none;
+    background-color: #ede8e1;
+   @include telefon{
+       display: flex;
+       flex-direction:column ;
+       &__wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 2em;
+        img{
+            width: 100vw;
+            border-radius: 20px;
+        }
+    }
+    &__title{
+        text-align: center;
+		font-size: clamp(3rem, 5vw, 5rem);
+		color: $green-deep;
+		margin-bottom: 3rem;
+		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+		padding-top: 6rem;
+		position: relative;
+		z-index: 10;
+    }
+
+   }
+}

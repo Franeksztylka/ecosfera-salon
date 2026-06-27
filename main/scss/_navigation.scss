@@ -15,7 +15,9 @@
 	-webkit-backdrop-filter: blur(20px);
 	border-bottom: 1px solid rgba(36, 94, 39, 0.1);
 	transition: background 0.4s ease, box-shadow 0.4s ease;
-
+	.nav-gallery{
+		display: none;
+	}
 	&.scrolled {
 		background: rgba(244, 242, 238, 0.97);
 		box-shadow: 0 1px 20px rgba(27, 58, 28, 0.07);
@@ -106,7 +108,9 @@
 	@include telefon {
 		padding: 0 1.2em;
 		transition: background 0.2s ease, box-shadow 0.2s ease;
-
+		.nav-gallery{
+		display: flex;
+	}
 		ul {
 			display: none;
 			position: absolute;
@@ -167,6 +171,7 @@
 		ul.navbar-open li:nth-child(3) { animation-delay: 0.15s; }
 		ul.navbar-open li:nth-child(4) { animation-delay: 0.20s; }
 		ul.navbar-open li:nth-child(5) { animation-delay: 0.25s; }
+		ul.navbar-open li:nth-child(6) { animation-delay: 0.30s; }
 
 		a.navbar__btn {
 			display: none;
@@ -213,7 +218,9 @@
 	@include tablet{
 		padding: 0.5em 1.5em;
 		transition: background 0.2s ease, box-shadow 0.2s ease;
-
+		.nav-gallery{
+		display: flex;
+	}
 		ul {
 			display: none;
 			position: absolute;
@@ -274,6 +281,7 @@
 		ul.navbar-open li:nth-child(3) { animation-delay: 0.15s; }
 		ul.navbar-open li:nth-child(4) { animation-delay: 0.20s; }
 		ul.navbar-open li:nth-child(5) { animation-delay: 0.25s; }
+		ul.navbar-open li:nth-child(6) { animation-delay: 0.30s; }
 
 		a.navbar__btn {
 			display: none;
