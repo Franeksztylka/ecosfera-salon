@@ -35,7 +35,7 @@
 		color: $green-deep;
 		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 		margin: 0 0 0.1em;
-		font-size: clamp(2.5rem, 4vw, 4rem);
+		font-size: 5rem;
 	}
     &__subtitle{
         color: $main-color;
@@ -180,13 +180,64 @@
 		font-size: 1rem;
 		color: $green-deep;
 	}
+	&__link{
+		text-decoration: underline;
+		font-size: 1rem;
+		color: $text-muted;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	@include telefon-small {
+		height: 190vh;
+		top: -90vh;
+		min-height: initial;
+		padding: 4rem 0;
+		&__title{
+			font-size: 3rem;
+		}
+		&__wrapper {
+			display: block;
+		}
 
+		&__header {
+			margin-bottom: 3rem;
+		}
+
+		&__content {
+			flex-direction: column;
+			gap: 3rem;
+		}
+
+		&__big-card {
+			max-width: 100%;
+			padding: 2.5rem 1.5rem;
+			text-align: center;
+		}
+
+		&__author {
+			flex-direction: column;
+			gap: 0.6rem;
+		}
+
+		&__rating {
+			font-size: 5rem;
+		}
+
+		&__cards {
+			flex-direction: column;
+			gap: 1.5rem;
+			margin-top: 3rem;
+			padding: 0;
+		}
+	}
 	@include telefon {
 		height: 180vh;
 		top: -84vh;
 		min-height: initial;
 		padding: 4rem 0;
-
+		&__title{
+			font-size: 3rem;
+		}
 		&__wrapper {
 			display: block;
 		}
@@ -225,7 +276,7 @@
 	@include tablet{
 		&__title{
 			padding-top: .6em;
-			font-size: 3em;
+			font-size: 4rem;
 		}
 	}
 }

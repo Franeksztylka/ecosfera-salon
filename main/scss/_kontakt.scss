@@ -56,16 +56,58 @@
         font-size: 1.5em;
         text-align: left;
     }
-}
+	}
 	&__entrance{
 		font-size: 1.5em;
 	}
-	@include telefon{
-		.kontakt{
-			&__map-container{
-				display: none;
+	@include telefon-small{
+		&__title{
+			font-size: 4rem;
+		}
+		&__map-container{
+			display: none;
+		}
+		&__data{
+			p{
+				font-size: 1.2em;
 			}
+		}
+		&__entrance{
+			font-size: 1.2em;
+		}
+		.data-title{
+			font-size: 2em;
+		}
+		&__workhours{
+			td{
+			 font-size: 1.5em;
+			}	
+		}
 
+	}
+	@include telefon{
+		&__title{
+			font-size: 4rem;
+		}
+		&__map-container{
+			display: none;
+		}
+		&__data{
+			margin:0 auto;
+			p{
+				font-size: 1.4em;
+			}
+		}
+		&__entrance{
+			font-size: 1.2em;
+		}
+		.data-title{
+			font-size: 2em;
+		}
+		&__workhours{
+			td{
+			 font-size: 1.5em;
+			}	
 		}
 	}
 	@include tablet {

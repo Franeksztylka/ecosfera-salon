@@ -111,6 +111,40 @@
 		line-height: 1.78;
 		color: #f0e6d9;
 	}
+	@include telefon-small{
+		top: -100vh;
+		height: 200vh;
+		&__owner-card,
+		&__coworker-card{
+			grid-template-columns: 1fr;
+			margin-bottom: 4rem;
+			width: 100%;
+		}
+		&__owner-card{
+			height: auto;
+			.description{
+				padding-right: 1rem;
+				font-size: 1.1em;
+				word-wrap: wrap;
+			}
+		}
+		&__coworker-card{
+			height: auto;
+			.description{
+				font-size: 1.1em;
+				padding-bottom: 1em;
+				word-wrap: wrap;
+			}
+		}
+		&__image-wrapper{
+		display: none;
+		}
+		&__glass-content{
+		padding: 0 1rem;
+				border-left: none;
+				border-top: 1px solid rgba(255, 255, 255, 0.15);
+		}
+	}
 	@include telefon{
 		top: -125vh;
 		height: 225vh;

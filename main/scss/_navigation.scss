@@ -104,7 +104,116 @@
 			width: auto;
 		}
 	}
+	@include telefon-small{
+		padding: 0 1.2em;
+		transition: background 0.2s ease, box-shadow 0.2s ease;
+		.nav-gallery{
+		display: flex;
+	}
+		ul {
+			display: none;
+			position: absolute;
+			top: var(--navbar-height);
+			left: 0;
+			width: 100%;
+			z-index: 99;
+			background: $green-deep;
+			padding: 0.6rem 1.5rem 1.4rem;
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 0;
 
+			li {
+				width: 100%;
+				padding: 0.85rem 0;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+				opacity: 0;
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+
+			li a,
+			li a.link-color-change {
+				color: #e8f5e9;
+				text-shadow: none;
+				font-size: 1.1rem;
+				font-weight: 500;
+				letter-spacing: 0.02em;
+				padding: 0;
+				border-radius: 0;
+				border: none;
+				display: block;
+				background: transparent;
+
+				&:hover {
+					color: $green-pale;
+					background: transparent;
+					border-color: transparent;
+					text-shadow: none;
+				}
+			}
+		}
+
+		ul.navbar-open {
+			display: flex;
+			animation: wjazd 0.3s ease forwards;
+		}
+
+		ul.navbar-open li {
+			animation: wjazd 0.3s ease forwards;
+		}
+
+		ul.navbar-open li:nth-child(1) { animation-delay: 0.05s; }
+		ul.navbar-open li:nth-child(2) { animation-delay: 0.10s; }
+		ul.navbar-open li:nth-child(3) { animation-delay: 0.15s; }
+		ul.navbar-open li:nth-child(4) { animation-delay: 0.20s; }
+		ul.navbar-open li:nth-child(5) { animation-delay: 0.25s; }
+		ul.navbar-open li:nth-child(6) { animation-delay: 0.30s; }
+
+		a.navbar__btn {
+			display: none;
+		}
+
+		img {
+			display: none;
+		}
+
+		.hamburger {
+			display: flex;
+			position: fixed;
+			flex-direction: column;
+			gap: 5px;
+			padding: 8px;
+			background: none;
+			border: none;
+			cursor: pointer;
+			z-index: 101;
+		}
+		.open{
+			span{
+
+				background-color: #fff;
+			}
+		}
+		span {
+			display: block;
+			width: 22px;
+			height: 2px;
+			background: $green-deep;
+			border-radius: 2px;
+			transition: transform 0.28s, opacity 0.28s;
+		}
+
+		.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+		.hamburger.open span:nth-child(2) { opacity: 0; }
+		.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+		.cross-color {
+    background-color: #e8f5e9;
+	}
+	}
 	@include telefon {
 		padding: 0 1.2em;
 		transition: background 0.2s ease, box-shadow 0.2s ease;

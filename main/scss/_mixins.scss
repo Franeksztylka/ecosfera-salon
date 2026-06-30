@@ -1,5 +1,11 @@
+@mixin telefon-small{
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
 @mixin telefon {
-  @media (max-width: 767px) {
+  @media (min-width:321px) and (max-width: 767px) {
     @content; 
   }
 }

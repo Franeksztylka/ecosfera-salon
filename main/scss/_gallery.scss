@@ -4,11 +4,30 @@
 
 .gallery{
     position: sticky;
-	height: auto;
-    top: -115vh;
+	height: 165vh;
+    top: -65vh;
 	z-index: 3;
     display: none;
-    background-color: #ede8e1;
+    background-color: #ede8e1;box-shadow:3px 3px 15px   rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+   @include telefon-small{
+       display: flex;
+       flex-direction:column ;
+       &__wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 2em;
+        img{
+            width: 100vw;
+            border-radius: 20px;
+        }
+    }
+    &__title{
+        text-align: center;
+    }
+}
    @include telefon{
        display: flex;
        flex-direction:column ;
@@ -22,6 +41,9 @@
             width: 100vw;
             border-radius: 20px;
         }
+    }
+    &__title{
+        text-align: center;
     }
     &__title{
         text-align: center;

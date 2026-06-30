@@ -111,7 +111,58 @@
 		filter: saturate(2);
 		overflow: hidden;
 	}
-	
+	@include telefon-small{
+	grid-template-columns: 1fr; 
+    padding-top: 20px;
+    padding-bottom: 25px;
+    &__right {
+		display: none; 
+    }
+    &__left {
+        width: 100%; 
+        padding: 0 ;
+        height: 100vh;
+		align-items: center;
+		text-align: center;
+    }
+	&__title{
+		font-size: 4em;
+
+	}
+	&__subtitle{
+		padding: 0;
+		margin: 0;
+		font-size: 2.6em;
+	}
+	&__description {
+		font-size: 1.2em;
+		margin-top: 20px;
+		padding: 0 1rem;
+	}
+	&__container{
+		justify-content: space-around;
+
+	}
+	&__btn{
+		font-size: 18px;
+	}
+	&__text{
+		font-size: 1.3em;
+		margin: 0;
+	}
+	&__reviews {
+		margin-top: 5em;
+		font-size: .9em;
+		text-align: left;
+		.hero__stars{
+			font-size: 1rem;
+		}
+		.hero__opinions{
+			font-size: 1rem;
+			font-weight: 700;
+		}
+	}
+}
 	@include telefon{
     grid-template-columns: 1fr; 
     padding-top: 20px;
