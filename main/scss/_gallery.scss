@@ -8,7 +8,7 @@
     top: -65vh;
 	z-index: 3;
     display: none;
-    background-color: #ede8e1;box-shadow:3px 3px 15px   rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
     overflow: hidden;
    @include telefon-small{
        display: flex;

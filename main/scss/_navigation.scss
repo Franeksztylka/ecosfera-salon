@@ -11,8 +11,8 @@
 	justify-content: space-between;
 	z-index: 100;
 	background: rgba(244, 242, 238, 0.75);
-	backdrop-filter: blur(20px);
-	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
 	border-bottom: 1px solid rgba(36, 94, 39, 0.1);
 	transition: background 0.4s ease, box-shadow 0.4s ease;
 	.nav-gallery{

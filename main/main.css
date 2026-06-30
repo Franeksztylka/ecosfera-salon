@@ -13,6 +13,11 @@ body {
   background-color: #F4F2EE;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
 @keyframes wjazd {
   from {
     opacity: 0;
@@ -120,8 +125,8 @@ body {
   justify-content: space-between;
   z-index: 100;
   background: rgba(244, 242, 238, 0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(36, 94, 39, 0.1);
   transition: background 0.4s ease, box-shadow 0.4s ease;
 }
@@ -869,15 +874,9 @@ body {
   top: -110vh;
   height: 210vh;
   background-color: #ede8e1;
-  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   z-index: 1;
-}
-.about-us #sylwia-image {
-  background-image: url("../main/img/Sylwia-Jamnicka-photo.png");
-}
-.about-us #coworker-image {
-  background-image: url("../main/img/twoja-wspolpracowniczka.jpg");
 }
 .about-us__title {
   text-align: center;
@@ -915,12 +914,17 @@ body {
   height: 82vh;
   min-height: 680px;
 }
-.about-us__image-wrapper {
+.about-us .about-us__image-wrapper {
   position: relative;
-  background-size: cover;
-  background-position: center 25%;
+  overflow: hidden;
 }
-.about-us__image-wrapper::before {
+.about-us .about-us__image-wrapper img.about-us__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%; /* Zachowuje oryginalne pozycjonowanie */
+}
+.about-us .about-us__image-wrapper::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1063,7 +1067,7 @@ body {
   position: sticky;
   top: 0;
   background-color: #ede8e1;
-  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
   z-index: 4;
   padding: 4em;
   height: 100vh;
@@ -1567,7 +1571,7 @@ body {
   top: 0;
   z-index: 5;
   background: #ede8e1;
-  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1815,7 +1819,7 @@ body {
   background-color: #ede8e1;
   z-index: 5;
   text-align: center;
-  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
 }
 .kontakt__title {
   font-size: 5em;
@@ -1847,6 +1851,10 @@ body {
 .kontakt__data p {
   font-size: 1.5em;
   margin: 0;
+}
+.kontakt__data svg {
+  width: 1.5rem;
+  fill: #6b7b6c;
 }
 .kontakt__map-container {
   max-width: 50%;
@@ -1930,8 +1938,7 @@ footer {
   top: -65vh;
   z-index: 3;
   display: none;
-  background-color: #ede8e1;
-  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 @media (max-width: 320px) {
