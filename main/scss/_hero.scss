@@ -19,14 +19,20 @@
 		background-color: $bg;
 	}
 	&__title {
-		color: $green-deep;
+		background: linear-gradient(180deg, $main-color 0%, $green-light 100%);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
 		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 		font-size: 5rem;
 		animation: fadeUp 0.8s ease forwards;
 	}
 
 	&__subtitle {
-		color: $main-color;
+		background: linear-gradient(-180deg, $main-color 0%, $green-light 50% );
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
 		font-size: 4.4rem;
 		font-style: italic;
 		animation: fadeUp 0.8s ease 0.2s forwards;

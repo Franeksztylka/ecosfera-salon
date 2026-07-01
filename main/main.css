@@ -587,13 +587,19 @@ body {
   background-color: #F4F2EE;
 }
 .hero__title {
-  color: #1B3A1C;
+  background: linear-gradient(180deg, #245e27 0%, #4CAF50 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   font-size: 5rem;
   animation: fadeUp 0.8s ease forwards;
 }
 .hero__subtitle {
-  color: #245e27;
+  background: linear-gradient(-180deg, #245e27 0%, #4CAF50 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 4.4rem;
   font-style: italic;
   animation: fadeUp 0.8s ease 0.2s forwards;
@@ -1819,7 +1825,7 @@ body {
 .kontakt {
   position: sticky;
   top: 0;
-  height: 80vh;
+  height: 75vh;
   background-color: #ede8e1;
   z-index: 5;
   text-align: center;
