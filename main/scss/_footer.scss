@@ -2,7 +2,77 @@
 @use 'mixins' as *;
 @use 'animations' as *;
 
-footer{
-    height: 17vh;
-    background-color: black;
+.footer {
+    background-color: #000000;
+    color: #e8d5b8;
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    margin-top: auto;
+
+    &__content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &__logo {
+        margin-bottom: 2rem;
+
+        img {
+            width: 250px;
+            height: 90px;
+            filter: brightness(0.5);
+        }
+    }
+
+   &__social {
+    display: flex;
+    justify-content: center;
+    gap: 2.8rem;
+    margin-bottom: 2.5rem;
+
+    a {
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            opacity: 0.9;
+        }
+
+        svg {
+            width: 36px;
+            height: 36px;
+            stroke-width:1px ;
+        }
+    }
+}
+
+    &__info {
+        font-size: 0.95rem;
+        opacity: 0.85;
+        line-height: 1.6;
+
+        p {
+            margin: 0.4rem 0;
+        }
+
+        a {
+            color: #e8d5b8;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+/* Responsywność */
+@include telefon-small {
+    .footer {
+        padding: 2.5rem 1.5rem 2rem;
+
+        &__social {
+            gap: 2rem;
+        }
+    }
 }

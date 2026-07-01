@@ -2,59 +2,90 @@
 @use 'mixins' as *;
 @use 'animations' as *;
 
-.gallery{
+.gallery {
     position: sticky;
-	height: 165vh;
+    height: 165vh;
     top: -65vh;
-	z-index: 3;
+    z-index: 3;
     display: none;
+    background-color: #ede8e1;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
     overflow: hidden;
-   @include telefon-small{
-       display: flex;
-       flex-direction:column ;
-       &__wrapper{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-wrap: nowrap;
-        gap: 2em;
-        img{
-            width: 100vw;
-            border-radius: 20px;
-        }
-    }
-    &__title{
+
+    &__title {
         text-align: center;
-    }
-}
-   @include telefon{
-       display: flex;
-       flex-direction:column ;
-       &__wrapper{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-wrap: nowrap;
-        gap: 2em;
-        img{
-            width: 100vw;
-            border-radius: 20px;
-        }
-    }
-    &__title{
-        text-align: center;
-    }
-    &__title{
-        text-align: center;
-		font-size: clamp(3rem, 5vw, 5rem);
-		color: $green-deep;
-		margin-bottom: 3rem;
-		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-		padding-top: 6rem;
-		position: relative;
-		z-index: 10;
+        font-size: 3rem;
+        color: $green-deep;
+        margin-bottom: 3rem;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        padding-top: 6rem;
+        z-index: 10;
     }
 
-   }
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        padding: 0 2rem 4rem;
+        max-width: 1400px;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+
+            &:hover {
+                transform: scale(1.03);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            }
+        }
+    }
+
+
+    @include telefon-small {
+        height: 220vh;
+        top: -120vh;
+        padding-bottom: 4rem;
+        display: grid;
+        &__wrapper {
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+            padding: 0 1rem 3rem;
+
+            img {
+                height: 320px;
+            }
+        }
+    }
+
+    @include telefon {
+        height: 220vh;
+        top: -120vh;
+        padding-bottom: 4rem;
+        display: grid;
+        &__wrapper {
+            grid-template-columns: 1fr;
+            gap: 1.6rem;
+            padding: 0 1.5rem 4rem;
+
+            img {
+                height: 340px;
+            }
+        }
+    }
+
+    @include tablet {
+       height: 220vh;
+        top: -120vh;
+        padding-bottom: 4rem;
+        display: grid;
+        &__wrapper {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.8rem;
+        }
+    }
 }
