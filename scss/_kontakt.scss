@@ -10,7 +10,7 @@
 	text-align: center;
 	box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
 	&__title{
-		font-size: 5em;
+		font-size: clamp(48px, 5em, 96px);
         color: $green-deep;
 		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 		padding-top: 1em;
@@ -36,7 +36,7 @@
         flex-direction: column;
         gap: 2rem;           
 		p{
-			font-size: 1.5em;
+			font-size: clamp(16px, 1.5em, 29px);
 			margin: 0;
 		}
 		svg{
@@ -50,47 +50,47 @@
 	}
 	.data-title{
 		text-align: center;
-		font-size: 2.5em;
+		font-size: clamp(26px, 2.5em, 48px);
 	}
 	&__workhours {
     padding-left: 0;       
     margin: 0 auto;         
     td {
-        font-size: 1.5em;
+        font-size: clamp(16px, 1.5em, 29px);
         text-align: left;
     }
 	}
 	&__entrance{
-		font-size: 1.5em;
+		font-size: clamp(16px, 1.5em, 29px);
 	}
 	@include telefon-small{
 		&__title{
-			font-size: 4rem;
+			font-size: clamp(38px, 4rem, 77px);
 		}
 		&__map-container{
 			display: none;
 		}
 		&__data{
 			p{
-				font-size: 1.2em;
+				font-size: clamp(12px, 1.2em, 23px);
 			}
 		}
 		&__entrance{
-			font-size: 1.2em;
+			font-size: clamp(12px, 1.2em, 23px);
 		}
 		.data-title{
-			font-size: 2em;
+			font-size: clamp(21px, 2em, 38px);
 		}
 		&__workhours{
 			td{
-			 font-size: 1.5em;
+			 font-size: clamp(16px, 1.5em, 29px);
 			}	
 		}
 
 	}
 	@include telefon{
 		&__title{
-			font-size: 4rem;
+			font-size: clamp(38px, 4rem, 77px);
 		}
 		&__map-container{
 			display: none;
@@ -98,19 +98,19 @@
 		&__data{
 			margin:0 auto;
 			p{
-				font-size: 1.4em;
+				font-size: clamp(15px, 1.4em, 27px);
 				padding: 0 1rem;
 			}
 		}
 		&__entrance{
-			font-size: 1.2em;
+			font-size: clamp(12px, 1.2em, 23px);
 		}
 		.data-title{
-			font-size: 2em;
+			font-size: clamp(21px, 2em, 38px);
 		}
 		&__workhours{
 			td{
-			 font-size: 1.5em;
+			 font-size: clamp(16px, 1.5em, 29px);
 			}	
 		}
 	}

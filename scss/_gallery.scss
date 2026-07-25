@@ -14,7 +14,7 @@
 
     &__title {
         text-align: center;
-        font-size: 3rem;
+        font-size: clamp(29px, 3rem, 58px);
         color: $green-deep;
         margin-bottom: 3rem;
         text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);

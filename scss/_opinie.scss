@@ -35,7 +35,7 @@
 		color: $green-deep;
 		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 		margin: 0 0 0.1em;
-		font-size: 5rem;
+		font-size: clamp(48px, 5rem, 96px);
 	}
     &__subtitle{
         color: $main-color;
@@ -49,7 +49,7 @@
 	}
 
 	&__description {
-		font-size: 1.1rem;
+		font-size: clamp(11px, 1.1rem, 21px);
 		font-family: sans-serif;
 		color: $text-muted;
 	}
@@ -66,7 +66,7 @@
 	}
 
 	&__rating {
-		font-size: 6rem;
+		font-size: clamp(58px, 6rem, 115px);
 		line-height: 1;
 		color: $green-deep;
 		margin-bottom: 0.1rem;
@@ -75,14 +75,14 @@
 
 	&__stars {
 		color: $green-deep;
-		font-size: 1.8rem;
+		font-size: clamp(19px, 1.8rem, 35px);
 		margin-bottom: 0.6rem;
 		letter-spacing: 4px;
 	}
 
 	&__reviews {
 		font-family: sans-serif;
-		font-size: 1.5rem;
+		font-size: clamp(16px, 1.5rem, 29px);
 		margin-bottom: 0.2rem;
 		color: $green-deep;
 		font-weight: 600;
@@ -91,7 +91,7 @@
 	&__source {
 		font-family: sans-serif;
 		color: $text-muted;
-		font-size: 0.9rem;
+		font-size: clamp(9px, 0.9rem, 17px);
 	}
 
 	&__big-card {
@@ -113,7 +113,7 @@
 	&__quote {
 		font-family: 'EB Garamond', serif;
 		font-style: italic;
-		font-size: 1.45rem;
+		font-size: clamp(15px, 1.45rem, 28px);
 		line-height: 1.6;
 		color: $green-deep;
 		margin-bottom: 1.5rem;
@@ -128,13 +128,13 @@
 	&__author-name {
 		font-family: sans-serif;
 		font-weight: 600;
-		font-size: 1.1rem;
+		font-size: clamp(11px, 1.1rem, 21px);
 		color: $green-deep;
 	}
 
 	&__author-stars {
 		color: $green-deep;
-		font-size: 1.1rem;
+		font-size: clamp(11px, 1.1rem, 21px);
 	}
 
 	&__cards {
@@ -160,7 +160,7 @@
 	}
 
 	&__card-stars {
-		font-size: 1.1rem;
+		font-size: clamp(11px, 1.1rem, 21px);
 		color: $green-deep;
 		margin-bottom: 0.8rem;
 		letter-spacing: 2px;
@@ -168,7 +168,7 @@
 
 	&__card-text {
 		font-family: 'EB Garamond', serif;
-		font-size: 1.15rem;
+		font-size: clamp(12px, 1.15rem, 22px);
 		line-height: 1.6;
 		color: $green-deep;
 		margin-bottom: 1.2rem;
@@ -177,12 +177,12 @@
 	&__card-author {
 		font-family: sans-serif;
 		font-weight: 600;
-		font-size: 1rem;
+		font-size: clamp(10px, 1rem, 19px);
 		color: $green-deep;
 	}
 	&__link{
 		text-decoration: underline;
-		font-size: 1rem;
+		font-size: clamp(10px, 1rem, 19px);
 		color: $text-muted;
 		font-weight: bold;
 		cursor: pointer;
@@ -193,7 +193,7 @@
 		min-height: initial;
 		padding: 4rem 0;
 		&__title{
-			font-size: 3rem;
+			font-size: clamp(29px, 3rem, 58px);
 		}
 		&__wrapper {
 			display: block;
@@ -220,7 +220,7 @@
 		}
 
 		&__rating {
-			font-size: 5rem;
+			font-size: clamp(48px, 5rem, 96px);
 		}
 
 		&__cards {
@@ -236,7 +236,7 @@
 		min-height: initial;
 		padding: 4rem 0;
 		&__title{
-			font-size: 3rem;
+			font-size: clamp(29px, 3rem, 58px);
 		}
 		&__wrapper {
 			display: block;
@@ -263,7 +263,7 @@
 		}
 
 		&__rating {
-			font-size: 5rem;
+			font-size: clamp(48px, 5rem, 96px);
 		}
 
 		&__cards {
@@ -276,7 +276,7 @@
 	@include tablet{
 		&__title{
 			padding-top: .6em;
-			font-size: 4rem;
+			font-size: clamp(38px, 4rem, 77px);
 		}
 	}
 }

@@ -24,7 +24,7 @@
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-		font-size: 5rem;
+		font-size: clamp(48px, 5rem, 96px);
 		animation: fadeUp 0.8s ease forwards;
 	}
 
@@ -33,7 +33,7 @@
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
-		font-size: 4.4rem;
+		font-size: clamp(42px, 4.4rem, 84px);
 		font-style: italic;
 		animation: fadeUp 0.8s ease 0.2s forwards;
 		opacity: 0;
@@ -42,7 +42,7 @@
 	&__description {
 		margin-top: 1.5rem;
 		color: $text-muted;
-		font-size: 1.5rem;
+		font-size: clamp(16px, 1.5rem, 29px);
 		animation: fadeUp 0.8s ease 0.4s forwards;
 		opacity: 0;
 	}
@@ -69,7 +69,7 @@
 	&__text {
 		margin-left: 1.6rem;
 		padding: 0.2rem;
-		font-size: 1.2em;
+		font-size: clamp(12px, 1.2em, 23px);
 		font-family: sans-serif;
 		border-bottom: 1px solid $green-light;
 		text-decoration: none;
@@ -79,13 +79,13 @@
 	&__stars {
 		color: $main-color;
 		padding-top:10px ;
-		font-size: 1rem;
+		font-size: clamp(10px, 1rem, 19px);
 	}
 	&__reviews {
 		margin-top: 3em;
 		padding: 0.1em 1.2em 0.7em;
 		width: 20em;
-		font-size: 1.2em;
+		font-size: clamp(12px, 1.2em, 23px);
 		border: 1px solid $green-light;
 		border-radius: 10px;
 		background-color: white;
@@ -96,7 +96,7 @@
 
 	&__opinions {
 		color: $text-muted;
-		font-size: 1em;
+		font-size: clamp(10px, 1em, 19px);
 	}
 
 	&__right {
@@ -132,16 +132,16 @@
 		text-align: center;
     }
 	&__title{
-		font-size: 4em;
+		font-size: clamp(38px, 4em, 77px);
 
 	}
 	&__subtitle{
 		padding: 0;
 		margin: 0;
-		font-size: 2.6em;
+		font-size: clamp(27px, 2.6em, 50px);
 	}
 	&__description {
-		font-size: 1.2em;
+		font-size: clamp(12px, 1.2em, 23px);
 		margin-top: 20px;
 		padding: 0 1rem;
 	}
@@ -153,18 +153,18 @@
 		font-size: 18px;
 	}
 	&__text{
-		font-size: 1.3em;
+		font-size: clamp(14px, 1.3em, 25px);
 		margin: 0;
 	}
 	&__reviews {
 		margin-top: 5em;
-		font-size: .9em;
+		font-size: clamp(9px, .9em, 17px);
 		text-align: left;
 		.hero__stars{
-			font-size: 1rem;
+			font-size: clamp(10px, 1rem, 19px);
 		}
 		.hero__opinions{
-			font-size: 1rem;
+			font-size: clamp(10px, 1rem, 19px);
 			font-weight: 700;
 		}
 	}
@@ -184,16 +184,16 @@
 		text-align: center;
     }
 	&__title{
-		font-size: 4em;
+		font-size: clamp(38px, 4em, 77px);
 
 	}
 	&__subtitle{
 		padding: 0;
 		margin: 0;
-		font-size: 2.6em;
+		font-size: clamp(27px, 2.6em, 50px);
 	}
 	&__description {
-		font-size: 1.3em;
+		font-size: clamp(14px, 1.3em, 25px);
 		margin-top: 20px;
 	}
 	&__container{
@@ -204,7 +204,7 @@
 		font-size: 18px;
 	}
 	&__text{
-		font-size: 1.3em;
+		font-size: clamp(14px, 1.3em, 25px);
 		margin: 0;
 	}
 	&__reviews {
@@ -212,10 +212,10 @@
 		font-size: 17px;
 		text-align: left;
 		.hero__stars{
-			font-size: 1.2rem;
+			font-size: clamp(12px, 1.2rem, 23px);
 		}
 		.hero__opinions{
-			font-size: 1.2rem;
+			font-size: clamp(12px, 1.2rem, 23px);
 		}
 	}
     }
@@ -234,28 +234,28 @@
 		text-align: center;
     }
 	&__title{
-		font-size: 5em;
+		font-size: clamp(48px, 5em, 96px);
 		
 	}
 	&__subtitle{
 		padding: 0;
 		margin: 0;
 		padding-bottom: 1.3em;
-		font-size: 3em;
+		font-size: clamp(29px, 3em, 58px);
 	}
 	&__description {
 		padding: 0 2rem;
-		font-size: 1.7rem;
+		font-size: clamp(18px, 1.7rem, 33px);
 		margin-top: 15px;
 	}
 	&__container{
 		gap: 6rem;
 	}
 	&__btn{
-		font-size: 1.2em;
+		font-size: clamp(12px, 1.2em, 23px);
 	}
 	&__text{
-		font-size: 1.2em;
+		font-size: clamp(12px, 1.2em, 23px);
 		margin: 0;
 	}
 	&__reviews {
@@ -264,10 +264,10 @@
 		text-align: left;
 		width: 30em;
 		.hero__stars{
-			font-size: 1.3rem;
+			font-size: clamp(14px, 1.3rem, 25px);
 		}
 		.hero__opinions{
-			font-size: 1.3rem;
+			font-size: clamp(14px, 1.3rem, 25px);
 		}
 	}
 	}
@@ -311,7 +311,7 @@
         padding: 1rem;
         cursor: pointer;
         z-index: 10;
-        font-size: 1.5rem;
+        font-size: clamp(16px, 1.5rem, 29px);
 
         &--prev { left: 10px; }
         &--next { right: 10px; }

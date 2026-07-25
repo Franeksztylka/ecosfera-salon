@@ -42,6 +42,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		border-radius: 24px;
+		min-width: 0;
 		overflow: hidden;
 		box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.45);
 	}
@@ -98,7 +99,7 @@
 
 		h3 {
 			font-family: 'Abril Fatface', serif;
-			font-size: 2.8rem;
+			font-size: clamp(29px, 2.8rem, 54px);
 			color: #e8d5b8;
 			margin: 0;
 		}
@@ -106,7 +107,7 @@
 		.role {
 			font-family: sans-serif;
 			color: #b8d5c4;
-			font-size: 1.1rem;
+			font-size: clamp(11px, 1.1rem, 21px);
 			letter-spacing: 1px;
 		}
 	}
@@ -131,14 +132,14 @@
 			height: auto;
 			.description {
 				padding-right: 1rem;
-				font-size: 1.1em;
+				font-size: clamp(11px, 1.1em, 21px);
 				word-wrap: wrap;
 			}
 		}
 		&__coworker-card {
 			height: auto;
 			.description {
-				font-size: 1.1em;
+				font-size: clamp(11px, 1.1em, 21px);
 				padding-bottom: 1em;
 				word-wrap: wrap;
 			}
@@ -165,14 +166,14 @@
 		&__owner-card {
 			height: auto;
 			.description {
-				font-size: 1.3em;
+				font-size: clamp(14px, 1.3em, 25px);
 				word-wrap: wrap;
 			}
 		}
 		&__coworker-card {
 			height: auto;
 			.description {
-				font-size: 1.3em;
+				font-size: clamp(14px, 1.3em, 25px);
 				word-wrap: wrap;
 			}
 		}
@@ -190,7 +191,7 @@
 		top: -100vh;
 		height: 200vh;
 		&__title {
-			font-size: 4.6em;
+			font-size: clamp(44px, 4.6em, 88px);
 		}
 		&__owner-card,
 		&__coworker-card {
@@ -202,7 +203,7 @@
 		&__coworker-card {
 			height: auto;
 			.description {
-				font-size: 1.5em;
+				font-size: clamp(16px, 1.5em, 29px);
 				word-wrap: wrap;
 			}
 		}

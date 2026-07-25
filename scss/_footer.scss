@@ -48,7 +48,7 @@
 }
 
     &__info {
-        font-size: 0.95rem;
+        font-size: clamp(10px, 0.95rem, 18px);
         opacity: 0.85;
         line-height: 1.6;
 
