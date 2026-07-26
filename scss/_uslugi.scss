@@ -7,8 +7,16 @@
 	background-color: #ede8e1;
 	box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
 	z-index: 4;
-	padding: 4em;
+	/* Wcześniej "padding: 4em;" - .uslugi nie ma własnego font-size,
+	   więc "em" dziedziczyło bezpośrednio ze skalowanego przez
+	   przeglądarkę (a11y) rozmiaru bazowego i rosło bez ograniczeń
+	   wewnątrz sztywnej wysokości (height: 100vh) sekcji. clamp()
+	   zachowuje dokładnie tę samą wartość domyślną (~4rem = 64px),
+	   ale nie pozwala paddingowi "zjeść" przestrzeni potrzebnej
+	   na treść przy powiększonej czcionce systemowej. */
+	padding: clamp(1.5rem, 4rem, 4.5rem);
 	height: 100vh;
+	overflow: hidden; /* spójne z .about-us / .opinie / .hero - domyka "kurtynę" i nie pozwala treści wylać się poza pinowaną sekcję */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -55,8 +63,8 @@
 
 	&__tabs {
 		display: flex;
-		gap: 1em;
-		margin-bottom: 1.5em;
+		gap: clamp(0.5rem, 1rem, 1.5rem);
+		margin-bottom: clamp(1rem, 1.5rem, 2rem);
 		justify-content: center;
 		flex-wrap: wrap;
 		animation: fadeUp 0.8s ease 0.5s forwards;

@@ -25,8 +25,8 @@
     &__wrapper {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-        padding: 0 2rem 4rem;
+        gap: clamp(1rem, 1.5rem, 2rem);
+        padding: 0 clamp(1rem, 2rem, 2.5rem) clamp(2.5rem, 4rem, 4.5rem);
         max-width: 1400px;
         margin: 0 auto;
 

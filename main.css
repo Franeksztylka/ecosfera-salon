@@ -1,6 +1,12 @@
 @charset "UTF-8";
 :root {
-  --navbar-height: 65px;
+  /* Bezpieczny, ograniczony clamp zamiast sztywnego px:
+     pozwala navbarowi delikatnie urosnąć, gdy użytkownik zwiększy
+     domyślny rozmiar czcionki w przeglądarce (a11y), ale nie pozwala
+     mu urosnąć w nieskończoność — dzięki temu wszystkie sekcje, które
+     liczą się z var(--navbar-height) (np. .hero, offsety w nawigacji
+     mobilnej) nie rozjeżdżają się przy zoomie tekstu. */
+  --navbar-height: clamp(65px, 4.5rem, 92px);
 }
 
 * {
@@ -583,6 +589,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* Wcześniej "padding: 6rem 5rem;" - .hero ma sztywne
+     height: 100vh + overflow: hidden. Nieograniczony padding
+     w rem rósł razem z systemową/przeglądarkową czcionką i przy
+     pewnym progu zabierał tyle miejsca w pionie, że górna/dolna
+     krawędź tekstu była ucinana przez overflow: hidden. */
   padding: 6rem 5rem;
   background-color: #F4F2EE;
 }
@@ -622,7 +633,7 @@ body {
 }
 .hero__btn {
   display: inline-block;
-  padding: 0.7em 1.5em;
+  padding: 0.9rem 1.6rem;
   font-family: sans-serif;
   border-radius: 10px;
   background-color: #245e27;
@@ -644,7 +655,7 @@ body {
   font-size: clamp(10px, 1rem, 19px);
 }
 .hero__reviews {
-  margin-top: 3em;
+  margin-top: 3rem;
   padding: 0.1em 1.2em 0.7em;
   width: 20em;
   font-size: clamp(12px, 1.2em, 23px);
@@ -887,7 +898,7 @@ body {
 }
 .about-us__title {
   text-align: center;
-  font-size: clamp(3rem, 5vw, 5rem);
+  font-size: clamp(3rem, 2.5rem + 2vw, 5rem);
   color: #1B3A1C;
   margin-bottom: 3rem;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -909,7 +920,12 @@ body {
   max-width: 1400px;
   margin: 0 auto 5rem;
   height: 85vh;
-  min-height: 620px;
+  /* 620px -> 38.75rem: ta sama wartość wizualna przy domyślnej
+     czcionce (16px), ale teraz rośnie razem z tekstem w środku
+     karty zamiast pozostawać sztywnym pułapem, który przy
+     powiększonej czcionce systemowej powodował ucinanie treści
+     przez .about-us { overflow: hidden }. */
+  min-height: 38.75rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-radius: 24px;
@@ -919,7 +935,8 @@ body {
 }
 .about-us__owner-card {
   height: 82vh;
-  min-height: 680px;
+  /* 680px -> 42.5rem, ta sama logika co wyżej */
+  min-height: 42.5rem;
 }
 .about-us__image-wrapper {
   position: relative;
@@ -945,7 +962,6 @@ body {
 .about-us__glass-content {
   position: relative;
   z-index: 2;
-  padding: 4.5rem 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -954,6 +970,7 @@ body {
   -webkit-backdrop-filter: blur(8px);
   border-left: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.35);
+  padding: 4.5rem 5rem;
 }
 .about-us__person-header {
   margin-bottom: 2rem;
@@ -972,7 +989,13 @@ body {
 }
 .about-us .description {
   font-family: sans-serif;
-  font-size: clamp(1.6rem, 2.1vw, 1.6rem);
+  /* Wcześniej: clamp(1.6rem, 2.1vw, 1.6rem) — min i max były
+     identyczne, więc clamp realnie zwracał zawsze dokładnie 1.6rem.
+     Ponieważ to wartość w rem, rosła proporcjonalnie do domyślnej
+     czcionki przeglądarki BEZ ŻADNEGO górnego ograniczenia — to był
+     główny winowajca przepełniania kart .about-us__owner-card /
+     .about-us__coworker-card przy a11y zoomie. */
+  font-size: 1.6rem;
   line-height: 1.78;
   color: #f0e6d9;
 }
@@ -1080,8 +1103,16 @@ body {
   background-color: #ede8e1;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
   z-index: 4;
-  padding: 4em;
+  /* Wcześniej "padding: 4em;" - .uslugi nie ma własnego font-size,
+     więc "em" dziedziczyło bezpośrednio ze skalowanego przez
+     przeglądarkę (a11y) rozmiaru bazowego i rosło bez ograniczeń
+     wewnątrz sztywnej wysokości (height: 100vh) sekcji. clamp()
+     zachowuje dokładnie tę samą wartość domyślną (~4rem = 64px),
+     ale nie pozwala paddingowi "zjeść" przestrzeni potrzebnej
+     na treść przy powiększonej czcionce systemowej. */
+  padding: 4rem;
   height: 100vh;
+  overflow: hidden; /* spójne z .about-us / .opinie / .hero - domyka "kurtynę" i nie pozwala treści wylać się poza pinowaną sekcję */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1124,8 +1155,8 @@ body {
 }
 .uslugi__tabs {
   display: flex;
-  gap: 1em;
-  margin-bottom: 1.5em;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
   animation: fadeUp 0.8s ease 0.5s forwards;
@@ -1833,7 +1864,7 @@ body {
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
 }
 .kontakt__title {
-  font-size: clamp(48px, 5em, 96px);
+  font-size: clamp(48px, 5rem, 96px);
   color: #1B3A1C;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   padding-top: 1em;
@@ -1852,7 +1883,9 @@ body {
   display: flex;
   color: #6b7b6c;
   flex-wrap: wrap;
-  gap: 5em;
+  /* Wcześniej "gap: 5em;" bez ograniczenia - rosło razem z systemową
+     czcionką wewnątrz sztywnej height: 75vh sekcji sticky. */
+  gap: 5rem;
 }
 .kontakt__data {
   display: flex;
@@ -1860,7 +1893,7 @@ body {
   gap: 2rem;
 }
 .kontakt__data p {
-  font-size: clamp(16px, 1.5em, 29px);
+  font-size: clamp(16px, 1.5rem, 29px);
   margin: 0;
 }
 .kontakt__data svg {
@@ -1873,18 +1906,18 @@ body {
 }
 .kontakt .data-title {
   text-align: center;
-  font-size: clamp(26px, 2.5em, 48px);
+  font-size: clamp(26px, 2.5rem, 48px);
 }
 .kontakt__workhours {
   padding-left: 0;
   margin: 0 auto;
 }
 .kontakt__workhours td {
-  font-size: clamp(16px, 1.5em, 29px);
+  font-size: clamp(16px, 1.5rem, 29px);
   text-align: left;
 }
 .kontakt__entrance {
-  font-size: clamp(16px, 1.5em, 29px);
+  font-size: clamp(16px, 1.5rem, 29px);
 }
 @media (max-width: 320px) {
   .kontakt__title {
@@ -1894,16 +1927,16 @@ body {
     display: none;
   }
   .kontakt__data p {
-    font-size: clamp(12px, 1.2em, 23px);
+    font-size: clamp(12px, 1.2rem, 23px);
   }
   .kontakt__entrance {
-    font-size: clamp(12px, 1.2em, 23px);
+    font-size: clamp(12px, 1.2rem, 23px);
   }
   .kontakt .data-title {
-    font-size: clamp(21px, 2em, 38px);
+    font-size: clamp(21px, 2rem, 38px);
   }
   .kontakt__workhours td {
-    font-size: clamp(16px, 1.5em, 29px);
+    font-size: clamp(16px, 1.5rem, 29px);
   }
 }
 @media (min-width: 321px) and (max-width: 767px) {
@@ -1917,17 +1950,17 @@ body {
     margin: 0 auto;
   }
   .kontakt__data p {
-    font-size: clamp(15px, 1.4em, 27px);
+    font-size: clamp(15px, 1.4rem, 27px);
     padding: 0 1rem;
   }
   .kontakt__entrance {
-    font-size: clamp(12px, 1.2em, 23px);
+    font-size: clamp(12px, 1.2rem, 23px);
   }
   .kontakt .data-title {
-    font-size: clamp(21px, 2em, 38px);
+    font-size: clamp(21px, 2rem, 38px);
   }
   .kontakt__workhours td {
-    font-size: clamp(16px, 1.5em, 29px);
+    font-size: clamp(16px, 1.5rem, 29px);
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {

@@ -1,7 +1,13 @@
 @use 'colors' as *;
 
 :root {
-	--navbar-height: 65px;
+	/* Bezpieczny, ograniczony clamp zamiast sztywnego px:
+	   pozwala navbarowi delikatnie urosnąć, gdy użytkownik zwiększy
+	   domyślny rozmiar czcionki w przeglądarce (a11y), ale nie pozwala
+	   mu urosnąć w nieskończoność — dzięki temu wszystkie sekcje, które
+	   liczą się z var(--navbar-height) (np. .hero, offsety w nawigacji
+	   mobilnej) nie rozjeżdżają się przy zoomie tekstu. */
+	--navbar-height: clamp(65px, 4.5rem, 92px);
 }
 
 * {

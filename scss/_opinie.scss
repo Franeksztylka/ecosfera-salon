@@ -19,7 +19,7 @@
 		max-width: 1400px;
 		margin: 0 auto;
 		text-align: center;
-		padding: 0 2rem;
+		padding: 0 clamp(1rem, 2rem, 2.5rem);
 
 		height: 100%;
 		display: flex;
@@ -58,7 +58,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: 4rem;
+		gap: clamp(2rem, 4rem, 4.5rem);
 	}
 
 	&__rating-box {
@@ -97,7 +97,7 @@
 	&__big-card {
 		max-width: 700px;
 		width: 100%;
-		padding: 2.5rem 3rem;
+		padding: clamp(1.75rem, 2.5rem, 3rem) clamp(2rem, 3rem, 3.5rem);
 		border-radius: 20px;
 		background-color: #f4f2ee;
 		box-shadow: 0 20px 40px -12px rgb(0 0 0 / 0.12);
@@ -140,14 +140,14 @@
 	&__cards {
 		display: flex;
 		justify-content: center;
-		gap: 2rem;
+		gap: clamp(1rem, 2rem, 2.5rem);
 		max-width: 1200px;
 		margin: 0 auto;
 	}
 
 	&__card {
 		flex: 1;
-		padding: 2rem;
+		padding: clamp(1.25rem, 2rem, 2.5rem);
 		background: #f4f2ee;
 		border-radius: 18px;
 		box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);

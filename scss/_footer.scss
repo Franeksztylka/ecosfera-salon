@@ -6,7 +6,7 @@
     background-color: #000000;
     color: #e8d5b8;
     // height: 20vh;
-    padding: 3rem 2rem 2rem;
+    padding: clamp(2rem, 3rem, 3.5rem) clamp(1.25rem, 2rem, 2.5rem) clamp(1.25rem, 2rem, 2.5rem);
     text-align: center;
     margin-top: auto;
 
@@ -28,7 +28,7 @@
    &__social {
     display: flex;
     justify-content: center;
-    gap: 2.8rem;
+    gap: clamp(1.5rem, 2.8rem, 3.2rem);
     margin-bottom: 2.5rem;
 
     a {
