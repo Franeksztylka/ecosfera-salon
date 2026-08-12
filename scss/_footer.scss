@@ -3,77 +3,183 @@
 @use 'animations' as *;
 
 .footer {
-    background-color: #000000;
-    color: #e8d5b8;
-    // height: 20vh;
-    padding: clamp(2rem, 3rem, 3.5rem) clamp(1.25rem, 2rem, 2.5rem) clamp(1.25rem, 2rem, 2.5rem);
-    text-align: center;
-    margin-top: auto;
+	background-color: #000000;
+	color: #e8d5b8;
+	// height: 20vh;
+	padding: clamp(2rem, 3rem, 3.5rem) clamp(1.25rem, 2rem, 2.5rem) clamp(1.25rem, 2rem, 2.5rem);
+	text-align: center;
+	margin-top: auto;
 
-    &__content {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+	&__content {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
 
-    &__logo {
-        margin-bottom: 2rem;
+	&__logo {
+		margin-bottom: 2rem;
 
-        img {
-            width: 250px;
-            height: 90px;
-            filter: brightness(0.5);
-        }
-    }
+		img {
+			width: 250px;
+			height: 90px;
+			filter: brightness(0.5);
+		}
+	}
 
-   &__social {
-    display: flex;
-    justify-content: center;
-    gap: clamp(1.5rem, 2.8rem, 3.2rem);
-    margin-bottom: 2.5rem;
+	&__social {
+		display: flex;
+		justify-content: center;
+		gap: clamp(1.5rem, 2.8rem, 3.2rem);
+		margin-bottom: 2.5rem;
 
-    a {
-        transition: all 0.3s ease;
+		a {
+			transition: all 0.3s ease;
 
-        &:hover {
-            transform: translateY(-4px);
-            opacity: 0.9;
-        }
+			&:hover {
+				transform: translateY(-4px);
+				opacity: 0.9;
+			}
 
-        svg {
-            width: 36px;
-            height: 36px;
-            stroke-width:1px ;
-        }
-    }
+			svg {
+				width: 36px;
+				height: 36px;
+				stroke-width: 1px;
+			}
+		}
+	}
+
+	&__info {
+		font-size: clamp(10px, 0.95rem, 18px);
+		opacity: 0.85;
+		line-height: 1.6;
+
+		p {
+			margin: 0.4rem 0;
+		}
+
+		a {
+			color: #e8d5b8;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__links button {
+		padding: 0;
+		background: none;
+		border: none;
+		color: var(--muted);
+		font-family: inherit;
+		font-size: inherit;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+	&__links button:hover {
+		color: var(--ink);
+	}
 }
 
-    &__info {
-        font-size: clamp(10px, 0.95rem, 18px);
-        opacity: 0.85;
-        line-height: 1.6;
+.modal-backdrop {
+	position: fixed;
+	inset: 0;
+	/* Czyste, przyciemnione tło z blurem (bez zielonego odcienia) */
+	background-color: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(6px);
+	z-index: 300;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
 
-        p {
-            margin: 0.4rem 0;
-        }
+	&.is-open {
+		display: flex;
+	}
+}
 
-        a {
-            color: #e8d5b8;
-            text-decoration: none;
+.modal {
+	/* Kremowe tło dopasowane do sekcji na stronie */
+	background: $bg;
+	/* Zielona obramówka nawiązująca do akcentów strony */
+	border: 2px solid $main-color;
+	border-radius: 16px;
+	max-width: 640px;
+	width: 100%;
+	max-height: 80vh;
+	overflow-y: auto;
+	padding: 36px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
+	/* Subtelny zielony pasek przewijania */
+	scrollbar-width: thin;
+	scrollbar-color: $main-color transparent;
+
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: $main-color;
+		border-radius: 4px;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+		color: $green-deep;
+		margin-bottom: 1.2rem;
+		font-weight: 700;
+	}
+
+	h3 {
+		font-size: 1.05rem;
+		margin-top: 20px;
+		color: $main-color;
+		font-weight: 600;
+	}
+
+	p,
+	li {
+		color: $text-muted;
+		font-size: 0.92rem;
+		line-height: 1.6;
+	}
+
+	&__close {
+		background: $main-color;
+		border: 1px solid $main-color;
+		color: $bg;
+		border-radius: 8px;
+		padding: 10px 24px;
+		font-size: 0.9rem;
+		font-weight: 500;
+		margin-top: 28px;
+		cursor: pointer;
+		transition: all 0.2s ease;
+
+		&:hover {
+			background: $green-deep;
+			border-color: $green-deep;
+		}
+	}
+
+	&__note {
+		margin-top: 20px;
+		padding: 14px;
+		border: 1px dashed $main-color;
+		background-color: $bg-2;
+		border-radius: 8px;
+		font-size: 0.85rem;
+		color: $green-deep;
+	}
 }
 
 /* Responsywność */
 @include telefon-small {
-    .footer {
-        padding: 2.5rem 1.5rem 2rem;
+	.footer {
+		padding: 2.5rem 1.5rem 2rem;
 
-        &__social {
-            gap: 2rem;
-        }
-    }
+		&__social {
+			gap: 2rem;
+		}
+	}
 }

@@ -145,8 +145,38 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			})
 		},
-		{ threshold: 0.5 }
+		{ threshold: 0.5 },
 	)
 
 	counters.forEach(counter => observer.observe(counter))
+
+	// ==================== REGULAMIN ====================
+
+	function openModal(backdrop) {
+		backdrop.classList.add('is-open')
+	}
+	function closeModal(backdrop) {
+		backdrop.classList.remove('is-open')
+	}
+	const privacyBackdrop = document.getElementById('privacyBackdrop')
+	const termsBackdrop = document.getElementById('termsBackdrop')
+	document.getElementById('openPrivacy').addEventListener('click', () => openModal(privacyBackdrop))
+	document.getElementById('openTerms').addEventListener('click', () => openModal(termsBackdrop))
+	document.querySelectorAll('[data-close-modal]').forEach(btn => {
+		btn.addEventListener('click', () => {
+			closeModal(privacyBackdrop)
+			closeModal(termsBackdrop)
+		})
+	})
+	;[privacyBackdrop, termsBackdrop].forEach(bd => {
+		bd.addEventListener('click', e => {
+			if (e.target === bd) closeModal(bd)
+		})
+	})
+	document.addEventListener('keydown', e => {
+		if (e.key === 'Escape') {
+			closeModal(privacyBackdrop)
+			closeModal(termsBackdrop)
+		}
+	})
 })
