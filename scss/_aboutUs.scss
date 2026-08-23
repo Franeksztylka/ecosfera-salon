@@ -91,13 +91,33 @@
 		z-index: 2;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		/* "safe center" = wyśrodkuj, ale jeśli treść nie mieści się
+		   w dostępnej wysokości, spadnij do wyrównania od góry (start)
+		   zamiast ucinać ją symetrycznie z obu stron. Bez "safe" przy
+		   powiększonej czcionce nagłówek (h3 + rola) wypadał poza
+		   widoczny obszar karty, a opis urywał się w połowie zdania. */
+		justify-content: safe center;
 		background: rgba(255, 255, 255, 0.07);
 		backdrop-filter: blur(8px);
 		-webkit-backdrop-filter: blur(8px);
 		border-left: 1px solid rgba(255, 255, 255, 0.18);
 		box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.35);
 		padding: clamp(2.5rem, 4.5rem, 5.5rem) clamp(2.5rem, 5rem, 6rem);
+		/* Zawór bezpieczeństwa: karta ma sztywną wysokość (85vh/82vh)
+		   i overflow: hidden, więc przy dłuższym tekście/powiększonej
+		   czcionce treść nie mieści się w pionie. Zamiast dać się
+		   niewidocznie przyciąć, staje się przewijalna wewnątrz karty -
+		   dokładnie ten sam wzorzec, co już sprawdzony w
+		   .uslugi__content. Wizualnie przy domyślnym rozmiarze czcionki
+		   nic się nie zmienia (treść mieści się bez potrzeby scrolla). */
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	}
 
 	&__person-header {

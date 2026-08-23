@@ -34,9 +34,16 @@
 	gap: clamp(2rem, 5rem, 6rem);
 	}
 	&__data{
-		display: flex;         
+		display: flex;
         flex-direction: column;
         gap: clamp(1rem, 2rem, 2.5rem);
+		/* Bez zadanej szerokości .kontakt__data rozciągało się do
+		   szerokości treści (w rem), która przy większej czcionce
+		   systemowej przestawała mieścić się obok mapy i flex-wrap
+		   zrzucał tę kolumnę pod spód - w efekcie znikała z widoku
+		   wewnątrz przypiętej (sticky) sekcji o stałej height: 75vh. */
+		flex: 1 1 min(100%, 22rem);
+		min-width: 0;
 		p{
 			font-size: clamp(16px, 1.5rem, 29px);
 			margin: 0;
@@ -44,11 +51,12 @@
 		svg{
 			width: 1.5rem;
 			fill: $text-muted;
-		}	
+		}
 	}
 	&__map-container{
 		max-width: 50%;
 		width: 80%;
+		flex: 1 1 min(80%, 25rem);
 	}
 	.data-title{
 		text-align: center;
