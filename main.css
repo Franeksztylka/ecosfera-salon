@@ -1015,9 +1015,18 @@ body {
      niewidocznie przyciąć, staje się przewijalna wewnątrz karty -
      dokładnie ten sam wzorzec, co już sprawdzony w
      .uslugi__content. Wizualnie przy domyślnym rozmiarze czcionki
-     nic się nie zmienia (treść mieści się bez potrzeby scrolla). */
+     nic się nie zmienia (treść mieści się bez potrzeby scrolla).
+
+     UWAGA: bez "overscroll-behavior: contain" - przy domyślnym
+     rozmiarze czcionki ten kontener i tak nie ma nadmiaru treści
+     do przewinięcia, ale "contain" i tak blokował przewijanie
+     scrollem myszy w miejscu, gdzie kursor był nad tą kartą -
+     zamiast przekazać scroll dalej do strony (pinowanej sekcji),
+     nic się nie działo i wyglądało to jak zepsuty scroll dla
+     KAŻDEGO odwiedzającego, nie tylko przy powiększonej czcionce.
+     Domyślne "auto" poprawnie przepuszcza scroll dalej, gdy
+     lokalnie nie ma czego przewijać. */
   overflow-y: auto;
-  overscroll-behavior: contain;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
