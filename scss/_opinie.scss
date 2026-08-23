@@ -8,11 +8,25 @@
 	z-index: 5;
 	background: #ede8e1;
    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
-	overflow: hidden;
+	/* "Minimum font size" w chrome://settings/fonts podbija drobny tekst
+	   (np. clamp z małym dolnym progiem, jak __source czy __card-author)
+	   bez zmiany font-size na <html>, więc height: 100vh tej sekcji się
+	   nie powiększa. overflow-y: auto zamienia dawne bezpowrotne
+	   ucinanie treści na możliwy do przescrollowania "zawór
+	   bezpieczeństwa" - przy domyślnych ustawieniach nic się nie zmienia
+	   (treść mieści się bez scrolla). */
+	overflow-y: auto;
+	overflow-x: hidden;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
 
 	&__wrapper {
 		width: 100%;

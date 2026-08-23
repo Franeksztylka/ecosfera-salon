@@ -8,8 +8,24 @@
 	height: 210vh;
 	background-color: #ede8e1;
 	box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* zoptymalizowany */
-	overflow: hidden;
+	/* "Minimum font size" w chrome://settings/fonts wymusza render
+	   drobnego tekstu (np. clamp z małym dolnym progiem) w większym
+	   rozmiarze, ale NIE zmienia font-size na <html>, więc żadna
+	   z rem-owych wysokości tej sekcji się nie powiększa. Przy
+	   overflow: hidden treść, która przestaje się mieścić w stałej
+	   wysokości (210vh), była bezpowrotnie ucinana. overflow-y: auto
+	   daje ten sam "zawór bezpieczeństwa" co .about-us__glass-content -
+	   przy domyślnych ustawieniach nic się nie zmienia (treść mieści
+	   się bez scrolla).*/
+	overflow-y: auto;
+	overflow-x: hidden;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
 	z-index: 1;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
 
 	&__title {
 		text-align: center;

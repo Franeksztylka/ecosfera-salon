@@ -887,8 +887,23 @@ body {
   height: 210vh;
   background-color: #ede8e1;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* zoptymalizowany */
-  overflow: hidden;
+  /* "Minimum font size" w chrome://settings/fonts wymusza render
+     drobnego tekstu (np. clamp z małym dolnym progiem) w większym
+     rozmiarze, ale NIE zmienia font-size na <html>, więc żadna
+     z rem-owych wysokości tej sekcji się nie powiększa. Przy
+     overflow: hidden treść, która przestaje się mieścić w stałej
+     wysokości (210vh), była bezpowrotnie ucinana. overflow-y: auto
+     daje ten sam "zawór bezpieczeństwa" co .about-us__glass-content -
+     przy domyślnych ustawieniach nic się nie zmienia (treść mieści
+     się bez scrolla).*/
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   z-index: 1;
+}
+.about-us::-webkit-scrollbar {
+  display: none;
 }
 .about-us__title {
   text-align: center;
@@ -1125,11 +1140,23 @@ body {
      na treść przy powiększonej czcionce systemowej. */
   padding: 4rem;
   height: 100vh;
-  overflow: hidden; /* spójne z .about-us / .opinie / .hero - domyka "kurtynę" i nie pozwala treści wylać się poza pinowaną sekcję */
+  /* "Minimum font size" w chrome://settings/fonts podbija drobny tekst
+     (np. clamp z małym dolnym progiem) bez zmiany font-size na <html>,
+     więc height: 100vh tej sekcji się nie powiększa. overflow-y: auto
+     zamienia dawne bezpowrotne ucinanie treści na możliwy do
+     przescrollowania "zawór bezpieczeństwa" - przy domyślnych
+     ustawieniach nic się nie zmienia (treść mieści się bez scrolla). */
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+.uslugi::-webkit-scrollbar {
+  display: none;
 }
 .uslugi__title {
   color: #1B3A1C;
@@ -1627,10 +1654,23 @@ body {
   z-index: 5;
   background: #ede8e1;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  /* "Minimum font size" w chrome://settings/fonts podbija drobny tekst
+     (np. clamp z małym dolnym progiem, jak __source czy __card-author)
+     bez zmiany font-size na <html>, więc height: 100vh tej sekcji się
+     nie powiększa. overflow-y: auto zamienia dawne bezpowrotne
+     ucinanie treści na możliwy do przescrollowania "zawór
+     bezpieczeństwa" - przy domyślnych ustawieniach nic się nie zmienia
+     (treść mieści się bez scrolla). */
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.opinie::-webkit-scrollbar {
+  display: none;
 }
 .opinie__wrapper {
   width: 100%;
@@ -1875,6 +1915,21 @@ body {
   z-index: 5;
   text-align: center;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+  /* "Minimum font size" w chrome://settings/fonts podbija drobny tekst
+     (np. td w __workhours) bez zmiany font-size na <html>, więc
+     height: 75vh się nie powiększa. Wcześniej (overflow: visible)
+     nadmiar treści spływał pod sekcję i bywał zasłaniany przez
+     kolejną przypiętą (sticky) sekcję nakładającą się od góry.
+     overflow-y: auto zamyka ten nadmiar w scrollowalnym "zaworze
+     bezpieczeństwa" wewnątrz samego .kontakt - przy domyślnych
+     ustawieniach nic się nie zmienia (treść mieści się bez scrolla). */
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.kontakt::-webkit-scrollbar {
+  display: none;
 }
 .kontakt__title {
   font-size: clamp(48px, 5rem, 96px);
