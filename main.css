@@ -911,23 +911,17 @@ body {
   height: 210vh;
   background-color: #ede8e1;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* zoptymalizowany */
-  /* "Minimum font size" w chrome://settings/fonts wymusza render
-     drobnego tekstu (np. clamp z małym dolnym progiem) w większym
-     rozmiarze, ale NIE zmienia font-size na <html>, więc żadna
-     z rem-owych wysokości tej sekcji się nie powiększa. Przy
-     overflow: hidden treść, która przestaje się mieścić w stałej
-     wysokości (210vh), była bezpowrotnie ucinana. overflow-y: auto
-     daje ten sam "zawór bezpieczeństwa" co .about-us__glass-content -
-     przy domyślnych ustawieniach nic się nie zmienia (treść mieści
-     się bez scrolla).*/
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  /* overflow-y: auto na całej (pełnoekranowej) sekcji psuło zwykłe
+     przewijanie strony dla każdego odwiedzającego: sekcja stawała
+     się własnym kontenerem scrolla na niemal całej wysokości
+     viewportu, więc szybkie kręcenie kółkiem myszy było "zjadane"
+     przez kilka pikseli niezauważalnego lokalnego scrolla zamiast
+     przewijać stronę - wyglądało to jak zepsute przewijanie.
+     Zawór bezpieczeństwa na "Minimum font size" zostaje tylko na
+     .about-us__glass-content (mniejszy, faktycznie przewijany
+     fragment), a nie na całej sekcji. */
+  overflow: hidden;
   z-index: 1;
-}
-.about-us::-webkit-scrollbar {
-  display: none;
 }
 .about-us__title {
   text-align: center;
@@ -1173,23 +1167,20 @@ body {
      na treść przy powiększonej czcionce systemowej. */
   padding: 4rem;
   height: 100vh;
-  /* "Minimum font size" w chrome://settings/fonts podbija drobny tekst
-     (np. clamp z małym dolnym progiem) bez zmiany font-size na <html>,
-     więc height: 100vh tej sekcji się nie powiększa. overflow-y: auto
-     zamienia dawne bezpowrotne ucinanie treści na możliwy do
-     przescrollowania "zawór bezpieczeństwa" - przy domyślnych
-     ustawieniach nic się nie zmienia (treść mieści się bez scrolla). */
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  /* overflow-y: auto na całej (pełnoekranowej) sekcji psuło zwykłe
+     przewijanie strony dla każdego odwiedzającego: sekcja stawała
+     się własnym kontenerem scrolla na niemal całej wysokości
+     viewportu, więc szybkie kręcenie kółkiem myszy było "zjadane"
+     przez kilka pikseli niezauważalnego lokalnego scrolla zamiast
+     przewijać stronę - wyglądało to jak zepsute przewijanie.
+     Zawór bezpieczeństwa na "Minimum font size" zostaje tylko na
+     .uslugi__content (mniejszy, faktycznie przewijany fragment),
+     a nie na całej sekcji. */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-}
-.uslugi::-webkit-scrollbar {
-  display: none;
 }
 .uslugi__title {
   color: #1B3A1C;
@@ -1700,23 +1691,21 @@ body {
   z-index: 5;
   background: #ede8e1;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
-  /* "Minimum font size" w chrome://settings/fonts podbija drobny tekst
-     (np. clamp z małym dolnym progiem, jak __source czy __card-author)
-     bez zmiany font-size na <html>, więc height: 100vh tej sekcji się
-     nie powiększa. overflow-y: auto zamienia dawne bezpowrotne
-     ucinanie treści na możliwy do przescrollowania "zawór
-     bezpieczeństwa" - przy domyślnych ustawieniach nic się nie zmienia
-     (treść mieści się bez scrolla). */
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  /* overflow-y: auto na całej (pełnoekranowej) sekcji psuło zwykłe
+     przewijanie strony dla każdego odwiedzającego: sekcja stawała
+     się własnym kontenerem scrolla na niemal całej wysokości
+     viewportu, więc szybkie kręcenie kółkiem myszy było "zjadane"
+     przez kilka pikseli niezauważalnego lokalnego scrolla zamiast
+     przewijać stronę - wyglądało to jak zepsute przewijanie. Ta
+     sekcja nie ma osobnego, mniejszego przewijanego pola (jak
+     .about-us__glass-content czy .uslugi__content), więc na razie
+     wraca do overflow: hidden - przy skrajnie dużym "Minimum font
+     size" treść może się ucinać, ale to rzadszy przypadek niż
+     zepsute przewijanie dla wszystkich. */
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.opinie::-webkit-scrollbar {
-  display: none;
 }
 .opinie__wrapper {
   width: 100%;
@@ -1961,21 +1950,16 @@ body {
   z-index: 5;
   text-align: center;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
-  /* "Minimum font size" w chrome://settings/fonts podbija drobny tekst
-     (np. td w __workhours) bez zmiany font-size na <html>, więc
-     height: 75vh się nie powiększa. Wcześniej (overflow: visible)
-     nadmiar treści spływał pod sekcję i bywał zasłaniany przez
-     kolejną przypiętą (sticky) sekcję nakładającą się od góry.
-     overflow-y: auto zamyka ten nadmiar w scrollowalnym "zaworze
-     bezpieczeństwa" wewnątrz samego .kontakt - przy domyślnych
-     ustawieniach nic się nie zmienia (treść mieści się bez scrolla). */
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.kontakt::-webkit-scrollbar {
-  display: none;
+  /* overflow-y: auto na całej (pełnoekranowej) sekcji psuło zwykłe
+     przewijanie strony dla każdego odwiedzającego: sekcja stawała
+     się własnym kontenerem scrolla na niemal całej wysokości
+     viewportu, więc szybkie kręcenie kółkiem myszy było "zjadane"
+     przez kilka pikseli niezauważalnego lokalnego scrolla zamiast
+     przewijać stronę - wyglądało to jak zepsute przewijanie. Wraca
+     do overflow: visible - przy skrajnie dużym "Minimum font size"
+     nadmiar treści może znów spływać pod sekcję, ale to rzadszy
+     przypadek niż zepsute przewijanie dla wszystkich. */
+  overflow: visible;
 }
 .kontakt__title {
   font-size: clamp(48px, 5rem, 96px);

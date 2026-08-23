@@ -9,22 +9,16 @@
 	z-index: 5;
 	text-align: center;
 	box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
-	/* "Minimum font size" w chrome://settings/fonts podbija drobny tekst
-	   (np. td w __workhours) bez zmiany font-size na <html>, więc
-	   height: 75vh się nie powiększa. Wcześniej (overflow: visible)
-	   nadmiar treści spływał pod sekcję i bywał zasłaniany przez
-	   kolejną przypiętą (sticky) sekcję nakładającą się od góry.
-	   overflow-y: auto zamyka ten nadmiar w scrollowalnym "zaworze
-	   bezpieczeństwa" wewnątrz samego .kontakt - przy domyślnych
-	   ustawieniach nic się nie zmienia (treść mieści się bez scrolla). */
-	overflow-y: auto;
-	overflow-x: hidden;
-	scrollbar-width: none;
-	-ms-overflow-style: none;
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
+	/* overflow-y: auto na całej (pełnoekranowej) sekcji psuło zwykłe
+	   przewijanie strony dla każdego odwiedzającego: sekcja stawała
+	   się własnym kontenerem scrolla na niemal całej wysokości
+	   viewportu, więc szybkie kręcenie kółkiem myszy było "zjadane"
+	   przez kilka pikseli niezauważalnego lokalnego scrolla zamiast
+	   przewijać stronę - wyglądało to jak zepsute przewijanie. Wraca
+	   do overflow: visible - przy skrajnie dużym "Minimum font size"
+	   nadmiar treści może znów spływać pod sekcję, ale to rzadszy
+	   przypadek niż zepsute przewijanie dla wszystkich. */
+	overflow: visible;
 
 	&__title{
 		font-size: clamp(48px, 5rem, 96px);
