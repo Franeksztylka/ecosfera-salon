@@ -1,0 +1,73 @@
+@use 'colors' as *;
+@use 'mixins' as *;
+
+.cookieBanner {
+	position: fixed;
+	padding: 18px 20px;
+	left: 16px;
+	right: 16px;
+	bottom: 16px;
+	background-color: #ede8e1;
+	border-radius: 14px;
+	border: 2px solid $main-color;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 640px;
+	margin: 0 auto;
+	z-index: 200;
+
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(100%);
+	transition:
+		transform 0.4s ease,
+		opacity 0.4s ease,
+		visibility 0.4s ease;
+
+	&.is-shown {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+
+	&__text {
+		margin: 0;
+		color: $text-muted;
+		font-size: 0.88rem;
+		line-height: 1.5;
+		flex: 1 1 260px;
+
+		a {
+			text-decoration: underline;
+			color: $green-deep;
+			font-weight: 600;
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: $main-color;
+			}
+		}
+	}
+
+	&__btn {
+		padding: 10px 22px;
+		background-color: $main-color;
+		border: 1px solid $main-color;
+		border-radius: 8px;
+		color: $bg;
+		font-weight: 600;
+		font-size: 0.85rem;
+		flex: 0 0 auto;
+		cursor: pointer;
+		transition: all 0.2s ease;
+
+		&:hover {
+			background-color: $green-deep;
+			border-color: $green-deep;
+		}
+	}
+}

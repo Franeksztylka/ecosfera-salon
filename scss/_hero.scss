@@ -15,13 +15,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		/* Wcześniej "padding: 6rem 5rem;" - .hero ma sztywne
-		   height: 100vh + overflow: hidden. Nieograniczony padding
-		   w rem rósł razem z systemową/przeglądarkową czcionką i przy
-		   pewnym progu zabierał tyle miejsca w pionie, że górna/dolna
-		   krawędź tekstu była ucinana przez overflow: hidden. */
 		padding: clamp(3rem, 6rem, 7rem) clamp(2.5rem, 5rem, 6rem);
-		background-color: $bg;
+		background-color: #ede8e1;
 	}
 	&__title {
 		background: linear-gradient(180deg, $main-color 0%, $green-light 100%);
@@ -34,7 +29,7 @@
 	}
 
 	&__subtitle {
-		background: linear-gradient(-180deg, $main-color 0%, $green-light 50% );
+		background: linear-gradient(-180deg, $main-color 0%, $green-light 50%);
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
@@ -61,14 +56,38 @@
 		opacity: 0;
 	}
 
+
 	&__btn {
-		display: inline-block;
+		align-items: center;
 		padding: clamp(0.6rem, 0.9rem, 1.1rem) clamp(1.2rem, 1.6rem, 2rem);
+		gap: 7px;
 		font-family: sans-serif;
-		border-radius: 10px;
-		background-color: $main-color;
-		color: white;
 		text-decoration: none;
+		font-size: 14px;
+		font-weight: 600;
+		background: $green-deep;
+		color: $beige;
+		border: none;
+		padding: 13px 25px;
+		border-radius: 10px;
+		transition:
+			background 0.2s ease,
+			transform 0.15s ease;
+
+		&::before {
+			content: '';
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: $green-light;
+			flex-shrink: 0;
+			animation: navbar-dot 2.4s ease-in-out infinite;
+		}
+
+		&:hover {
+			background: $main-color;
+			transform: translateY(-1px);
+		}
 	}
 
 	&__text {
@@ -83,7 +102,7 @@
 
 	&__stars {
 		color: $main-color;
-		padding-top:10px ;
+		padding-top: 10px;
 		font-size: clamp(10px, 1rem, 19px);
 	}
 	&__reviews {
@@ -97,7 +116,6 @@
 		animation: popIn 0.6s ease 1s forwards;
 		opacity: 0;
 	}
-
 
 	&__opinions {
 		color: $text-muted;
@@ -122,203 +140,214 @@
 		filter: saturate(2);
 		overflow: hidden;
 	}
-	@include telefon-small{
-	grid-template-columns: 1fr; 
-    padding-top: 20px;
-    padding-bottom: 25px;
-    &__right {
-		display: none; 
-    }
-    &__left {
-        width: 100%; 
-        padding: 0 ;
-        height: 100vh;
-		align-items: center;
-		text-align: center;
-    }
-	&__title{
-		font-size: clamp(38px, 4em, 77px);
-
-	}
-	&__subtitle{
-		padding: 0;
-		margin: 0;
-		font-size: clamp(27px, 2.6em, 50px);
-	}
-	&__description {
-		font-size: clamp(12px, 1.2em, 23px);
-		margin-top: 20px;
-		padding: 0 1rem;
-	}
-	&__container{
-		justify-content: space-around;
-
-	}
-	&__btn{
-		font-size: 18px;
-	}
-	&__text{
-		font-size: clamp(14px, 1.3em, 25px);
-		margin: 0;
-	}
-	&__reviews {
-		margin-top: 5em;
-		font-size: clamp(9px, .9em, 17px);
-		text-align: left;
-		.hero__stars{
-			font-size: clamp(10px, 1rem, 19px);
+	@include telefon-small {
+		grid-template-columns: 1fr;
+		padding-top: 20px;
+		padding-bottom: 25px;
+		&__right {
+			display: none;
 		}
-		.hero__opinions{
-			font-size: clamp(10px, 1rem, 19px);
-			font-weight: 700;
+		&__left {
+			width: 100%;
+			padding: 0;
+			height: 100vh;
+			align-items: center;
+			text-align: center;
+		}
+		&__title {
+			font-size: clamp(38px, 4em, 77px);
+		}
+		&__subtitle {
+			padding: 0;
+			margin: 0;
+			font-size: clamp(27px, 2.6em, 50px);
+		}
+		&__description {
+			font-size: clamp(12px, 1.2em, 23px);
+			margin-top: 20px;
+			padding: 0 1rem;
+		}
+		&__container {
+			justify-content: space-around;
+		}
+		&__btn {
+			font-size: 18px;
+		}
+		&__text {
+			font-size: clamp(14px, 1.3em, 25px);
+			margin: 0;
+		}
+		&__reviews {
+			margin-top: 5em;
+			font-size: clamp(9px, 0.9em, 17px);
+			text-align: left;
+			.hero__stars {
+				font-size: clamp(10px, 1rem, 19px);
+			}
+			.hero__opinions {
+				font-size: clamp(10px, 1rem, 19px);
+				font-weight: 700;
+			}
+		}
+	}
+	@include telefon {
+		grid-template-columns: 1fr;
+		padding-top: 20px;
+		padding-bottom: 25px;
+		&__right {
+			display: none;
+		}
+		&__left {
+			width: 100%;
+			padding: 0;
+			height: 100vh;
+			align-items: center;
+			text-align: center;
+		}
+		&__title {
+			font-size: clamp(38px, 4em, 77px);
+		}
+		&__subtitle {
+			padding: 0;
+			margin: 0;
+			font-size: clamp(27px, 2.6em, 50px);
+		}
+		&__description {
+			font-size: clamp(14px, 1.3em, 25px);
+			margin-top: 20px;
+		}
+		&__container {
+			justify-content: space-around;
+		}
+		&__btn {
+			font-size: 18px;
+		}
+		&__text {
+			font-size: clamp(14px, 1.3em, 25px);
+			margin: 0;
+		}
+		&__reviews {
+			margin-top: 3em;
+			font-size: 17px;
+			text-align: left;
+			.hero__stars {
+				font-size: clamp(12px, 1.2rem, 23px);
+			}
+			.hero__opinions {
+				font-size: clamp(12px, 1.2rem, 23px);
+			}
+		}
+	}
+	@include tablet {
+		grid-template-columns: 1fr;
+		padding-top: 20px;
+		padding-bottom: 25px;
+		&__right {
+			display: none;
+		}
+		&__left {
+			width: 100%;
+			padding: 0;
+			height: 100vh;
+			align-items: center;
+			text-align: center;
+		}
+		&__title {
+			font-size: clamp(48px, 5em, 96px);
+		}
+		&__subtitle {
+			padding: 0;
+			margin: 0;
+			padding-bottom: 1.3em;
+			font-size: clamp(29px, 3em, 58px);
+		}
+		&__description {
+			padding: 0 2rem;
+			font-size: clamp(18px, 1.7rem, 33px);
+			margin-top: 15px;
+		}
+		&__container {
+			gap: 6rem;
+		}
+		&__btn {
+			font-size: clamp(12px, 1.2em, 23px);
+		}
+		&__text {
+			font-size: clamp(12px, 1.2em, 23px);
+			margin: 0;
+		}
+		&__reviews {
+			margin-top: 4em;
+			font-size: 17px;
+			text-align: left;
+			width: 30em;
+			.hero__stars {
+				font-size: clamp(14px, 1.3rem, 25px);
+			}
+			.hero__opinions {
+				font-size: clamp(14px, 1.3rem, 25px);
+			}
 		}
 	}
 }
-	@include telefon{
-    grid-template-columns: 1fr; 
-    padding-top: 20px;
-    padding-bottom: 25px;
-    &__right {
-		display: none; 
-    }
-    &__left {
-        width: 100%; 
-        padding: 0 ;
-        height: 100vh;
-		align-items: center;
-		text-align: center;
-    }
-	&__title{
-		font-size: clamp(38px, 4em, 77px);
+.colorBox {
+	z-index: 2;
+	filter: brightness(1.1);
+	transition: 2s ease;
+	position: relative;
+	// margin: 2px;
+	// background: #1d1d1d;
+	border: 1px solid $text-muted;
+	opacity: 0.2;
+}
+.carousel {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
 
-	}
-	&__subtitle{
-		padding: 0;
-		margin: 0;
-		font-size: clamp(27px, 2.6em, 50px);
-	}
-	&__description {
-		font-size: clamp(14px, 1.3em, 25px);
-		margin-top: 20px;
-	}
-	&__container{
-		justify-content: space-around;
+	&__slide {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0;
+		transition: opacity 0.8s ease;
 
-	}
-	&__btn{
-		font-size: 18px;
-	}
-	&__text{
-		font-size: clamp(14px, 1.3em, 25px);
-		margin: 0;
-	}
-	&__reviews {
-		margin-top: 3em;
-		font-size: 17px;
-		text-align: left;
-		.hero__stars{
-			font-size: clamp(12px, 1.2rem, 23px);
-		}
-		.hero__opinions{
-			font-size: clamp(12px, 1.2rem, 23px);
+		&.active {
+			opacity: 1;
 		}
 	}
-    }
-	@include tablet{
-	grid-template-columns: 1fr; 
-    padding-top: 20px;
-    padding-bottom: 25px;
-    &__right {
-		display: none; 
-    }
-    &__left {
-        width: 100%; 
-        padding: 0 ;
-        height: 100vh;
-		align-items: center;
-		text-align: center;
-    }
-	&__title{
-		font-size: clamp(48px, 5em, 96px);
-		
-	}
-	&__subtitle{
-		padding: 0;
-		margin: 0;
-		padding-bottom: 1.3em;
-		font-size: clamp(29px, 3em, 58px);
-	}
-	&__description {
-		padding: 0 2rem;
-		font-size: clamp(18px, 1.7rem, 33px);
-		margin-top: 15px;
-	}
-	&__container{
-		gap: 6rem;
-	}
-	&__btn{
-		font-size: clamp(12px, 1.2em, 23px);
-	}
-	&__text{
-		font-size: clamp(12px, 1.2em, 23px);
-		margin: 0;
-	}
-	&__reviews {
-		margin-top: 4em;
-		font-size: 17px;
-		text-align: left;
-		width: 30em;
-		.hero__stars{
-			font-size: clamp(14px, 1.3rem, 25px);
+
+	&__btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: rgba(0, 0, 0, 0.3);
+		color: white;
+		border: none;
+		padding: 1rem;
+		cursor: pointer;
+		z-index: 10;
+		font-size: clamp(16px, 1.5rem, 29px);
+
+		&--prev {
+			left: 10px;
 		}
-		.hero__opinions{
-			font-size: clamp(14px, 1.3rem, 25px);
+		&--next {
+			right: 10px;
 		}
-	}
 	}
 }
-	.colorBox {
-		z-index: 2;
-		filter: brightness(1.1);
-		transition: 2s ease;
-		position: relative;
-		// margin: 2px;
-		// background: #1d1d1d;
-		border: 1px solid $text-muted;
-		opacity: 0.2;
+
+@keyframes navbar-dot {
+	0%,
+	100% {
+		opacity: 1;
+		transform: scale(1);
 	}
-	.carousel {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-
-    &__slide {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0;
-        transition: opacity 0.8s ease;
-
-        &.active {
-            opacity: 1;
-        }
-    }
-
-    &__btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0,0,0,0.3);
-        color: white;
-        border: none;
-        padding: 1rem;
-        cursor: pointer;
-        z-index: 10;
-        font-size: clamp(16px, 1.5rem, 29px);
-
-        &--prev { left: 10px; }
-        &--next { right: 10px; }
-    }
+	50% {
+		opacity: 0.5;
+		transform: scale(0.75);
+	}
 }

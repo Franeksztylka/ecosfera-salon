@@ -5,34 +5,37 @@ document.addEventListener('DOMContentLoaded', () => {
 	const navBtn = document.querySelector('.navbar__btn')
 	const navUl = document.getElementById('navbar-links')
 	const navLinks = document.querySelectorAll('.navbar-links-menu')
-	const burgerSpan = document.querySelectorAll('.hamburger span')
 
-	burgerBtn.addEventListener('click', () => {
-		const isOpen = burgerBtn.classList.toggle('open')
-		navUl.classList.toggle('navbar-open')
-		navBar.classList.toggle('navbar-open-bg')
-	})
+	if (burgerBtn && navUl && navBar) {
+		burgerBtn.addEventListener('click', () => {
+			burgerBtn.classList.toggle('open')
+			navUl.classList.toggle('navbar-open')
+			navBar.classList.toggle('navbar-open-bg')
+		})
+	}
 
 	navLinks.forEach(link => {
 		link.addEventListener('click', () => {
-			navUl.classList.remove('navbar-open')
-			burgerBtn.classList.remove('open')
-			navBar.classList.remove('navbar-open-bg')
+			if (navUl) navUl.classList.remove('navbar-open')
+			if (burgerBtn) burgerBtn.classList.remove('open')
+			if (navBar) navBar.classList.remove('navbar-open-bg')
 		})
 	})
 
-	window.addEventListener('scroll', () => {
-		const scrolled = window.scrollY > 40
-		const menuOpen = navBar.classList.contains('navbar-open-bg')
+	if (navBar) {
+		window.addEventListener('scroll', () => {
+			const scrolled = window.scrollY > 40
+			const menuOpen = navBar.classList.contains('navbar-open-bg')
 
-		navBar.classList.toggle('scrolled', scrolled && !menuOpen)
+			navBar.classList.toggle('scrolled', scrolled && !menuOpen)
 
-		if (!menuOpen) {
-			navLinks.forEach(link => link.classList.toggle('link-color-change', scrolled))
-		}
+			if (!menuOpen) {
+				navLinks.forEach(link => link.classList.toggle('link-color-change', scrolled))
+			}
 
-		if (navBtn) navBtn.classList.toggle('btn-color-change', scrolled)
-	})
+			if (navBtn) navBtn.classList.toggle('btn-color-change', scrolled)
+		})
+	}
 
 	// ==================== CAROUSEL ====================
 	const slides = document.querySelectorAll('.carousel__slide')
@@ -42,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	let carouselInterval
 
 	function goTo(index) {
+		if (!slides.length) return
 		slides[current].classList.remove('active')
 		current = (index + slides.length) % slides.length
 		slides[current].classList.add('active')
@@ -59,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function startCarousel() {
-		if (!carouselInterval) {
+		if (!carouselInterval && slides.length) {
 			carouselInterval = setInterval(() => goTo(current + 1), 3000)
 		}
 	}
@@ -91,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			const content = document.querySelector(`[data-content="${tabName}"]`)
 
 			const activePanel = document.querySelector('.uslugi__panel--active')
-			if (activePanel) {
+			if (activePanel && content) {
 				activePanel.style.animation = 'fadeOutScale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
 
 				setTimeout(() => {
@@ -145,8 +149,75 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			})
 		},
-		{ threshold: 0.5 }
+		{ threshold: 0.5 },
 	)
 
 	counters.forEach(counter => observer.observe(counter))
+
+	// ==================== REGULAMIN & PRIVACY ====================
+	function openModal(backdrop) {
+		if (backdrop) backdrop.classList.add('is-open')
+	}
+	function closeModal(backdrop) {
+		if (backdrop) backdrop.classList.remove('is-open')
+	}
+
+	const privacyBackdrop = document.getElementById('privacyBackdrop')
+	const termsBackdrop = document.getElementById('termsBackdrop')
+
+	const openPrivacyBtn = document.getElementById('openPrivacy')
+	const openTermsBtn = document.getElementById('openTerms')
+	const openPrivacyFromCookiesBtn = document.getElementById('openPrivacyFromCookies') // <--- NOWY ELEM.
+
+	if (openPrivacyBtn) openPrivacyBtn.addEventListener('click', () => openModal(privacyBackdrop))
+	if (openTermsBtn) openTermsBtn.addEventListener('click', () => openModal(termsBackdrop))
+
+	// Podpięcie otwierania z poziomu bannera cookies:
+	if (openPrivacyFromCookiesBtn) {
+		openPrivacyFromCookiesBtn.addEventListener('click', e => {
+			e.preventDefault() // Zapobiega przeskakiwaniu strony do góry przez href="#"
+			openModal(privacyBackdrop)
+		})
+	}
+
+	document.querySelectorAll('[data-close-modal]').forEach(btn => {
+		btn.addEventListener('click', () => {
+			closeModal(privacyBackdrop)
+			closeModal(termsBackdrop)
+		})
+	})
+	;[privacyBackdrop, termsBackdrop].forEach(bd => {
+		if (bd) {
+			bd.addEventListener('click', e => {
+				if (e.target === bd) closeModal(bd)
+			})
+		}
+	})
+
+	document.addEventListener('keydown', e => {
+		if (e.key === 'Escape') {
+			closeModal(privacyBackdrop)
+			closeModal(termsBackdrop)
+		}
+	})
+
+	// ==================== COOKIES ====================
+	const banner = document.getElementById('cookieBanner')
+	if (banner) {
+		const consent = localStorage.getItem('cookieConsent')
+
+		if (!consent) {
+			setTimeout(() => {
+				banner.classList.add('is-shown')
+			}, 100)
+		}
+
+		const acceptBtn = document.getElementById('cookieAccept')
+		if (acceptBtn) {
+			acceptBtn.addEventListener('click', () => {
+				localStorage.setItem('cookieConsent', 'accepted')
+				banner.classList.remove('is-shown')
+			})
+		}
+	}
 })
