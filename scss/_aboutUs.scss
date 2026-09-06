@@ -238,8 +238,8 @@
 	}
 
 	@include tablet {
-		top: -100vh;
-		height: 200vh;
+		top: -80vh;
+		height: 180vh;
 		&__title {
 			font-size: clamp(44px, 4.6em, 88px);
 		}

@@ -199,8 +199,8 @@
 		cursor: pointer;
 	}
 	@include telefon-small {
-		height: 190vh;
-		top: -90vh;
+		height: 270vh;
+		top: -170vh;
 		min-height: initial;
 		padding: 4rem 0;
 		&__title{
@@ -242,8 +242,8 @@
 		}
 	}
 	@include telefon {
-		height: 180vh;
-		top: -84vh;
+		height: 220vh;
+		top: -120vh;
 		min-height: initial;
 		padding: 4rem 0;
 		&__title{

@@ -1124,8 +1124,8 @@ body {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .about-us {
-    top: -100vh;
-    height: 200vh;
+    top: -80vh;
+    height: 180vh;
   }
   .about-us__title {
     font-size: clamp(44px, 4.6em, 88px);
@@ -1859,8 +1859,8 @@ body {
 }
 @media (max-width: 320px) {
   .opinie {
-    height: 190vh;
-    top: -90vh;
+    height: 270vh;
+    top: -170vh;
     min-height: initial;
     padding: 4rem 0;
   }
@@ -1898,8 +1898,8 @@ body {
 }
 @media (min-width: 321px) and (max-width: 767px) {
   .opinie {
-    height: 180vh;
-    top: -84vh;
+    height: 220vh;
+    top: -120vh;
     min-height: initial;
     padding: 4rem 0;
   }
@@ -2317,8 +2317,8 @@ body {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .gallery {
-    height: 220vh;
-    top: -120vh;
+    height: auto;
+    top: 0;
     padding-bottom: 4rem;
     display: grid;
     align-content: start;

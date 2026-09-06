@@ -79,8 +79,8 @@
     }
 
     @include tablet {
-       height: 220vh;
-        top: -120vh;
+       height: auto;
+        top: 0;
         padding-bottom: 4rem;
         display: grid;
         align-content: start;
