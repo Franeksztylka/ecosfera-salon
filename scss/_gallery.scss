@@ -83,9 +83,18 @@
         top: -120vh;
         padding-bottom: 4rem;
         display: grid;
+        align-content: start;
+        &__title {
+            padding-top: 3rem;
+            margin-bottom: 1.5rem;
+        }
         &__wrapper {
             grid-template-columns: repeat(2, 1fr);
             gap: 1.8rem;
+
+            img:last-child {
+                display: none;
+            }
         }
     }
 }

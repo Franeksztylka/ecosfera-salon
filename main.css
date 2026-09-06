@@ -1948,6 +1948,11 @@ body {
   font-size: clamp(16px, 1.5rem, 29px);
 }
 @media (max-width: 320px) {
+  .kontakt {
+    position: sticky;
+    height: auto;
+    padding-bottom: 3rem;
+  }
   .kontakt__title {
     font-size: clamp(38px, 4rem, 77px);
   }
@@ -1968,6 +1973,11 @@ body {
   }
 }
 @media (min-width: 321px) and (max-width: 767px) {
+  .kontakt {
+    position: sticky;
+    height: auto;
+    padding-bottom: 3rem;
+  }
   .kontakt__title {
     font-size: clamp(38px, 4rem, 77px);
   }
@@ -2234,10 +2244,18 @@ body {
     top: -120vh;
     padding-bottom: 4rem;
     display: grid;
+    align-content: start;
+  }
+  .gallery__title {
+    padding-top: 3rem;
+    margin-bottom: 1.5rem;
   }
   .gallery__wrapper {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.8rem;
+  }
+  .gallery__wrapper img:last-child {
+    display: none;
   }
 }
 
