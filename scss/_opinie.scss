@@ -8,6 +8,17 @@
 	z-index: 5;
 	background: #ede8e1;
    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+	/* overflow-y: auto na całej (pełnoekranowej) sekcji psuło zwykłe
+	   przewijanie strony dla każdego odwiedzającego: sekcja stawała
+	   się własnym kontenerem scrolla na niemal całej wysokości
+	   viewportu, więc szybkie kręcenie kółkiem myszy było "zjadane"
+	   przez kilka pikseli niezauważalnego lokalnego scrolla zamiast
+	   przewijać stronę - wyglądało to jak zepsute przewijanie. Ta
+	   sekcja nie ma osobnego, mniejszego przewijanego pola (jak
+	   .about-us__glass-content czy .uslugi__content), więc na razie
+	   wraca do overflow: hidden - przy skrajnie dużym "Minimum font
+	   size" treść może się ucinać, ale to rzadszy przypadek niż
+	   zepsute przewijanie dla wszystkich. */
 	overflow: hidden;
 
 	display: flex;
