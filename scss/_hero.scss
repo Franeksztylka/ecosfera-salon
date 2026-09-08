@@ -278,8 +278,11 @@
 		}
 	}
 	@media (min-width: 760px) {
-		grid-template-columns: 130px minmax(0, 1fr) 130px;
+		grid-template-columns: 170px minmax(0, 1fr) 170px;
 		gap: 22px;
+	}
+	@media (min-width: 1024px) {
+		grid-template-columns: 230px minmax(0, 1fr) 230px;
 	}
 }
 
@@ -290,19 +293,9 @@
 
 	&--left {
 		align-items: flex-end;
-		transform: translateX(40px);
-
-		@media (min-width: 1024px) {
-			transform: translateX(100px);
-		}
 	}
 	&--right {
 		align-items: flex-start;
-		transform: translateX(-40px);
-
-		@media (min-width: 1024px) {
-			transform: translateX(-100px);
-		}
 	}
 
 	&__lines {
