@@ -37,57 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	// ==================== CAROUSEL ====================
-	const slides = document.querySelectorAll('.carousel__slide')
-	const prevBtn = document.querySelector('.carousel__btn--prev')
-	const nextBtn = document.querySelector('.carousel__btn--next')
-	let current = 0
-	let carouselInterval
-
-	function goTo(index) {
-		if (!slides.length) return
-		slides[current].classList.remove('active')
-		current = (index + slides.length) % slides.length
-		slides[current].classList.add('active')
-	}
-
-	if (nextBtn && prevBtn) {
-		nextBtn.addEventListener('click', () => {
-			goTo(current + 1)
-			resetCarouselTimer()
-		})
-		prevBtn.addEventListener('click', () => {
-			goTo(current - 1)
-			resetCarouselTimer()
-		})
-	}
-
-	function startCarousel() {
-		if (!carouselInterval && slides.length) {
-			carouselInterval = setInterval(() => goTo(current + 1), 3000)
-		}
-	}
-
-	function stopCarousel() {
-		clearInterval(carouselInterval)
-		carouselInterval = null
-	}
-
-	function resetCarouselTimer() {
-		stopCarousel()
-		startCarousel()
-	}
-
-	startCarousel()
-
-	document.addEventListener('visibilitychange', () => {
-		if (document.hidden) {
-			stopCarousel()
-		} else {
-			startCarousel()
-		}
-	})
-
 	// ==================== CENNIK ====================
 	document.querySelectorAll('.uslugi__tab').forEach(tab => {
 		tab.addEventListener('click', () => {

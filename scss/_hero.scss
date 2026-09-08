@@ -7,16 +7,21 @@
 	width: 100%;
 	height: 100vh;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 	padding-top: var(--navbar-height);
 	overflow: hidden;
 	z-index: 0;
+	background-color: #ede8e1;
 	&__left {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		justify-content: center;
+		text-align: center;
+		width: 100%;
+		max-width: 900px;
+		margin: 0 auto;
 		padding: clamp(3rem, 6rem, 7rem) clamp(2.5rem, 5rem, 6rem);
-		background-color: #ede8e1;
 	}
 	&__title {
 		background: linear-gradient(180deg, $main-color 0%, $green-light 100%);
@@ -24,7 +29,7 @@
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-		font-size: clamp(48px, 5rem, 96px);
+		font-size: clamp(56px, 5.75rem, 112px);
 		animation: fadeUp 0.8s ease forwards;
 	}
 
@@ -33,7 +38,7 @@
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
-		font-size: clamp(42px, 4.4rem, 84px);
+		font-size: clamp(48px, 5rem, 96px);
 		font-style: italic;
 		animation: fadeUp 0.8s ease 0.2s forwards;
 		opacity: 0;
@@ -42,7 +47,7 @@
 	&__description {
 		margin-top: 1.5rem;
 		color: $text-muted;
-		font-size: clamp(16px, 1.5rem, 29px);
+		font-size: clamp(18px, 1.75rem, 33px);
 		animation: fadeUp 0.8s ease 0.4s forwards;
 		opacity: 0;
 	}
@@ -50,6 +55,7 @@
 	&__container {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		gap: clamp(1rem, 2rem, 2.5rem);
 		margin-top: clamp(1.5rem, 3rem, 3.5rem);
 		animation: fadeUp 0.8s ease 0.6s forwards;
@@ -122,31 +128,10 @@
 		font-size: clamp(10px, 1em, 19px);
 	}
 
-	&__right {
-		background-color: $green-deep;
-		overflow: hidden;
-	}
-
-	&__bg {
-		z-index: 1;
-		position: relative;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		display: grid;
-		grid-template-columns: repeat(7, 1fr);
-		grid-template-rows: repeat(7, 1fr);
-		filter: saturate(2);
-		overflow: hidden;
-	}
 	@include telefon-small {
 		grid-template-columns: 1fr;
 		padding-top: 20px;
 		padding-bottom: 25px;
-		&__right {
-			display: none;
-		}
 		&__left {
 			width: 100%;
 			padding: 0;
@@ -194,9 +179,6 @@
 		grid-template-columns: 1fr;
 		padding-top: 20px;
 		padding-bottom: 25px;
-		&__right {
-			display: none;
-		}
 		&__left {
 			width: 100%;
 			padding: 0;
@@ -242,9 +224,6 @@
 		grid-template-columns: 1fr;
 		padding-top: 20px;
 		padding-bottom: 25px;
-		&__right {
-			display: none;
-		}
 		&__left {
 			width: 100%;
 			padding: 0;
@@ -300,47 +279,6 @@
 	border: 1px solid $text-muted;
 	opacity: 0.2;
 }
-.carousel {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-
-	&__slide {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center top;
-		opacity: 0;
-		transition: opacity 0.8s ease;
-
-		&.active {
-			opacity: 1;
-		}
-	}
-
-	&__btn {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		background: rgba(0, 0, 0, 0.3);
-		color: white;
-		border: none;
-		padding: 1rem;
-		cursor: pointer;
-		z-index: 10;
-		font-size: clamp(16px, 1.5rem, 29px);
-
-		&--prev {
-			left: 10px;
-		}
-		&--next {
-			right: 10px;
-		}
-	}
-}
-
 @keyframes navbar-dot {
 	0%,
 	100% {
