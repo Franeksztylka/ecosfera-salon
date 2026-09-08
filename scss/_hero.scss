@@ -290,6 +290,24 @@
 	display: none;
 	flex-direction: column;
 	min-height: 560px;
+	-webkit-mask-image: linear-gradient(
+		to bottom,
+		transparent 0%,
+		rgba(0, 0, 0, 0.5) 6%,
+		black 16%,
+		black 84%,
+		rgba(0, 0, 0, 0.5) 94%,
+		transparent 100%
+	);
+	mask-image: linear-gradient(
+		to bottom,
+		transparent 0%,
+		rgba(0, 0, 0, 0.5) 6%,
+		black 16%,
+		black 84%,
+		rgba(0, 0, 0, 0.5) 94%,
+		transparent 100%
+	);
 
 	&--left {
 		align-items: flex-end;
