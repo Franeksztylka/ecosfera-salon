@@ -11,14 +11,18 @@
     <!--SEO Meta-->
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.ecosfera-salon.pl/">
-    <!-- Preload LCP image -->
-    <link rel="preload" as="image" href="./img/blondeHairClient.jpeg" fetchpriority="high">
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Optimized Google Fonts - only used variants: Abril Fatface (regular), EB Garamond (400, italic 400) -->
+    <!-- Optimized Google Fonts - only used variants: Abril Fatface (regular), EB Garamond (400, italic 400), Montserrat (300, for the hero title/subtitle, matching the logo's font) -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&amp;family=EB+Garamond:ital,wght@400;400i&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&amp;family=EB+Garamond:ital,wght@400;400i&amp;family=Montserrat:wght@300&amp;display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="main.css">
@@ -127,6 +131,16 @@
 
 
         <section class="hero" id="hero">
+            <aside class="hero-ornament hero-ornament--left" aria-hidden="true">
+                <div class="hero-ornament__lines"></div>
+                <div class="hero-ornament__thread"></div>
+                <div class="hero-ornament__dots"></div>
+                <div class="hero-ornament__circle"></div>
+                <div class="hero-ornament__circle hero-ornament__circle--small"></div>
+                <div class="hero-ornament__thread"></div>
+                <div class="hero-ornament__dots hero-ornament__dots--soft"></div>
+                <div class="hero-ornament__lines hero-ornament__lines--soft"></div>
+            </aside>
             <div class="hero__left">
                 <h1 class="hero__title">Ecosfera </h1>
                 <h2 class="hero__subtitle">salon fryzjerski</h2>
@@ -145,22 +159,16 @@
                     <p class="hero__opinions">5.0 &middot; na ponad 350 opinii!</p>
                 </div>
             </div>
-
-            <div class="hero__right">
-                <div class="carousel">
-                    <div class="carousel__track">
-                        <img src="./img/blondeHairClient.jpeg" class="carousel__slide active"
-                            alt="Stylizacja 1, blond włosy do karku" fetchpriority="high" width="800" height="1000"
-                            loading="eager">
-                        <img src="./img/blondeHairClient2.jpeg" class="carousel__slide"
-                            alt="Stylizacja 2, blond włosy do ramion" loading="lazy" width="800" height="1000">
-                        <img src="./img/stylizacja3.jpeg" class="carousel__slide"
-                            alt="Stylizacja 3, długie rozjasnione włosy" loading="lazy" width="800" height="1000">
-                    </div>
-                    <button class="carousel__btn carousel__btn--prev">&#8592;</button>
-                    <button class="carousel__btn carousel__btn--next">&#8594;</button>
-                </div>
-            </div>
+            <aside class="hero-ornament hero-ornament--right" aria-hidden="true">
+                <div class="hero-ornament__lines"></div>
+                <div class="hero-ornament__thread"></div>
+                <div class="hero-ornament__dots"></div>
+                <div class="hero-ornament__circle"></div>
+                <div class="hero-ornament__circle hero-ornament__circle--small"></div>
+                <div class="hero-ornament__thread"></div>
+                <div class="hero-ornament__dots hero-ornament__dots--soft"></div>
+                <div class="hero-ornament__lines hero-ornament__lines--soft"></div>
+            </aside>
         </section>
 
         <div id="about-us-top"></div>

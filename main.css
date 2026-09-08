@@ -574,17 +574,22 @@ body {
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   padding-top: var(--navbar-height);
   overflow: hidden;
   z-index: 0;
+  background-color: #ede8e1;
 }
 .hero__left {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 6rem 5rem;
-  background-color: #ede8e1;
 }
 .hero__title {
   background: linear-gradient(180deg, #245e27 0%, #4CAF50 100%);
@@ -592,6 +597,11 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   font-size: clamp(48px, 5rem, 96px);
   animation: fadeUp 0.8s ease forwards;
 }
@@ -600,21 +610,26 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: clamp(42px, 4.4rem, 84px);
-  font-style: italic;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: clamp(28px, 3rem, 58px);
   animation: fadeUp 0.8s ease 0.2s forwards;
   opacity: 0;
 }
 .hero__description {
   margin-top: 1.5rem;
   color: #6b7b6c;
-  font-size: clamp(16px, 1.5rem, 29px);
+  font-size: clamp(18px, 1.75rem, 33px);
   animation: fadeUp 0.8s ease 0.4s forwards;
   opacity: 0;
 }
 .hero__container {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
   margin-top: 3rem;
   animation: fadeUp 0.8s ease 0.6s forwards;
@@ -677,31 +692,11 @@ body {
   color: #6b7b6c;
   font-size: clamp(10px, 1em, 19px);
 }
-.hero__right {
-  background-color: #1B3A1C;
-  overflow: hidden;
-}
-.hero__bg {
-  z-index: 1;
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(7, 1fr);
-  filter: saturate(2);
-  overflow: hidden;
-}
 @media (max-width: 320px) {
   .hero {
     grid-template-columns: 1fr;
     padding-top: 20px;
     padding-bottom: 25px;
-  }
-  .hero__right {
-    display: none;
   }
   .hero__left {
     width: 100%;
@@ -752,9 +747,6 @@ body {
     padding-top: 20px;
     padding-bottom: 25px;
   }
-  .hero__right {
-    display: none;
-  }
   .hero__left {
     width: 100%;
     padding: 0;
@@ -802,9 +794,6 @@ body {
     padding-top: 20px;
     padding-bottom: 25px;
   }
-  .hero__right {
-    display: none;
-  }
   .hero__left {
     width: 100%;
     padding: 0;
@@ -849,6 +838,82 @@ body {
     font-size: clamp(14px, 1.3rem, 25px);
   }
 }
+@media (min-width: 760px) {
+  .hero {
+    grid-template-columns: 170px minmax(0, 1fr) 170px;
+    gap: 22px;
+  }
+}
+@media (min-width: 1024px) {
+  .hero {
+    grid-template-columns: 230px minmax(0, 1fr) 230px;
+  }
+}
+
+.hero-ornament {
+  display: none;
+  flex-direction: column;
+  min-height: 560px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 6%, black 16%, black 84%, rgba(0, 0, 0, 0.5) 94%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 6%, black 16%, black 84%, rgba(0, 0, 0, 0.5) 94%, transparent 100%);
+}
+.hero-ornament--left {
+  align-items: flex-end;
+}
+.hero-ornament--right {
+  align-items: flex-start;
+}
+.hero-ornament__lines {
+  width: 100%;
+  height: 150px;
+  background: repeating-linear-gradient(90deg, rgba(47, 107, 51, 0.34) 0 2px, transparent 2px 24px);
+}
+.hero-ornament__lines--soft {
+  height: 120px;
+  opacity: 0.85;
+}
+.hero-ornament__thread {
+  flex: 1;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(47, 107, 51, 0.65), rgba(47, 107, 51, 0));
+}
+.hero-ornament__dots {
+  width: 100%;
+  height: 200px;
+  background: radial-gradient(circle at center, rgba(47, 107, 51, 0.58) 1.8px, transparent 2.2px) 0 0/20px 20px;
+}
+.hero-ornament__dots--soft {
+  height: 140px;
+  opacity: 0.78;
+}
+.hero-ornament__circle {
+  width: 84px;
+  height: 84px;
+  border: 2px solid rgba(47, 107, 51, 0.58);
+  border-radius: 999px;
+}
+.hero-ornament__circle--small {
+  width: 40px;
+  height: 40px;
+  border-color: rgba(47, 107, 51, 0.48);
+}
+@media (min-width: 760px) {
+  .hero-ornament {
+    display: flex;
+  }
+}
+.hero-ornament--left .hero-ornament__thread {
+  margin-right: 14px;
+}
+.hero-ornament--left .hero-ornament__circle {
+  margin-right: 8px;
+}
+.hero-ornament--right .hero-ornament__thread {
+  margin-left: 14px;
+}
+.hero-ornament--right .hero-ornament__circle {
+  margin-left: 8px;
+}
 
 .colorBox {
   z-index: 2;
@@ -857,42 +922,6 @@ body {
   position: relative;
   border: 1px solid #6b7b6c;
   opacity: 0.2;
-}
-
-.carousel {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.carousel__slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-.carousel__slide.active {
-  opacity: 1;
-}
-.carousel__btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.3);
-  color: white;
-  border: none;
-  padding: 1rem;
-  cursor: pointer;
-  z-index: 10;
-  font-size: clamp(16px, 1.5rem, 29px);
-}
-.carousel__btn--prev {
-  left: 10px;
-}
-.carousel__btn--next {
-  right: 10px;
 }
 
 @keyframes navbar-dot {
@@ -911,23 +940,17 @@ body {
   height: 210vh;
   background-color: #ede8e1;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* zoptymalizowany */
-  /* "Minimum font size" w chrome://settings/fonts wymusza render
-     drobnego tekstu (np. clamp z małym dolnym progiem) w większym
-     rozmiarze, ale NIE zmienia font-size na <html>, więc żadna
-     z rem-owych wysokości tej sekcji się nie powiększa. Przy
-     overflow: hidden treść, która przestaje się mieścić w stałej
-     wysokości (210vh), była bezpowrotnie ucinana. overflow-y: auto
-     daje ten sam "zawór bezpieczeństwa" co .about-us__glass-content -
-     przy domyślnych ustawieniach nic się nie zmienia (treść mieści
-     się bez scrolla).*/
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  /* overflow-y: auto na całej (pełnoekranowej) sekcji psuło zwykłe
+     przewijanie strony dla każdego odwiedzającego: sekcja stawała
+     się własnym kontenerem scrolla na niemal całej wysokości
+     viewportu, więc szybkie kręcenie kółkiem myszy było "zjadane"
+     przez kilka pikseli niezauważalnego lokalnego scrolla zamiast
+     przewijać stronę - wyglądało to jak zepsute przewijanie.
+     Zawór bezpieczeństwa na "Minimum font size" zostaje tylko na
+     .about-us__glass-content (mniejszy, faktycznie przewijany
+     fragment), a nie na całej sekcji. */
+  overflow: hidden;
   z-index: 1;
-}
-.about-us::-webkit-scrollbar {
-  display: none;
 }
 .about-us__title {
   text-align: center;
@@ -1015,9 +1038,18 @@ body {
      niewidocznie przyciąć, staje się przewijalna wewnątrz karty -
      dokładnie ten sam wzorzec, co już sprawdzony w
      .uslugi__content. Wizualnie przy domyślnym rozmiarze czcionki
-     nic się nie zmienia (treść mieści się bez potrzeby scrolla). */
+     nic się nie zmienia (treść mieści się bez potrzeby scrolla).
+
+     UWAGA: bez "overscroll-behavior: contain" - przy domyślnym
+     rozmiarze czcionki ten kontener i tak nie ma nadmiaru treści
+     do przewinięcia, ale "contain" i tak blokował przewijanie
+     scrollem myszy w miejscu, gdzie kursor był nad tą kartą -
+     zamiast przekazać scroll dalej do strony (pinowanej sekcji),
+     nic się nie działo i wyglądało to jak zepsuty scroll dla
+     KAŻDEGO odwiedzającego, nie tylko przy powiększonej czcionce.
+     Domyślne "auto" poprawnie przepuszcza scroll dalej, gdy
+     lokalnie nie ma czego przewijać. */
   overflow-y: auto;
-  overscroll-behavior: contain;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -1119,10 +1151,15 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.15);
   }
 }
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .about-us {
+    padding: 0 3rem;
+  }
+}
 @media (min-width: 768px) and (max-width: 1023px) {
   .about-us {
-    top: -100vh;
-    height: 200vh;
+    top: -80vh;
+    height: 180vh;
   }
   .about-us__title {
     font-size: clamp(44px, 4.6em, 88px);
@@ -1164,23 +1201,20 @@ body {
      na treść przy powiększonej czcionce systemowej. */
   padding: 4rem;
   height: 100vh;
-  /* "Minimum font size" w chrome://settings/fonts podbija drobny tekst
-     (np. clamp z małym dolnym progiem) bez zmiany font-size na <html>,
-     więc height: 100vh tej sekcji się nie powiększa. overflow-y: auto
-     zamienia dawne bezpowrotne ucinanie treści na możliwy do
-     przescrollowania "zawór bezpieczeństwa" - przy domyślnych
-     ustawieniach nic się nie zmienia (treść mieści się bez scrolla). */
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  /* overflow-y: auto na całej (pełnoekranowej) sekcji psuło zwykłe
+     przewijanie strony dla każdego odwiedzającego: sekcja stawała
+     się własnym kontenerem scrolla na niemal całej wysokości
+     viewportu, więc szybkie kręcenie kółkiem myszy było "zjadane"
+     przez kilka pikseli niezauważalnego lokalnego scrolla zamiast
+     przewijać stronę - wyglądało to jak zepsute przewijanie.
+     Zawór bezpieczeństwa na "Minimum font size" zostaje tylko na
+     .uslugi__content (mniejszy, faktycznie przewijany fragment),
+     a nie na całej sekcji. */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-}
-.uslugi::-webkit-scrollbar {
-  display: none;
 }
 .uslugi__title {
   color: #1B3A1C;
@@ -1272,11 +1306,24 @@ body {
   width: 100%;
   scroll-behavior: smooth;
   animation: fadeInScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  /* Lista usług prawie zawsze jest dłuższa niż mieści się w 50vh,
+     więc scrollbar musi być widoczny - bez niego nic nie mówi
+     użytkownikowi, że pod spodem jest więcej pozycji cennika. */
+  scrollbar-width: thin;
+  scrollbar-color: #245e27 transparent;
 }
 .uslugi__content::-webkit-scrollbar {
-  display: none;
+  width: 8px;
+}
+.uslugi__content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.uslugi__content::-webkit-scrollbar-thumb {
+  background-color: #245e27;
+  border-radius: 4px;
+}
+.uslugi__content::-webkit-scrollbar-thumb:hover {
+  background-color: #1B3A1C;
 }
 .uslugi__panel {
   display: none;
@@ -1289,7 +1336,7 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 900px;
-  margin-left: 480px;
+  margin: 0 auto;
   gap: 0;
 }
 .uslugi__row {
@@ -1678,23 +1725,21 @@ body {
   z-index: 5;
   background: #ede8e1;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
-  /* "Minimum font size" w chrome://settings/fonts podbija drobny tekst
-     (np. clamp z małym dolnym progiem, jak __source czy __card-author)
-     bez zmiany font-size na <html>, więc height: 100vh tej sekcji się
-     nie powiększa. overflow-y: auto zamienia dawne bezpowrotne
-     ucinanie treści na możliwy do przescrollowania "zawór
-     bezpieczeństwa" - przy domyślnych ustawieniach nic się nie zmienia
-     (treść mieści się bez scrolla). */
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  /* overflow-y: auto na całej (pełnoekranowej) sekcji psuło zwykłe
+     przewijanie strony dla każdego odwiedzającego: sekcja stawała
+     się własnym kontenerem scrolla na niemal całej wysokości
+     viewportu, więc szybkie kręcenie kółkiem myszy było "zjadane"
+     przez kilka pikseli niezauważalnego lokalnego scrolla zamiast
+     przewijać stronę - wyglądało to jak zepsute przewijanie. Ta
+     sekcja nie ma osobnego, mniejszego przewijanego pola (jak
+     .about-us__glass-content czy .uslugi__content), więc na razie
+     wraca do overflow: hidden - przy skrajnie dużym "Minimum font
+     size" treść może się ucinać, ale to rzadszy przypadek niż
+     zepsute przewijanie dla wszystkich. */
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.opinie::-webkit-scrollbar {
-  display: none;
 }
 .opinie__wrapper {
   width: 100%;
@@ -1848,8 +1893,8 @@ body {
 }
 @media (max-width: 320px) {
   .opinie {
-    height: 190vh;
-    top: -90vh;
+    height: 264vh;
+    top: -164vh;
     min-height: initial;
     padding: 4rem 0;
   }
@@ -1887,8 +1932,8 @@ body {
 }
 @media (min-width: 321px) and (max-width: 767px) {
   .opinie {
-    height: 180vh;
-    top: -84vh;
+    height: 220vh;
+    top: -120vh;
     min-height: initial;
     padding: 4rem 0;
   }
@@ -1939,21 +1984,16 @@ body {
   z-index: 5;
   text-align: center;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
-  /* "Minimum font size" w chrome://settings/fonts podbija drobny tekst
-     (np. td w __workhours) bez zmiany font-size na <html>, więc
-     height: 75vh się nie powiększa. Wcześniej (overflow: visible)
-     nadmiar treści spływał pod sekcję i bywał zasłaniany przez
-     kolejną przypiętą (sticky) sekcję nakładającą się od góry.
-     overflow-y: auto zamyka ten nadmiar w scrollowalnym "zaworze
-     bezpieczeństwa" wewnątrz samego .kontakt - przy domyślnych
-     ustawieniach nic się nie zmienia (treść mieści się bez scrolla). */
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.kontakt::-webkit-scrollbar {
-  display: none;
+  /* overflow-y: auto na całej (pełnoekranowej) sekcji psuło zwykłe
+     przewijanie strony dla każdego odwiedzającego: sekcja stawała
+     się własnym kontenerem scrolla na niemal całej wysokości
+     viewportu, więc szybkie kręcenie kółkiem myszy było "zjadane"
+     przez kilka pikseli niezauważalnego lokalnego scrolla zamiast
+     przewijać stronę - wyglądało to jak zepsute przewijanie. Wraca
+     do overflow: visible - przy skrajnie dużym "Minimum font size"
+     nadmiar treści może znów spływać pod sekcję, ale to rzadszy
+     przypadek niż zepsute przewijanie dla wszystkich. */
+  overflow: visible;
 }
 .kontakt__title {
   font-size: clamp(48px, 5rem, 96px);
@@ -2020,6 +2060,11 @@ body {
   font-size: clamp(16px, 1.5rem, 29px);
 }
 @media (max-width: 320px) {
+  .kontakt {
+    position: sticky;
+    height: auto;
+    padding-bottom: 3rem;
+  }
   .kontakt__title {
     font-size: clamp(38px, 4rem, 77px);
   }
@@ -2040,6 +2085,11 @@ body {
   }
 }
 @media (min-width: 321px) and (max-width: 767px) {
+  .kontakt {
+    position: sticky;
+    height: auto;
+    padding-bottom: 3rem;
+  }
   .kontakt__title {
     font-size: clamp(38px, 4rem, 77px);
   }
@@ -2064,6 +2114,11 @@ body {
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
+  .kontakt {
+    position: sticky;
+    height: auto;
+    padding-bottom: 3rem;
+  }
   .kontakt__map-container {
     display: none;
   }
@@ -2259,6 +2314,7 @@ body {
   width: 100%;
   height: 380px;
   object-fit: cover;
+  object-position: center top;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   transition: all 0.4s ease;
@@ -2267,10 +2323,13 @@ body {
   transform: scale(1.03);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
+.gallery__wrapper img:last-child {
+  display: none;
+}
 @media (max-width: 320px) {
   .gallery {
-    height: 220vh;
-    top: -120vh;
+    height: 236vh;
+    top: -136vh;
     padding-bottom: 4rem;
     display: grid;
   }
@@ -2301,10 +2360,15 @@ body {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .gallery {
-    height: 220vh;
-    top: -120vh;
+    height: auto;
+    top: 0;
     padding-bottom: 4rem;
     display: grid;
+    align-content: start;
+  }
+  .gallery__title {
+    padding-top: 3rem;
+    margin-bottom: 1.5rem;
   }
   .gallery__wrapper {
     grid-template-columns: repeat(2, 1fr);
@@ -2371,6 +2435,4 @@ body {
 .cookieBanner__btn:hover {
   background-color: #1B3A1C;
   border-color: #1B3A1C;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
