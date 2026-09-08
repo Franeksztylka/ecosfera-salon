@@ -237,6 +237,10 @@
 		}
 	}
 
+	@include laptop {
+		padding: 0 3rem;
+	}
+
 	@include tablet {
 		top: -80vh;
 		height: 180vh;

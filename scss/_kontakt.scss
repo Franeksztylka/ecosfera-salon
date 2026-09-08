@@ -142,12 +142,15 @@
 		}
 	}
 	@include tablet {
+    position: sticky;
+    height: auto;
+    padding-bottom: 3rem;
     &__map-container {
         display: none;
     }
     &__wrapper {
         justify-content: center;
     }
-	
+
 }
 }

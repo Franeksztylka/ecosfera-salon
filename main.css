@@ -870,6 +870,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   opacity: 0;
   transition: opacity 0.8s ease;
 }
@@ -1122,6 +1123,11 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.15);
   }
 }
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .about-us {
+    padding: 0 3rem;
+  }
+}
 @media (min-width: 768px) and (max-width: 1023px) {
   .about-us {
     top: -80vh;
@@ -1302,7 +1308,7 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 900px;
-  margin-left: 480px;
+  margin: 0 auto;
   gap: 0;
 }
 .uslugi__row {
@@ -1859,8 +1865,8 @@ body {
 }
 @media (max-width: 320px) {
   .opinie {
-    height: 270vh;
-    top: -170vh;
+    height: 264vh;
+    top: -164vh;
     min-height: initial;
     padding: 4rem 0;
   }
@@ -2080,6 +2086,11 @@ body {
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
+  .kontakt {
+    position: sticky;
+    height: auto;
+    padding-bottom: 3rem;
+  }
   .kontakt__map-container {
     display: none;
   }
@@ -2275,6 +2286,7 @@ body {
   width: 100%;
   height: 380px;
   object-fit: cover;
+  object-position: center top;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   transition: all 0.4s ease;
@@ -2283,10 +2295,13 @@ body {
   transform: scale(1.03);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
+.gallery__wrapper img:last-child {
+  display: none;
+}
 @media (max-width: 320px) {
   .gallery {
-    height: 220vh;
-    top: -120vh;
+    height: 236vh;
+    top: -136vh;
     padding-bottom: 4rem;
     display: grid;
   }
@@ -2330,9 +2345,6 @@ body {
   .gallery__wrapper {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.8rem;
-  }
-  .gallery__wrapper img:last-child {
-    display: none;
   }
 }
 
