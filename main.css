@@ -838,6 +838,66 @@ body {
     font-size: clamp(14px, 1.3rem, 25px);
   }
 }
+@media (min-width: 760px) {
+  .hero {
+    grid-template-columns: 110px minmax(0, 1fr) 110px;
+    gap: 32px;
+  }
+}
+
+.hero-ornament {
+  display: none;
+  flex-direction: column;
+  min-height: 560px;
+}
+.hero-ornament--left {
+  align-items: flex-end;
+}
+.hero-ornament--right {
+  align-items: flex-start;
+}
+.hero-ornament__lines {
+  width: 100%;
+  height: 150px;
+  background: repeating-linear-gradient(90deg, rgba(47, 107, 51, 0.13) 0 1px, transparent 1px 26px);
+}
+.hero-ornament__lines--soft {
+  height: 120px;
+  opacity: 0.6;
+}
+.hero-ornament__thread {
+  flex: 1;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(47, 107, 51, 0.28), rgba(47, 107, 51, 0));
+}
+.hero-ornament__dots {
+  width: 100%;
+  height: 200px;
+  background: radial-gradient(circle at center, rgba(47, 107, 51, 0.22) 1.2px, transparent 1.6px) 0 0/22px 22px;
+}
+.hero-ornament__circle {
+  width: 74px;
+  height: 74px;
+  border: 1px solid rgba(47, 107, 51, 0.22);
+  border-radius: 999px;
+}
+@media (min-width: 760px) {
+  .hero-ornament {
+    display: flex;
+  }
+}
+.hero-ornament--left .hero-ornament__thread {
+  margin-right: 46px;
+}
+.hero-ornament--left .hero-ornament__circle {
+  margin-right: 20px;
+}
+.hero-ornament--right .hero-ornament__thread {
+  margin-left: 46px;
+}
+.hero-ornament--right .hero-ornament__circle {
+  margin-left: 20px;
+}
 
 .colorBox {
   z-index: 2;
