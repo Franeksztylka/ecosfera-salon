@@ -51,15 +51,37 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		const maxScrollLeft = () => galleryWrapper.scrollWidth - galleryWrapper.clientWidth
+		const isAtStart = () => galleryWrapper.scrollLeft <= 2
+		const isAtEnd = () => galleryWrapper.scrollLeft >= maxScrollLeft() - 2
 
+		// Karuzela w pętli - koniec zawija do początku i odwrotnie, więc
+		// zdjęcia "nie kończą się", tylko zaczynają się od nowa.
 		galleryNext.addEventListener('click', () => {
+			if (isAtEnd()) {
+				galleryWrapper.scrollTo({ left: 0, behavior: 'smooth' })
+				return
+			}
 			const target = Math.min(galleryWrapper.scrollLeft + scrollStep(), maxScrollLeft())
 			galleryWrapper.scrollTo({ left: target, behavior: 'smooth' })
 		})
 		galleryPrev.addEventListener('click', () => {
+			if (isAtStart()) {
+				galleryWrapper.scrollTo({ left: maxScrollLeft(), behavior: 'smooth' })
+				return
+			}
 			const target = Math.max(galleryWrapper.scrollLeft - scrollStep(), 0)
 			galleryWrapper.scrollTo({ left: target, behavior: 'smooth' })
 		})
+
+		// Także przy przewijaniu palcem/gestem (nie tylko przyciskami) -
+		// po dotarciu do końca wraca płynnie na początek.
+		if ('onscrollend' in window) {
+			galleryWrapper.addEventListener('scrollend', () => {
+				if (isAtEnd()) {
+					galleryWrapper.scrollTo({ left: 0, behavior: 'instant' })
+				}
+			})
+		}
 	}
 
 	// ==================== CENNIK ====================
