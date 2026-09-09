@@ -4,10 +4,11 @@
 
 .gallery {
     position: sticky;
-    height: 165vh;
-    top: -65vh;
+    height: auto;
+    top: 0;
     z-index: 3;
-    display: none;
+    display: grid;
+    align-content: start;
     background-color: #ede8e1;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
     overflow: hidden;
