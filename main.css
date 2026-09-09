@@ -703,7 +703,7 @@ body {
     text-align: center;
   }
   .hero__title {
-    font-size: clamp(38px, 4em, 77px);
+    font-size: clamp(32px, 15vw, 77px);
   }
   .hero__subtitle {
     padding: 0;
@@ -752,7 +752,7 @@ body {
     text-align: center;
   }
   .hero__title {
-    font-size: clamp(38px, 4em, 77px);
+    font-size: clamp(32px, 15vw, 77px);
   }
   .hero__subtitle {
     padding: 0;
