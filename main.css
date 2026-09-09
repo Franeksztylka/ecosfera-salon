@@ -2288,18 +2288,21 @@ body {
   z-index: 10;
 }
 .gallery__carousel {
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1.5vw, 1.25rem);
   width: 100%;
   min-width: 0;
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 .gallery__wrapper {
   display: flex;
   gap: 1.5rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 0 2rem;
+  min-width: 0;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -2321,9 +2324,7 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 .gallery__btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2335,17 +2336,10 @@ body {
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
-  z-index: 10;
   transition: background 0.2s ease;
 }
 .gallery__btn:hover {
   background: rgba(0, 0, 0, 0.55);
-}
-.gallery__btn--prev {
-  left: 4px;
-}
-.gallery__btn--next {
-  right: 4px;
 }
 @media (max-width: 320px) {
   .gallery {
@@ -2356,18 +2350,21 @@ body {
     padding-top: 4rem;
     margin-bottom: 1.5rem;
   }
+  .gallery__carousel {
+    gap: 0.4rem;
+    padding: 0 0.75rem;
+  }
   .gallery__wrapper {
     gap: 1rem;
-    padding: 0 1rem;
   }
   .gallery__wrapper img {
-    flex-basis: 78vw;
+    flex-basis: 68vw;
     height: 320px;
   }
   .gallery__btn {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
   }
 }
 @media (min-width: 321px) and (max-width: 767px) {
@@ -2378,13 +2375,21 @@ body {
     padding-top: 4rem;
     margin-bottom: 1.5rem;
   }
+  .gallery__carousel {
+    gap: 0.6rem;
+    padding: 0 1rem;
+  }
   .gallery__wrapper {
     gap: 1.2rem;
-    padding: 0 1.2rem;
   }
   .gallery__wrapper img {
-    flex-basis: 70vw;
+    flex-basis: 62vw;
     height: 340px;
+  }
+  .gallery__btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -2393,7 +2398,7 @@ body {
     margin-bottom: 1.5rem;
   }
   .gallery__wrapper img {
-    flex-basis: clamp(260px, 42vw, 340px);
+    flex-basis: clamp(230px, 38vw, 320px);
   }
 }
 

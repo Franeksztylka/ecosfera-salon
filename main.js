@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		galleryNext.addEventListener('click', () => {
 			const target = Math.min(galleryWrapper.scrollLeft + scrollStep(), maxScrollLeft())
-			galleryWrapper.scrollTo({ left: target, behavior: 'instant' })
+			galleryWrapper.scrollTo({ left: target, behavior: 'smooth' })
 		})
 		galleryPrev.addEventListener('click', () => {
 			const target = Math.max(galleryWrapper.scrollLeft - scrollStep(), 0)
-			galleryWrapper.scrollTo({ left: target, behavior: 'instant' })
+			galleryWrapper.scrollTo({ left: target, behavior: 'smooth' })
 		})
 	}
 
