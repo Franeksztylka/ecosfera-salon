@@ -1,0 +1,25 @@
+# Ecosfera Salon Fryzjerski
+
+> Ekologiczny salon fryzjerski w Warszawie (Wilanów), oferujący bezpieczną, ekologiczną koloryzację, strzyżenie, stylizację i pielęgnację włosów. Prowadzony przez Sylwię Jamnicką i Annę.
+
+Salon działa pod adresem Aleja Rzeczypospolitej 18, 02-972 Warszawa (Wilanów), wejście od ulicy Oś Królewska. Rezerwacja wizyt odbywa się przez platformę Booksy.
+
+## Strona
+
+- [Cennik usług](https://www.ecosferasalon.pl/#uslugi): strzyżenie, koloryzacja, stylizacja, pielęgnacja - ceny wszystkich usług
+- [O nas](https://www.ecosferasalon.pl/#about-us): zespół salonu - Sylwia i Anna
+- [Galeria](https://www.ecosferasalon.pl/#gallery): przykładowe realizacje fryzjerskie
+- [Opinie](https://www.ecosferasalon.pl/#opinie): opinie klientów
+- [Kontakt](https://www.ecosferasalon.pl/#kontakt): adres, mapa, godziny otwarcia, telefon
+
+## Godziny otwarcia
+
+- Wtorek - Piątek: 9:00 - 19:00
+- Sobota: 9:00 - 15:00
+- Niedziela, Poniedziałek: nieczynne
+
+## Kontakt
+
+- Telefon: +48 500 736 003
+- Adres: Aleja Rzeczypospolitej 18, 02-972 Warszawa (Wilanów)
+- Rezerwacja online: Booksy
