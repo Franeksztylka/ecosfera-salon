@@ -37,6 +37,31 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
+	// ==================== GALERIA KARUZELA ====================
+	const galleryWrapper = document.querySelector('.gallery__wrapper')
+	const galleryPrev = document.querySelector('.gallery__btn--prev')
+	const galleryNext = document.querySelector('.gallery__btn--next')
+
+	if (galleryWrapper && galleryPrev && galleryNext) {
+		const scrollStep = () => {
+			const firstImg = galleryWrapper.querySelector('img')
+			if (!firstImg) return galleryWrapper.clientWidth
+			const gap = parseFloat(getComputedStyle(galleryWrapper).columnGap || getComputedStyle(galleryWrapper).gap) || 0
+			return firstImg.getBoundingClientRect().width + gap
+		}
+
+		const maxScrollLeft = () => galleryWrapper.scrollWidth - galleryWrapper.clientWidth
+
+		galleryNext.addEventListener('click', () => {
+			const target = Math.min(galleryWrapper.scrollLeft + scrollStep(), maxScrollLeft())
+			galleryWrapper.scrollTo({ left: target, behavior: 'instant' })
+		})
+		galleryPrev.addEventListener('click', () => {
+			const target = Math.max(galleryWrapper.scrollLeft - scrollStep(), 0)
+			galleryWrapper.scrollTo({ left: target, behavior: 'instant' })
+		})
+	}
+
 	// ==================== CENNIK ====================
 	document.querySelectorAll('.uslugi__tab').forEach(tab => {
 		tab.addEventListener('click', () => {
