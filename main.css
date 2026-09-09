@@ -899,12 +899,14 @@ body {
     display: flex;
   }
 }
+
 .hero-ornament--left .hero-ornament__thread {
   margin-right: 14px;
 }
 .hero-ornament--left .hero-ornament__circle {
   margin-right: 8px;
 }
+
 .hero-ornament--right .hero-ornament__thread {
   margin-left: 14px;
 }
@@ -2461,4 +2463,6 @@ body {
 .cookieBanner__btn:hover {
   background-color: #1B3A1C;
   border-color: #1B3A1C;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
