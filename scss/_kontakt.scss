@@ -4,7 +4,8 @@
 .kontakt{
    position: sticky;
 	top: 0;
-	height: 75vh;
+	height: auto;
+	padding-bottom: 3rem;
 	background-color: #ede8e1;
 	z-index: 5;
 	text-align: center;
@@ -85,9 +86,6 @@
 		font-size: clamp(16px, 1.5rem, 29px);
 	}
 	@include telefon-small{
-		position: sticky;
-		height: auto;
-		padding-bottom: 3rem;
 		&__title{
 			font-size: clamp(38px, 4rem, 77px);
 		}
@@ -113,9 +111,6 @@
 
 	}
 	@include telefon{
-		position: sticky;
-		height: auto;
-		padding-bottom: 3rem;
 		&__title{
 			font-size: clamp(38px, 4rem, 77px);
 		}
@@ -142,9 +137,6 @@
 		}
 	}
 	@include tablet {
-    position: sticky;
-    height: auto;
-    padding-bottom: 3rem;
     &__map-container {
         display: none;
     }
