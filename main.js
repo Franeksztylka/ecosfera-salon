@@ -1,3 +1,22 @@
+// ==================== LOADER ====================
+// Chowamy loader jak najwcześniej (po pełnym załadowaniu zasobów), z
+// bezpiecznikiem czasowym na wypadek wolnego/zawieszonego window.load.
+;(() => {
+	const loader = document.getElementById('page-loader')
+	if (!loader) return
+
+	let hidden = false
+	const hideLoader = () => {
+		if (hidden) return
+		hidden = true
+		loader.classList.add('page-loader--hidden')
+		setTimeout(() => loader.remove(), 500)
+	}
+
+	window.addEventListener('load', hideLoader)
+	setTimeout(hideLoader, 4000)
+})()
+
 document.addEventListener('DOMContentLoaded', () => {
 	// ==================== NAWIGACJA ====================
 	const navBar = document.querySelector('.navbar')
@@ -202,6 +221,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (banner) {
 		const consent = localStorage.getItem('cookieConsent')
 
+		// Google Consent Mode startuje domyślnie z "denied" (patrz <head>) -
+		// jeśli zgoda była już wcześniej udzielona, aktualizujemy ją od razu.
+		if (consent === 'accepted' && typeof gtag === 'function') {
+			gtag('consent', 'update', { analytics_storage: 'granted' })
+		}
+
 		if (!consent) {
 			setTimeout(() => {
 				banner.classList.add('is-shown')
@@ -212,6 +237,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (acceptBtn) {
 			acceptBtn.addEventListener('click', () => {
 				localStorage.setItem('cookieConsent', 'accepted')
+				if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: 'granted' })
+				banner.classList.remove('is-shown')
+			})
+		}
+
+		const declineBtn = document.getElementById('cookieDecline')
+		if (declineBtn) {
+			declineBtn.addEventListener('click', () => {
+				localStorage.setItem('cookieConsent', 'declined')
 				banner.classList.remove('is-shown')
 			})
 		}

@@ -53,6 +53,12 @@
 		}
 	}
 
+	&__actions {
+		display: flex;
+		gap: 10px;
+		flex: 0 0 auto;
+	}
+
 	&__btn {
 		padding: 10px 22px;
 		background-color: $main-color;
@@ -68,6 +74,18 @@
 		&:hover {
 			background-color: $green-deep;
 			border-color: $green-deep;
+		}
+
+		&--secondary {
+			background-color: transparent;
+			color: $text-muted;
+			border-color: $text-muted;
+
+			&:hover {
+				background-color: transparent;
+				color: $green-deep;
+				border-color: $green-deep;
+			}
 		}
 	}
 }

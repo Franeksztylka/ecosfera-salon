@@ -44,6 +44,15 @@
 
     <link rel="stylesheet" href="main.css">
 
+    <!-- Google tag (gtag.js) - Consent Mode: analytics storage denied until cookie consent is granted -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', { 'analytics_storage': 'denied' });
+        gtag('js', new Date());
+        gtag('config', 'G-8BCWN9GK8Y');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BCWN9GK8Y"></script>
 
     <script type="application/ld+json">
     {
@@ -53,6 +62,7 @@
   "image": "https://www.ecosferasalon.pl/img/ecosfera-salon-logo.jpeg",
   "description": "Ekologiczny salon fryzjerski w Wilanowie oferujący bezpieczną koloryzację, strzyżenie i pielęgnację włosów.",
   "telephone": "+48 500 736 003",
+  "email": "biuro.ecosfera@gmail.com",
   "url": "https://www.ecosferasalon.pl/",
   "address": {
     "@type": "PostalAddress",
@@ -114,6 +124,11 @@
 </head>
 
 <body>
+    <div id="page-loader" class="page-loader" role="status" aria-label="Ładowanie strony">
+        <img src="img/ecosfera-salon-logo-removebg.png" alt="" class="page-loader__logo" width="180" height="65">
+        <span class="page-loader__spinner" aria-hidden="true"></span>
+    </div>
+
     <div id="hero-top"></div>
     <header>
         <nav class="navbar">
@@ -569,7 +584,14 @@
                             <path
                                 d="M224.2 89C216.3 70.1 195.7 60.1 176.1 65.4L170.6 66.9C106 84.5 50.8 147.1 66.9 223.3C104 398.3 241.7 536 416.7 573.1C493 589.3 555.5 534 573.1 469.4L574.6 463.9C580 444.2 569.9 423.6 551.1 415.8L453.8 375.3C437.3 368.4 418.2 373.2 406.8 387.1L368.2 434.3C297.9 399.4 241.3 341 208.8 269.3L253 233.3C266.9 222 271.6 202.9 264.8 186.3L224.2 89z" />
                         </svg>&nbsp;Zarezerwuj wizytę: </h3>
-                    <p class="kontakt__number">+48 500 736 003</p>
+                    <p class="kontakt__number"><a href="tel:+48500736003">+48 500 736 003</a></p>
+
+                    <h3 class="data-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5z" />
+                            <path fill="#ede8e1" d="M3.5 4.5 12 12 20.5 4.5" />
+                        </svg>&nbsp;E-mail: </h3>
+                    <p class="kontakt__number"><a href="mailto:biuro.ecosfera@gmail.com">biuro.ecosfera@gmail.com</a></p>
                 </div>
             </div>
 
@@ -612,6 +634,7 @@
                 <p>&copy; 2026 Ecosfera Salon Fryzjerski. Wszystkie prawa zastrzeżone.</p>
                 <p>Aleja Rzeczypospolitej 18, 02-972 Warszawa (Wilanów)</p>
                 <p>Tel: <a href="tel:+48500736003">500 736 003</a></p>
+                <p>E-mail: <a href="mailto:biuro.ecosfera@gmail.com">biuro.ecosfera@gmail.com</a></p>
                 <div class="footer__links">
                     <button id="openPrivacy" type="button">Polityka prywatności</button>
                     <button id="openTerms" type="button">Regulamin</button>
@@ -624,29 +647,38 @@
         <div class="modal" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
             <h2 id="termsTitle">REGULAMIN KORZYSTANIA ZE STRONY</h2>
             <h3>§1 Postanowienia ogólne</h3>
-            <p>Niniejszy regulamin dotyczy zasad korzystania ze strony internetowej
-                salonu Ecosfera Salon Fryzjerski, prowadzonej przez salon Ecosfera Salon Fryzjerski,
-                NIP: 8261822142.
+            <p>Niniejszy regulamin określa zasady korzystania ze stroną internetową
+                www.ecosferasalon.pl, prowadzoną przez Ecosfera Salon Fryzjerski,
+                NIP: 8261822142, z siedzibą pod adresem Aleja Rzeczypospolitej 18, 02-972 Warszawa
+                (Wilanów) ("Salon").
             </p>
-            <h3>§2 Zakres usług</h3>
-            <p>Tworzenie stron internetowych, wdrażanie automatyzacji i narzędzi opartych na AI oraz projekty dla
-                podmiotów związanych ze sportem. Szczegółowy zakres ustalany indywidualnie.</p>
-            <h3>§3 Zamówienia</h3>
-            <p>Kontakt przez formularz lub e-mail. Cena i termin realizacji ustalane indywidualnie przed rozpoczęciem
-                prac.</p>
-            <h3>§4 Płatności</h3>
-            <p>Warunki płatności ustalane indywidualnie dla każdego zlecenia i potwierdzane przed rozpoczęciem
-                realizacji.</p>
-            <h3>§5 Reklamacje</h3>
-            <p>Zgłoszenia drogą mailową, rozpatrywane w terminie 14 dni od otrzymania.</p>
-            <h3>§6 Odstąpienie od umowy</h3>
-            <p>Klientowi-konsumentowi przysługuje prawo odstąpienia w terminie 14 dni zgodnie z przepisami, z
-                zastrzeżeniem wyjątków (np. usługi rozpoczęte na wyraźne żądanie przed upływem terminu).</p>
+            <h3>§2 Charakter strony</h3>
+            <p>Strona ma charakter wyłącznie informacyjny i prezentuje ofertę usług fryzjerskich
+                Salonu, cennik, galerię realizacji oraz dane kontaktowe. Strona nie posiada
+                formularza kontaktowego, koszyka ani systemu płatności i nie umożliwia zawierania
+                umów drogą elektroniczną bezpośrednio na Stronie.</p>
+            <h3>§3 Rezerwacja wizyt</h3>
+            <p>Rezerwacja wizyt odbywa się wyłącznie za pośrednictwem zewnętrznej platformy
+                Booksy, do której Strona zawiera przekierowania. Booksy działa na podstawie
+                własnego regulaminu i polityki prywatności, niezależnych od niniejszej Strony -
+                Salon nie ponosi odpowiedzialności za działanie tej platformy.</p>
+            <h3>§4 Własność intelektualna</h3>
+            <p>Treści zamieszczone na Stronie (teksty, zdjęcia, grafiki, logo) stanowią własność
+                Salonu lub są wykorzystywane za zgodą uprawnionych podmiotów i podlegają ochronie
+                prawnoautorskiej. Kopiowanie, powielanie i rozpowszechnianie tych treści bez
+                pisemnej zgody Salonu jest zabronione.</p>
+            <h3>§5 Odpowiedzialność</h3>
+            <p>Salon dokłada starań, aby informacje prezentowane na Stronie (w tym cennik i
+                godziny otwarcia) były aktualne, jednak nie ponosi odpowiedzialności za zmiany od
+                niego niezależne ani za treść i działanie serwisów zewnętrznych (Booksy, Mapy
+                Google, media społecznościowe), do których Strona odsyła.</p>
+            <h3>§6 Dane osobowe i pliki cookies</h3>
+            <p>Zasady przetwarzania danych osobowych oraz wykorzystywania plików cookies przez
+                osoby odwiedzające Stronę określa Polityka Prywatności.</p>
             <h3>§7 Postanowienia końcowe</h3>
-            <p>W sprawach nieuregulowanych zastosowanie mają przepisy prawa polskiego.</p>
-            <h3>§8 Prawa autorskie i prawa do serwisu</h3>
-            <p>Autorkie prawa majątkowe/osobiste do projektu graficznego oraz struktury strony internetowej przysługują
-                ich wykonawcom: Codale Web Development.</p>
+            <p>W sprawach nieuregulowanych niniejszym regulaminem zastosowanie mają przepisy
+                prawa polskiego. Salon zastrzega sobie prawo do wprowadzania zmian w regulaminie;
+                aktualna wersja jest zawsze dostępna na Stronie.</p>
             <button class="modal__close" type="button" data-close-modal>Zamknij</button>
         </div>
     </div>
@@ -656,42 +688,59 @@
             <h2 id="privacyTitle">Polityka prywatności</h2>
             <p>Administratorem danych jest Ecosfera Salon Fryzjerski,
                 NIP: 8261822142, z siedzibą w Warszawie (Aleja Rzeczypospolitej 18, Wilanów).
-                Kontakt: Tel: 500 736 003.</p>
+                Kontakt: Tel: 500 736 003, e-mail: biuro.ecosfera@gmail.com.</p>
             <h3>1. Zakres przetwarzanych danych</h3>
             <p>Ta strona nie posiada formularza kontaktowego i nie zbiera danych
                 osobowych bezpośrednio. Serwer, na którym działa strona, może
                 automatycznie zapisywać standardowe dane techniczne (adres IP, typ
                 przeglądarki, czas wizyty) w logach — to typowa, techniczna funkcja
                 każdego hostingu, niezwiązana z identyfikacją konkretnej osoby.</p>
-            <h3>2. Mapa Google</h3>
+            <h3>2. Google Analytics</h3>
+            <p>Za Twoją zgodą strona korzysta z Google Analytics (Google Ireland Ltd.) w
+                celu analizy ruchu i statystyk odwiedzin. Narzędzie to zapisuje pliki cookie
+                i przetwarza dane takie jak adres IP, rodzaj urządzenia i przeglądarki,
+                źródło wejścia na stronę oraz sposób korzystania ze Strony. Dane te są
+                przetwarzane wyłącznie po wyrażeniu zgody w bannerze cookies (podstawa prawna:
+                art. 6 ust. 1 lit. a RODO - zgoda) i mogą być przekazywane do Google LLC z
+                siedzibą w USA w oparciu o standardowe klauzule umowne zatwierdzone przez
+                Komisję Europejską. Zgodę można wycofać w każdej chwili poprzez wyczyszczenie
+                danych przeglądarki dla tej strony lub kontakt z Administratorem. Więcej
+                informacji: policies.google.com/privacy</p>
+            <h3>3. Mapa Google</h3>
             <p>Strona zawiera osadzoną mapę Google (Google Maps), która może
                 ustawiać własne pliki cookie i przetwarzać dane zgodnie z polityką
                 prywatności Google. Więcej informacji: policies.google.com/privacy</p>
-            <h3>3. Booksy</h3>
+            <h3>4. Booksy</h3>
             <p>Strona zawiera linki do serwisu Booksy, umożliwiającego rezerwację
                 wizyt. Kliknięcie takiego linku przenosi na stronę Booksy, która
                 działa na podstawie własnej, niezależnej polityki prywatności. Nasza
                 strona nie przekazuje żadnych danych do Booksy — dane podajesz
                 samodzielnie, bezpośrednio w serwisie Booksy, jeśli zdecydujesz się
                 na rezerwację.</p>
-            <h3>4. Twoje prawa</h3>
-            <p>Masz prawo do dostępu do swoich danych, ich sprostowania, usunięcia
-                oraz wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych —
-                w zakresie, w jakim dane są przetwarzane (patrz punkt 1).</p>
-            <h3>5. Cookies</h3>
-            <p>Jedyne cookies, jakie mogą pojawić się na tej stronie, pochodzą
-                z osadzonej mapy Google. Strona sama z siebie nie ustawia żadnych
-                własnych plików cookie.</p>
+            <h3>5. Twoje prawa</h3>
+            <p>Masz prawo do dostępu do swoich danych, ich sprostowania, usunięcia,
+                ograniczenia przetwarzania, wycofania zgody w dowolnym momencie (co nie
+                wpływa na zgodność z prawem przetwarzania dokonanego przed jej wycofaniem)
+                oraz wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych — w
+                zakresie, w jakim dane są przetwarzane (patrz punkty 1-2).</p>
+            <h3>6. Cookies</h3>
+            <p>Strona sama z siebie nie ustawia żadnych własnych plików cookie. Cookies,
+                jakie mogą pojawić się podczas przeglądania Strony, pochodzą z osadzonej
+                mapy Google oraz - wyłącznie po wyrażeniu zgody w bannerze - z Google
+                Analytics.</p>
             <button class="modal__close" type="button" data-close-modal>Zamknij</button>
         </div>
     </div>
 
     <div id="cookieBanner" class="cookieBanner">
         <p class="cookieBanner__text">
-            Ta strona korzysta z plików cookies, aby zapewnić Ci najlepsze doświadczenia.
+            Ta strona korzysta z Google Analytics wyłącznie za Twoją zgodą.
             Więcej informacji znajdziesz w <a href="#" id="openPrivacyFromCookies">Polityce prywatności</a>.
         </p>
-        <button id="cookieAccept" class="cookieBanner__btn">Rozumiem</button>
+        <div class="cookieBanner__actions">
+            <button id="cookieDecline" class="cookieBanner__btn cookieBanner__btn--secondary">Odrzuć</button>
+            <button id="cookieAccept" class="cookieBanner__btn">Akceptuję</button>
+        </div>
     </div>
 
     <script src="main.js" defer></script>

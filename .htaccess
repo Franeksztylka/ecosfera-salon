@@ -1,3 +1,18 @@
+# HTTPS is already forced via Hostido's panel setting, so only the www
+# subdomain is enforced here, matching the canonical URL used throughout
+# the site (og:url, canonical link, JSON-LD, sitemap).
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} !^www\. [NC]
+    RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Don't let visitors browse directory listings (e.g. /img/, /scss/)
+Options -Indexes
+
+# Custom 404 page (Apache serves it while still returning a real 404 status)
+ErrorDocument 404 /404.html
+
 # Cache-Control: long-lived caching for static assets (renamed on update),
 # short/no caching for HTML so visitors always get the latest page.
 

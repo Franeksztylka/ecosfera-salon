@@ -1,0 +1,81 @@
+@use 'colors' as *;
+@use 'mixins' as *;
+
+.error-page {
+	min-height: calc(100vh - var(--navbar-height));
+	padding: clamp(3rem, 8vh, 6rem) 1.5rem;
+	padding-top: calc(var(--navbar-height) + clamp(3rem, 8vh, 6rem));
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background-color: #ede8e1;
+
+	&__code {
+		font-family: 'Abril Fatface', serif;
+		font-size: clamp(72px, 14vw, 160px);
+		line-height: 1;
+		background: linear-gradient(180deg, $main-color 0%, $green-light 100%);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	&__title {
+		font-size: clamp(24px, 3.5vw, 36px);
+		color: $green-deep;
+		margin-top: 0.5rem;
+	}
+
+	&__description {
+		max-width: 44ch;
+		margin: 1rem auto 2rem;
+		color: $text-muted;
+		font-size: clamp(15px, 1.2rem, 19px);
+		line-height: 1.6;
+	}
+
+	&__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: center;
+	}
+
+	&__btn {
+		padding: 0.9rem 2rem;
+		border-radius: 8px;
+		font-weight: 600;
+		text-decoration: none;
+		transition: all 0.2s ease;
+
+		&--primary {
+			background-color: $main-color;
+			color: $bg;
+			border: 1px solid $main-color;
+
+			&:hover {
+				background-color: $green-deep;
+				border-color: $green-deep;
+			}
+		}
+
+		&--secondary {
+			background-color: transparent;
+			color: $main-color;
+			border: 1px solid $main-color;
+
+			&:hover {
+				background-color: $bg-2;
+			}
+		}
+	}
+}
+
+@include telefon-small {
+	.error-page {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
