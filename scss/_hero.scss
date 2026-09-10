@@ -139,12 +139,14 @@
 
 	@include telefon-small {
 		grid-template-columns: 1fr;
-		padding-top: 20px;
+		height: auto;
+		min-height: 100vh;
+		overflow: visible;
+		padding-top: var(--navbar-height);
 		padding-bottom: 25px;
 		&__left {
 			width: 100%;
 			padding: 0;
-			height: 100vh;
 			align-items: center;
 			text-align: center;
 		}
@@ -186,12 +188,14 @@
 	}
 	@include telefon {
 		grid-template-columns: 1fr;
-		padding-top: 20px;
+		height: auto;
+		min-height: 100vh;
+		overflow: visible;
+		padding-top: var(--navbar-height);
 		padding-bottom: 25px;
 		&__left {
 			width: 100%;
 			padding: 0;
-			height: 100vh;
 			align-items: center;
 			text-align: center;
 		}
@@ -231,12 +235,14 @@
 	}
 	@include tablet {
 		grid-template-columns: 1fr;
-		padding-top: 20px;
+		height: auto;
+		min-height: 100vh;
+		overflow: visible;
+		padding-top: var(--navbar-height);
 		padding-bottom: 25px;
 		&__left {
 			width: 100%;
 			padding: 0;
-			height: 100vh;
 			align-items: center;
 			text-align: center;
 		}

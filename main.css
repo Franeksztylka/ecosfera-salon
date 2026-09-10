@@ -692,13 +692,15 @@ body {
 @media (max-width: 320px) {
   .hero {
     grid-template-columns: 1fr;
-    padding-top: 20px;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    padding-top: var(--navbar-height);
     padding-bottom: 25px;
   }
   .hero__left {
     width: 100%;
     padding: 0;
-    height: 100vh;
     align-items: center;
     text-align: center;
   }
@@ -741,13 +743,15 @@ body {
 @media (min-width: 321px) and (max-width: 767px) {
   .hero {
     grid-template-columns: 1fr;
-    padding-top: 20px;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    padding-top: var(--navbar-height);
     padding-bottom: 25px;
   }
   .hero__left {
     width: 100%;
     padding: 0;
-    height: 100vh;
     align-items: center;
     text-align: center;
   }
@@ -788,13 +792,15 @@ body {
 @media (min-width: 768px) and (max-width: 1023px) {
   .hero {
     grid-template-columns: 1fr;
-    padding-top: 20px;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    padding-top: var(--navbar-height);
     padding-bottom: 25px;
   }
   .hero__left {
     width: 100%;
     padding: 0;
-    height: 100vh;
     align-items: center;
     text-align: center;
   }
@@ -2034,6 +2040,13 @@ body {
 .kontakt__data p {
   font-size: clamp(16px, 1.5rem, 29px);
   margin: 0;
+}
+.kontakt__data a {
+  color: #6b7b6c;
+  text-decoration: none;
+}
+.kontakt__data a:hover {
+  color: #245e27;
 }
 .kontakt__data svg {
   width: 1.5rem;

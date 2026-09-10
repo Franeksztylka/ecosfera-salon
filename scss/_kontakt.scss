@@ -60,6 +60,14 @@
 			font-size: clamp(16px, 1.5rem, 29px);
 			margin: 0;
 		}
+		a{
+			color: $text-muted;
+			text-decoration: none;
+
+			&:hover{
+				color: $main-color;
+			}
+		}
 		svg{
 			width: 1.5rem;
 			fill: $text-muted;
