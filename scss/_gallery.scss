@@ -12,7 +12,7 @@
     background-color: #ede8e1;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    padding-bottom: clamp(3.125rem, 5rem, 5.625rem);
+    padding-bottom: clamp(3.75rem, 6rem, 6.75rem);
 
     &__title {
         text-align: center;
@@ -20,7 +20,7 @@
         color: $green-deep;
         margin-bottom: 3rem;
         text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        padding-top: 7.5rem;
+        padding-top: 9rem;
         z-index: 10;
     }
 
@@ -86,10 +86,10 @@
     }
 
     @include telefon-small {
-        padding-bottom: 3.75rem;
+        padding-bottom: 4.5rem;
         &__title {
             font-size: clamp(29px, 3rem, 58px);
-            padding-top: 5rem;
+            padding-top: 6rem;
             margin-bottom: 1.5rem;
         }
         &__carousel {
@@ -112,9 +112,9 @@
     }
 
     @include telefon {
-        padding-bottom: 3.75rem;
+        padding-bottom: 4.5rem;
         &__title {
-            padding-top: 5rem;
+            padding-top: 6rem;
             margin-bottom: 1.5rem;
         }
         &__carousel {
@@ -138,7 +138,7 @@
 
     @include tablet {
         &__title {
-            padding-top: 3.75rem;
+            padding-top: 4.5rem;
             margin-bottom: 1.5rem;
         }
         &__wrapper {
