@@ -270,4 +270,9 @@
 			border-top: 1px solid rgba(255, 255, 255, 0.15);
 		}
 	}
+
+	@media (min-height: 900px) and (max-height: 1000px) and (max-width: 1023px) {
+		top: -115vh;
+		height: 215vh;
+	}
 }
