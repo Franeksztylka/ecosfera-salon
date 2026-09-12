@@ -1119,8 +1119,8 @@ body {
 }
 @media (min-width: 321px) and (max-width: 767px) {
   .about-us {
-    top: -137.5vh;
-    height: 237.5vh;
+    top: -125vh;
+    height: 225vh;
   }
   .about-us__owner-card, .about-us__coworker-card {
     grid-template-columns: 1fr;
@@ -1157,8 +1157,8 @@ body {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .about-us {
-    top: -88vh;
-    height: 188vh;
+    top: -80vh;
+    height: 180vh;
   }
   .about-us__title {
     font-size: clamp(44px, 4.6em, 88px);
@@ -1922,8 +1922,8 @@ body {
 }
 @media (min-width: 321px) and (max-width: 767px) {
   .opinie {
-    height: 232vh;
-    top: -132vh;
+    height: 220vh;
+    top: -120vh;
     min-height: initial;
     padding: 4rem 0;
   }
