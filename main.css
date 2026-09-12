@@ -2304,6 +2304,7 @@ body {
 }
 .gallery__wrapper img {
   flex: 0 0 clamp(230px, 30vw, 320px);
+  width: clamp(230px, 30vw, 320px);
   height: 380px;
   scroll-snap-align: start;
   object-fit: cover;
@@ -2352,6 +2353,7 @@ body {
   }
   .gallery__wrapper img {
     flex-basis: 68vw;
+    width: 68vw;
     height: 320px;
   }
   .gallery__btn {
@@ -2377,6 +2379,7 @@ body {
   }
   .gallery__wrapper img {
     flex-basis: 62vw;
+    width: 62vw;
     height: 340px;
   }
   .gallery__btn {
@@ -2392,6 +2395,7 @@ body {
   }
   .gallery__wrapper img {
     flex-basis: clamp(230px, 38vw, 320px);
+    width: clamp(230px, 38vw, 320px);
   }
 }
 
