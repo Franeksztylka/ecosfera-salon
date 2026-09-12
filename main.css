@@ -1119,8 +1119,8 @@ body {
 }
 @media (min-width: 321px) and (max-width: 767px) {
   .about-us {
-    top: -125vh;
-    height: 225vh;
+    top: -1250px;
+    height: calc(100vh + 1250px);
   }
   .about-us__owner-card, .about-us__coworker-card {
     grid-template-columns: 1fr;
@@ -1157,8 +1157,8 @@ body {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .about-us {
-    top: -80vh;
-    height: 180vh;
+    top: -1100px;
+    height: calc(100vh + 1100px);
   }
   .about-us__title {
     font-size: clamp(44px, 4.6em, 88px);
@@ -1182,12 +1182,6 @@ body {
     padding: 1rem 1rem;
     border-left: none;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
-  }
-}
-@media (min-height: 900px) and (max-height: 1000px) and (max-width: 1023px) {
-  .about-us {
-    top: -115vh;
-    height: 215vh;
   }
 }
 
@@ -1928,8 +1922,8 @@ body {
 }
 @media (min-width: 321px) and (max-width: 767px) {
   .opinie {
-    height: 220vh;
-    top: -120vh;
+    height: calc(100vh + 1600px);
+    top: -1600px;
     min-height: initial;
     padding: 4rem 0;
   }
@@ -1967,18 +1961,12 @@ body {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .opinie {
-    height: 100vh;
-    top: 0;
+    height: calc(100vh + 850px);
+    top: -850px;
   }
   .opinie__title {
     padding-top: 0.6em;
     font-size: clamp(38px, 4rem, 77px);
-  }
-}
-@media (min-height: 900px) and (max-height: 1000px) and (max-width: 1023px) {
-  .opinie {
-    height: 200vh;
-    top: -100vh;
   }
 }
 
