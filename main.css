@@ -1297,7 +1297,7 @@ body {
 }
 .uslugi__content {
   flex: 1;
-  max-height: 75vh;
+  max-height: 50vh;
   min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
@@ -1533,9 +1533,6 @@ body {
     padding: 0.6em 1.2em;
     font-size: clamp(8px, 0.8rem, 15px);
   }
-  .uslugi__content {
-    overflow: visible;
-  }
   .uslugi__table {
     margin: 0;
     width: 100%;
@@ -1589,9 +1586,6 @@ body {
     padding: 0.6em 1.2em;
     font-size: clamp(9px, 0.9rem, 17px);
   }
-  .uslugi__content {
-    overflow: visible;
-  }
   .uslugi__table {
     margin: 0;
     width: 100%;
@@ -1641,9 +1635,6 @@ body {
   .uslugi__tab {
     padding: 0.6em 1.2em;
     font-size: clamp(9px, 0.9rem, 17px);
-  }
-  .uslugi__content {
-    overflow: visible;
   }
   .uslugi__table {
     margin: 0;
