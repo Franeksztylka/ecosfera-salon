@@ -205,8 +205,8 @@
 	}
 
 	@include telefon {
-		top: -137.5vh;
-		height: 237.5vh;
+		top: -187.5vh;
+		height: 287.5vh;
 		&__owner-card,
 		&__coworker-card {
 			grid-template-columns: 1fr;
@@ -242,8 +242,8 @@
 	}
 
 	@include tablet {
-		top: -88vh;
-		height: 188vh;
+		top: -120vh;
+		height: 220vh;
 		&__title {
 			font-size: clamp(44px, 4.6em, 88px);
 		}
