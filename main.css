@@ -1213,7 +1213,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .uslugi__title {
   color: #1B3A1C;
