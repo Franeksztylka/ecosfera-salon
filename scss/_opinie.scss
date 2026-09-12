@@ -242,8 +242,8 @@
 		}
 	}
 	@include telefon {
-		height: 280vh;
-		top: -180vh;
+		height: 232vh;
+		top: -132vh;
 		min-height: initial;
 		padding: 4rem 0;
 		&__title{
@@ -285,6 +285,8 @@
 		}
 	}
 	@include tablet{
+		height: 100vh;
+		top: 0;
 		&__title{
 			padding-top: .6em;
 			font-size: clamp(38px, 4rem, 77px);
