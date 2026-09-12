@@ -15,7 +15,7 @@
 	   ale nie pozwala paddingowi "zjeść" przestrzeni potrzebnej
 	   na treść przy powiększonej czcionce systemowej. */
 	padding: clamp(1.5rem, 4rem, 4.5rem);
-	height: 100vh;
+	height: 125vh;
 	/* overflow-y: auto na całej (pełnoekranowej) sekcji psuło zwykłe
 	   przewijanie strony dla każdego odwiedzającego: sekcja stawała
 	   się własnym kontenerem scrolla na niemal całej wysokości
@@ -313,7 +313,7 @@
 	}
 	@include telefon-small{
 		
-		min-height: 100vh;
+		min-height: 125vh;
 		padding: 4em 1em;
 
 
@@ -372,7 +372,7 @@
 		}
 	}
 	@include telefon{
-		min-height: 100vh;
+		min-height: 125vh;
 		padding: 4em 1em;
 	
 		&__title {
@@ -429,9 +429,9 @@
 	}
 	@include tablet{
 		.uslugi {
-		min-height: 100vh;
+		min-height: 125vh;
 		padding: 2em 1em;
-		
+
 		}
 		&__title {
 			font-size: clamp(29px, 3rem, 58px);

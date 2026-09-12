@@ -3,8 +3,8 @@
 
 .opinie {
 	position: sticky;
-	height: 100vh;
-    top: 0;
+	height: 125vh;
+    top: -25vh;
 	z-index: 5;
 	background: #ede8e1;
    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
@@ -199,8 +199,8 @@
 		cursor: pointer;
 	}
 	@include telefon-small {
-		height: 264vh;
-		top: -164vh;
+		height: 305vh;
+		top: -205vh;
 		min-height: initial;
 		padding: 4rem 0;
 		&__title{
@@ -242,8 +242,8 @@
 		}
 	}
 	@include telefon {
-		height: 220vh;
-		top: -120vh;
+		height: 250vh;
+		top: -150vh;
 		min-height: initial;
 		padding: 4rem 0;
 		&__title{
