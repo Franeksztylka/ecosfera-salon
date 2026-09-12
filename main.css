@@ -1184,6 +1184,12 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.15);
   }
 }
+@media (min-height: 900px) and (max-height: 1000px) and (max-width: 1023px) {
+  .about-us {
+    top: -115vh;
+    height: 215vh;
+  }
+}
 
 .uslugi {
   position: sticky;
@@ -1967,6 +1973,12 @@ body {
   .opinie__title {
     padding-top: 0.6em;
     font-size: clamp(38px, 4rem, 77px);
+  }
+}
+@media (min-height: 900px) and (max-height: 1000px) and (max-width: 1023px) {
+  .opinie {
+    height: 200vh;
+    top: -100vh;
   }
 }
 
