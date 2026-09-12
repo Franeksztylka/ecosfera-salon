@@ -123,7 +123,7 @@
 
 	&__content {
 		flex: 1;
-		max-height: 75vh;
+		max-height: 50vh;
 		min-height: 0;
 		overflow-y: auto;
 		overflow-x: hidden;
@@ -333,9 +333,6 @@
 			padding: 0.6em 1.2em;
 			font-size: clamp(8px, 0.8rem, 15px);
 		}
-		&__content{
-			overflow: visible;
-		}
 		&__table{
 			margin: 0;
 			width: 100%;
@@ -390,9 +387,6 @@
 		&__tab {
 			padding: 0.6em 1.2em;
 			font-size: clamp(9px, 0.9rem, 17px);
-		}
-		&__content{
-			overflow: visible;
 		}
 		&__table{
 			margin: 0;
@@ -449,10 +443,6 @@
 			padding: 0.6em 1.2em;
 			font-size: clamp(9px, 0.9rem, 17px);
 		}
-		&__content{
-			overflow: visible;
-		}
-		
 		&__table{
 			margin: 0;
 			width: 100%;
