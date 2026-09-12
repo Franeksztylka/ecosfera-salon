@@ -935,8 +935,8 @@ body {
 }
 .about-us {
   position: sticky;
-  top: -110vh;
-  height: 210vh;
+  top: -165vh;
+  height: 265vh;
   background-color: #ede8e1;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* zoptymalizowany */
   /* overflow-y: auto na całej (pełnoekranowej) sekcji psuło zwykłe
@@ -1084,8 +1084,8 @@ body {
 }
 @media (max-width: 320px) {
   .about-us {
-    top: -100vh;
-    height: 200vh;
+    top: -150vh;
+    height: 250vh;
   }
   .about-us__owner-card, .about-us__coworker-card {
     grid-template-columns: 1fr;
@@ -1119,8 +1119,8 @@ body {
 }
 @media (min-width: 321px) and (max-width: 767px) {
   .about-us {
-    top: -125vh;
-    height: 225vh;
+    top: -187.5vh;
+    height: 287.5vh;
   }
   .about-us__owner-card, .about-us__coworker-card {
     grid-template-columns: 1fr;
@@ -1157,8 +1157,8 @@ body {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .about-us {
-    top: -80vh;
-    height: 180vh;
+    top: -120vh;
+    height: 220vh;
   }
   .about-us__title {
     font-size: clamp(44px, 4.6em, 88px);
@@ -1199,7 +1199,7 @@ body {
      ale nie pozwala paddingowi "zjeść" przestrzeni potrzebnej
      na treść przy powiększonej czcionce systemowej. */
   padding: 4rem;
-  height: 100vh;
+  height: 150vh;
   /* overflow-y: auto na całej (pełnoekranowej) sekcji psuło zwykłe
      przewijanie strony dla każdego odwiedzającego: sekcja stawała
      się własnym kontenerem scrolla na niemal całej wysokości
@@ -1297,7 +1297,7 @@ body {
 }
 .uslugi__content {
   flex: 1;
-  max-height: 50vh;
+  max-height: 75vh;
   min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
@@ -1516,7 +1516,7 @@ body {
 }
 @media (max-width: 320px) {
   .uslugi {
-    min-height: 100vh;
+    min-height: 150vh;
     padding: 4em 1em;
   }
   .uslugi__title {
@@ -1572,7 +1572,7 @@ body {
 }
 @media (min-width: 321px) and (max-width: 767px) {
   .uslugi {
-    min-height: 100vh;
+    min-height: 150vh;
     padding: 4em 1em;
   }
   .uslugi__title {
@@ -1625,7 +1625,7 @@ body {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .uslugi .uslugi {
-    min-height: 100vh;
+    min-height: 150vh;
     padding: 2em 1em;
   }
   .uslugi__title {
@@ -1719,8 +1719,8 @@ body {
 
 .opinie {
   position: sticky;
-  height: 100vh;
-  top: 0;
+  height: 130vh;
+  top: -30vh;
   z-index: 5;
   background: #ede8e1;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
@@ -1892,8 +1892,8 @@ body {
 }
 @media (max-width: 320px) {
   .opinie {
-    height: 264vh;
-    top: -164vh;
+    height: 346vh;
+    top: -246vh;
     min-height: initial;
     padding: 4rem 0;
   }
@@ -1931,8 +1931,8 @@ body {
 }
 @media (min-width: 321px) and (max-width: 767px) {
   .opinie {
-    height: 220vh;
-    top: -120vh;
+    height: 280vh;
+    top: -180vh;
     min-height: initial;
     padding: 4rem 0;
   }
@@ -2278,7 +2278,7 @@ body {
   background-color: #ede8e1;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  padding-bottom: 4rem;
+  padding-bottom: 6rem;
 }
 .gallery__title {
   text-align: center;
@@ -2286,7 +2286,7 @@ body {
   color: #1B3A1C;
   margin-bottom: 3rem;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  padding-top: 6rem;
+  padding-top: 9rem;
   z-index: 10;
 }
 .gallery__carousel {
@@ -2345,11 +2345,11 @@ body {
 }
 @media (max-width: 320px) {
   .gallery {
-    padding-bottom: 3rem;
+    padding-bottom: 4.5rem;
   }
   .gallery__title {
     font-size: clamp(29px, 3rem, 58px);
-    padding-top: 4rem;
+    padding-top: 6rem;
     margin-bottom: 1.5rem;
   }
   .gallery__carousel {
@@ -2371,10 +2371,10 @@ body {
 }
 @media (min-width: 321px) and (max-width: 767px) {
   .gallery {
-    padding-bottom: 3rem;
+    padding-bottom: 4.5rem;
   }
   .gallery__title {
-    padding-top: 4rem;
+    padding-top: 6rem;
     margin-bottom: 1.5rem;
   }
   .gallery__carousel {
@@ -2396,7 +2396,7 @@ body {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .gallery__title {
-    padding-top: 3rem;
+    padding-top: 4.5rem;
     margin-bottom: 1.5rem;
   }
   .gallery__wrapper img {
