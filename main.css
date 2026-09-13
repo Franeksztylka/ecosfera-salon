@@ -762,6 +762,7 @@ body {
   .hero__description {
     font-size: clamp(14px, 1.3em, 25px);
     margin-top: 20px;
+    padding: 0 1.5rem;
   }
   .hero__container {
     justify-content: space-around;
