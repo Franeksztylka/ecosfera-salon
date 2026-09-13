@@ -1922,8 +1922,8 @@ body {
 }
 @media (min-width: 321px) and (max-width: 767px) {
   .opinie {
-    height: calc(100vh + 1600px);
-    top: -1600px;
+    height: calc(100vh + 1440px);
+    top: -1440px;
     min-height: initial;
     padding: 4rem 0;
   }
@@ -1961,8 +1961,8 @@ body {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .opinie {
-    height: calc(100vh + 850px);
-    top: -850px;
+    height: calc(100vh + 765px);
+    top: -765px;
   }
   .opinie__title {
     padding-top: 0.6em;
