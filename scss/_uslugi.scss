@@ -15,7 +15,7 @@
 	   ale nie pozwala paddingowi "zjeść" przestrzeni potrzebnej
 	   na treść przy powiększonej czcionce systemowej. */
 	padding: clamp(1.5rem, 4rem, 4.5rem);
-	height: 100vh;
+	height: 150vh;
 	/* overflow-y: auto na całej (pełnoekranowej) sekcji psuło zwykłe
 	   przewijanie strony dla każdego odwiedzającego: sekcja stawała
 	   się własnym kontenerem scrolla na niemal całej wysokości
@@ -29,7 +29,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-start;
 
 	&__title {
 		color: $green-deep;
@@ -313,7 +313,7 @@
 	}
 	@include telefon-small{
 		
-		min-height: 100vh;
+		min-height: 150vh;
 		padding: 4em 1em;
 
 
@@ -332,9 +332,6 @@
 		&__tab {
 			padding: 0.6em 1.2em;
 			font-size: clamp(8px, 0.8rem, 15px);
-		}
-		&__content{
-			overflow: visible;
 		}
 		&__table{
 			margin: 0;
@@ -372,7 +369,7 @@
 		}
 	}
 	@include telefon{
-		min-height: 100vh;
+		min-height: 150vh;
 		padding: 4em 1em;
 	
 		&__title {
@@ -390,9 +387,6 @@
 		&__tab {
 			padding: 0.6em 1.2em;
 			font-size: clamp(9px, 0.9rem, 17px);
-		}
-		&__content{
-			overflow: visible;
 		}
 		&__table{
 			margin: 0;
@@ -429,9 +423,9 @@
 	}
 	@include tablet{
 		.uslugi {
-		min-height: 100vh;
+		min-height: 150vh;
 		padding: 2em 1em;
-		
+
 		}
 		&__title {
 			font-size: clamp(29px, 3rem, 58px);
@@ -449,10 +443,6 @@
 			padding: 0.6em 1.2em;
 			font-size: clamp(9px, 0.9rem, 17px);
 		}
-		&__content{
-			overflow: visible;
-		}
-		
 		&__table{
 			margin: 0;
 			width: 100%;

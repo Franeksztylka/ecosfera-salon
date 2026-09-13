@@ -4,8 +4,8 @@
 
 .about-us {
 	position: sticky;
-	top: -110vh;
-	height: 210vh;
+	top: -165vh;
+	height: 265vh;
 	background-color: #ede8e1;
 	box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* zoptymalizowany */
 	/* overflow-y: auto na całej (pełnoekranowej) sekcji psuło zwykłe
@@ -170,8 +170,8 @@
 	}
 
 	@include telefon-small {
-		top: -100vh;
-		height: 200vh;
+		top: -150vh;
+		height: 250vh;
 		&__owner-card,
 		&__coworker-card {
 			grid-template-columns: 1fr;
@@ -205,8 +205,8 @@
 	}
 
 	@include telefon {
-		top: -125vh;
-		height: 225vh;
+		top: -1250px;
+		height: calc(100vh + 1250px);
 		&__owner-card,
 		&__coworker-card {
 			grid-template-columns: 1fr;
@@ -242,8 +242,8 @@
 	}
 
 	@include tablet {
-		top: -80vh;
-		height: 180vh;
+		top: -1100px;
+		height: calc(100vh + 1100px);
 		&__title {
 			font-size: clamp(44px, 4.6em, 88px);
 		}
