@@ -35,7 +35,7 @@
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
 		font-size: clamp(48px, 5rem, 96px);
-		animation: fadeUp 0.8s ease forwards;
+		animation: fadeUp 0.35s ease forwards;
 	}
 
 	&__subtitle {
@@ -49,7 +49,7 @@
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
 		font-size: clamp(28px, 3rem, 58px);
-		animation: fadeUp 0.8s ease 0.2s forwards;
+		animation: fadeUp 0.35s ease 0.08s forwards;
 		opacity: 0;
 	}
 
@@ -57,7 +57,7 @@
 		margin-top: 1.5rem;
 		color: $text-muted;
 		font-size: clamp(18px, 1.75rem, 33px);
-		animation: fadeUp 0.8s ease 0.4s forwards;
+		animation: fadeUp 0.35s ease 0.16s forwards;
 		opacity: 0;
 	}
 
@@ -67,7 +67,7 @@
 		justify-content: center;
 		gap: clamp(1rem, 2rem, 2.5rem);
 		margin-top: clamp(1.5rem, 3rem, 3.5rem);
-		animation: fadeUp 0.8s ease 0.6s forwards;
+		animation: fadeUp 0.35s ease 0.24s forwards;
 		opacity: 0;
 	}
 
@@ -128,7 +128,7 @@
 		border: 1px solid $green-light;
 		border-radius: 10px;
 		background-color: white;
-		animation: popIn 0.6s ease 1s forwards;
+		animation: popIn 0.35s ease 0.4s forwards;
 		opacity: 0;
 	}
 

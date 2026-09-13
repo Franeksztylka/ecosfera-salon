@@ -217,6 +217,19 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 
 	// ==================== COOKIES ====================
+	// Ładujemy właściwą bibliotekę gtag.js dopiero po realnej zgodzie -
+	// dopóki analytics_storage jest "denied", i tak nic by nie mierzyła,
+	// więc wcześniejsze wczytanie byłoby tylko martwym, nieużywanym JS-em.
+	let gtagScriptLoaded = false
+	const loadGtagScript = () => {
+		if (gtagScriptLoaded) return
+		gtagScriptLoaded = true
+		const script = document.createElement('script')
+		script.async = true
+		script.src = 'https://www.googletagmanager.com/gtag/js?id=G-8BCWN9GK8Y'
+		document.head.appendChild(script)
+	}
+
 	const banner = document.getElementById('cookieBanner')
 	if (banner) {
 		const consent = localStorage.getItem('cookieConsent')
@@ -225,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		// jeśli zgoda była już wcześniej udzielona, aktualizujemy ją od razu.
 		if (consent === 'accepted' && typeof gtag === 'function') {
 			gtag('consent', 'update', { analytics_storage: 'granted' })
+			loadGtagScript()
 		}
 
 		if (!consent) {
@@ -238,6 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			acceptBtn.addEventListener('click', () => {
 				localStorage.setItem('cookieConsent', 'accepted')
 				if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: 'granted' })
+				loadGtagScript()
 				banner.classList.remove('is-shown')
 			})
 		}

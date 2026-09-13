@@ -53,7 +53,9 @@
 
     <link rel="stylesheet" href="main.css">
 
-    <!-- Google tag (gtag.js) - Consent Mode: analytics storage denied until cookie consent is granted -->
+    <!-- Google tag (gtag.js) - Consent Mode: analytics storage denied until cookie consent is granted.
+         The gtag.js library itself is only fetched once consent is actually granted (see main.js) -
+         until then it would just be unused JavaScript sitting on every page load. -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -61,7 +63,6 @@
         gtag('js', new Date());
         gtag('config', 'G-8BCWN9GK8Y');
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BCWN9GK8Y"></script>
 
     <script type="application/ld+json">
     {
@@ -133,10 +134,7 @@
 </head>
 
 <body>
-    <div id="page-loader" class="page-loader" role="status" aria-label="Ładowanie strony">
-        <img src="img/ecosfera-salon-logo-removebg.png" alt="" class="page-loader__logo" width="180" height="65">
-        <span class="page-loader__spinner" aria-hidden="true"></span>
-    </div>
+   
 
     <div id="hero-top"></div>
     <header>
@@ -753,7 +751,7 @@
         </div>
     </div>
 
-    <script src="main.js" defer></script>
+    <script src="main.min.js" defer></script>
 </body>
 
 </html>
